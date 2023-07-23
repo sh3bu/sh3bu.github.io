@@ -4,12 +4,12 @@ title: "CMSpit - THM"
 date: "2021-12-25"
 tags: ["cockpit-cms", "CVE-2021-22204","CVE-2020-35848", "CVE-2020-35847", "exiftool", "mongodb"]
 cover:
-    image: "null"
+    image: resources/_gen/assets/CMSpit/cmspit.jpg
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "<alt text>"
     caption: "<text>"
-    relative: false # To use relative path for cover image, used in hugo Page-bundles
+    relative: true # To use relative path for cover image, used in hugo Page-bundles
 ---
 
 # Description

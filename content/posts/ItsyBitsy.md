@@ -4,7 +4,7 @@ title: "ItsyBitsy - THM"
 date: "2023-07-23"
 tags: ["Elastic", "Kibana", "C2 server"]
 cover:
-    image: "https://tryhackme-images.s3.amazonaws.com/room-icons/be84f26c22e5a051fc003dba5ed3dcd4.png"
+    image: "null"
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "<alt text>"
