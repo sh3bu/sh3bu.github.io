@@ -65,11 +65,12 @@ Add `contacttracer.thm` to your `/etc/hosts` file.
 
 Visiting website at port 80 gives us this simple page of Coronavirus contact tracer.
 
-![website1](../../assets/img/posts/Lockdown/website1.png)
+![website1](img/website1.png#center)
 
 The link to admin panel which lead  to  `/login.php` had a login form .
 
-![login](../../assets/img/posts/Lockdown/login.png)
+![login](img/login.png#center)
+
 _login.php_
 
 ## sqli auth-bypass
@@ -77,14 +78,14 @@ _login.php_
 
 I tried simple sqli auth bypass payload like `admin' OR 1=1-- ` and to my surprise I was logged in !
 
-![website2](../../assets/img/posts/Lockdown/website2.png)
+![website2](img/website2.png#center)
 
 # Shell as www-data
 -------------------------
 
 Browsing through the application I finally reached the settings page which had an `upload image functionality` .
 
-![upload](../../assets/img/posts/Lockdown/upload.png)
+![upload](img/upload.png#center)
 
 I was not sure whether .php file could be uploaded .If not then I would have to rename it to something like shell.php.jpg .
 
@@ -92,13 +93,13 @@ I first tried uploading `php-reverse-shell.php` script & it was succesfully uplo
 
 Now I went back to `contacttracer.thm` and opened the image in new tab .Make sure to setup nc listener before this.
 
-![website3](../../assets/img/posts/Lockdown/website3.png)
+![website3](img/website3.png#center)
 
-![website4](../../assets/img/posts/Lockdown/website4.png)
+![website4](img/website4.png#center)
 
 The page keeps on loading which is a good sign that means the reverse shell connected back to our nc listener!
 
-![revshell](../../assets/img/posts/Lockdown/revshell.png)
+![revshell](img/revshell.png#center)
 
 So now we are in as `www-data` .
 # Shell as cyrus
@@ -262,7 +263,7 @@ mysql> SELECT * FROM users;
 
 I cracked the password hash using crackstation.net .
 
-![crackstation](../../assets/img/posts/Lockdown/crackstation.png)
+![crackstation](img/crackstation.png#center)
 
 Now we have the password .Lets  switch to `cyrus` user.
 ## user.txt 🚩

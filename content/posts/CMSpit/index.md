@@ -77,19 +77,19 @@ The home page of this website redirects to  url `http://cmspit.thm/auth/login?to
 
 ## login page
 
-![website1](../../assets/img/posts/CMSpit/website1.png)
+![website1](img/website1.png#center)
 A normal login page with username & password .
 
 ## forgot-password page
 
 Forgot password page at `http://cmspit.thm/auth/forgotpassword`
 
-![website2](../../assets/img/posts/CMSpit/website2.png)
+![website2](img/website2.png#center)
 
 Wappalyzer didnt reveal much info on version of this CMS.
 Taking a close look at the source code reveals the version information of `cockpit-cms` which is `0.11.1`
 
-![website3](../../assets/img/posts/CMSpit/website3.png)
+![website3](img/website3.png#center)
 
 
 # Shell as www-data
@@ -230,7 +230,7 @@ www-data@ubuntu:/var/www/html/cockpit$ cat webflag.php
 
 Time to escalate ! I quickly transferred linpeas to the target machine & ran it.
 
-![termninal1](../../assets/img/posts/CMSpit/terminal1.png)
+![termninal1](img/terminal1.png#center)
 
 ## MongoDB
 

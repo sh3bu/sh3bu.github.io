@@ -17,7 +17,7 @@ cover:
 **Git and Crumpets** is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea's git hooks functionality .For root, we change the permissions of the **git** user to **root** user. Now we were able to see a private repository owned by root which had root user's ssh private key through which we login as root to get the root flag.
 
 
-![header](../../assets/img/posts/Gitandcrumpets/header.png)
+![header](img/header.png#center)
 
 |  **Room** 	| Git and Crumpets                                          	|
 |:--------------:	|----------------------------------------------------	|
@@ -57,11 +57,11 @@ After the nmap scan I couldn't access the webpage .Initially I thought it might 
 
 The nmap results show that the machine ip is getting redirected to `http://10.10.234.147/index.html` .There was nothing quite interesting here.
 
-![header](../../assets/img/posts/Gitandcrumpets/website1.png)
+![header](img/website1.png#center)
 
 Searching for **/robots.txt** or any other directories leads to Rick Roll youtube video .
 
-![header](../../assets/img/posts/Gitandcrumpets/website2.png)
+![header](img/website2.png#center)
 
 We couldn't find any dirctories & there was pretty much nothing we could do here but using curl to retrieve the contents of the webpage reveals the following.
 
@@ -111,7 +111,7 @@ Never gonna give you up,
 
 In the comments we see a hostname called `git.git-and-crumpets.thm` . Added it to /etc/hosts file & visited the page.
 
-![header](../../assets/img/posts/Gitandcrumpets/website3.png)
+![header](img/website3.png#center)
 
 It' a `Gitea` page.
 
@@ -119,31 +119,31 @@ It' a `Gitea` page.
 
 Viewing the source code reveals the version of gitea as `1.14.0`
 
-![header](../../assets/img/posts/Gitandcrumpets/website4.png)
+![header](img/website4.png#center)
 
 # Shell as git
 -------------------
 
 Create an account in **signup** page and log in to the account.
 
-![header](../../assets/img/posts/Gitandcrumpets/website5.png)
+![header](img/website5.png#center)
 
 Here we have 3 repositories `cant-touch-this`, `hello world`.
 
-![header](../../assets/img/posts/Gitandcrumpets/website6.png)
+![header](img/website6.png#center)
 
 There are 4 users `hydra`, `root groot`, `scones`& `test` other than the account which I created. 
 
-![header](../../assets/img/posts/Gitandcrumpets/website7.png)
+![header](img/website7.png#center)
 
 Visit the `cant-touch-this` repository which the user `scones` owns .
 
-![header](../../assets/img/posts/Gitandcrumpets/website8.png)
+![header](img/website8.png#center)
 
 There are 5 commits in this repo.
 Here there is a comment in one of the commits mentioning that the user scones has stored his password in his avatar.
 
-![header](../../assets/img/posts/Gitandcrumpets/website9.png)
+![header](img/website9.png#center)
 
 Using **exiftool** to retrieve user **scones** password .
 
@@ -185,11 +185,11 @@ Blog post for this Githooks RCE - https://podalirius.net/en/articles/exploiting-
 
 Edit the contents of git-hook with a reverse shell one-liner & click on **Update hook.**
 
-![header](../../assets/img/posts/Gitandcrumpets/website10.png)
+![header](img/website10.png#center)
 
 Make changes in README.md file & commit the changes to trigger a callback.
 
-![header](../../assets/img/posts/Gitandcrumpets/website11.png)
+![header](img/website11.png#center)
 
 We get a connection back on our machine & we are user `git` on the machine!
 ```bash
@@ -315,15 +315,15 @@ sqlite> UPDATE user SET is_admin=1 WHERE id=3;
 
 Now if we visit the website we see a private repository  called `backups` owned by root!
 
-![header](../../assets/img/posts/Gitandcrumpets/website12.png)
+![header](img/website12.png#center)
 
 We have 2 branches in here `master` & `dotfiles`.
 
-![header](../../assets/img/posts/Gitandcrumpets/website13.png)
+![header](img/website13.png#center)
 
 The **dotfiles** branch has 4 commits. We see that the root user added his ssh keys and then deleted it.
 
-![header](../../assets/img/posts/Gitandcrumpets/website14.png)
+![header](img/website14.png#center)
 
 Lets now grab the SSH private key and ssh into the box as root to grab the root flag!🚩
 

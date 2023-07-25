@@ -62,7 +62,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 It gives us the default apache page and nothing else.
 
-![website1](../../assets/img/posts/Cyborg/website1.png)
+![website1](img/website1.png#center)
 
 Lets do some directory-bruteforcing .
 
@@ -91,37 +91,37 @@ Task Completed
 ```
 ### /admin
 
-![website2](../../assets/img/posts/Cyborg/website2.png)
+![website2](img/website2.png#center)
 
 There is a possible username called `Alex` in setup description.
 
 Clicking on `admin` tab leads us to `/admin/admin.html`
 
-![website3](../../assets/img/posts/Cyborg/website3.png)
+![website3](img/website3.png#center)
 
 Seems like a chat between `Josh`, `Adam` and `Alex` where he mentions about some kind of music_archive.
 
 The `archive` tab gives us two more options `listen` and `download`
 
-![website4](../../assets/img/posts/Cyborg/website4.png)
+![website4](img/website4.png#center)
 
 Clicking on download button downloads an **archive.tar** file.
 
-![website5](../../assets/img/posts/Cyborg/website5.png)
+![website5](img/website5.png#center)
 
 ### /etc
 
-![website6](../../assets/img/posts/Cyborg/website6.png)
+![website6](img/website6.png#center)
 
-![website7](../../assets/img/posts/Cyborg/website7.png)
+![website7](img/website7.png#center)
 
 The **passwd** file contains a hash
 
-![website8](../../assets/img/posts/Cyborg/website8.png)
+![website8](img/website8.png#center)
 
 The **squid.conf** file contains the squid proxy configuration. 
 
-![website9](../../assets/img/posts/Cyborg/website9.png) 
+![website9](img/website9.png#center) 
 
 # Shell as Alex
 --------------------------

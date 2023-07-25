@@ -15,7 +15,7 @@ cover:
 Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called `Tab Nabbing` to phish the admin of the website to get user daniel's credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root.
 
 
-![header](../../assets/img/posts/Napping/nappingbanner.png)
+![header](img/nappingbanner.png#center)
 
 |  **Room** 	| Napping                                           	|
 |:--------------:	|----------------------------------------------------	|
@@ -23,6 +23,7 @@ Napping is a medium difficulty box from TryHackMe which had a interesting vulner
 | **Difficulty** 	| Medium                                             	|
 |  **Room Link** 	| [https://tryhackme.com/room/nappingis1337](https://tryhackme.com/room/nappingis1337)               	|
 |   **Creator**  	| [hadrian3689](https://tryhackme.com/p/hadrian3689) 	|
+
 
 
 # Enumeration 
@@ -85,25 +86,25 @@ So there are 2 ports running
 The webpage had just a simple login & sign up page.
 
 login page - 
-![website1](../../assets/img/posts/Napping/website1.png)
+![website1](img/website1.png#center)
 
 signup page - 
-![website2](../../assets/img/posts/Napping/website2.png)
+![website2](img/website2.png#center)
 
 
 I tried default credentials, basic sql injection but those didn't work so I quickly went on to create an account & logged into the site.
 
 We were greeted with a `welcome.php` page where we could submit a blog link & as the site says the blog link which we submitted will be reviewed by the admin. 
 
-![website3](../../assets/img/posts/Napping/website3.png)
+![website3](img/website3.png#center)
 
 When I entered my website link ,it is displayed back for us to review it. 
 
-![website4](../../assets/img/posts/Napping/website4.png)
+![website4](img/website4.png#center)
 
 Once clicked it will open the link we submitted in a new tab.
 
-![website5](../../assets/img/posts/Napping/website5.png)
+![website5](img/website5.png#center)
 
 ## Directory bruteforce
 
@@ -149,11 +150,11 @@ So we have some interesting directories `/admin` & `/admin/login.php`
 The /admin directory showed 403 but we were able to access the admin login page which is at `/admin/login.php`
 
 forbidden page - 
-![website6](../../assets/img/posts/Napping/website6.png)
+![website6](img/website6.png#center)
 
 
 admin login page -
-![website7](../../assets/img/posts/Napping/website7.png)
+![website7](img/website7.png#center)
 
 
 # Shell as daniel
@@ -249,11 +250,11 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ```
 Interesting thing to see here is that there is a **POST** request sent back to us. Lets check wireshark for more information about that .
 
-![website8](../../assets/img/posts/Napping/website8.png)
+![website8](img/website8.png#center)
 
 **Right click on the POST request** and select **Follow** -> **TCP stream**
 
-![website9](../../assets/img/posts/Napping/website9.png)
+![website9](img/website9.png#center)
 
 Yay  we got a username called `daniel` & his password.
 

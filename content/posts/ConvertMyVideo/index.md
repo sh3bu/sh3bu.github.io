@@ -14,7 +14,7 @@ cover:
 
 My Script to convert videos to MP3 is super secure. You can convert your videos - Why don't you check it out!
 
-![header](../../assets/img/posts/Convertmyvideo/header.png)
+![header](img/header.png#center)
 
 |  **Room name** 	| Convert My Video                          	|
 |:--------------:	|-------------------------------------------	|
@@ -62,7 +62,7 @@ As you can see there are only 2 ports open
 
 The website at port 80 shows us a simple page like this 
 
-![Website](../../assets/img/posts/Convertmyvideo/website.png)
+![Website](img/website.png#center)
 
 It asks us for an ID to which it converts it into an video.
 
@@ -87,7 +87,7 @@ What is the name of the secret folder? - admin
 
 So the only interesting find here is the `/admin` directory.Lets check it out.
 
-![admin](../../assets/img/posts/Convertmyvideo/admin.png)
+![admin](img/admin.png#center)
 
 I tried some default creds but it didn't work. So lets access this once we get some valid creds.
 
@@ -98,7 +98,7 @@ Lets get back to the webpage at port 80 and intercept the request to see what's 
 
 I entered a random number as ID & pressed  Convert. The request looked like this 
 
-![intercept1](../../assets/img/posts/Convertmyvideo/intercept1.png)
+![intercept1](img/intercept1.png#center)
 
 
 So the only parameter here that we can play with is `yt_url`.
@@ -107,7 +107,7 @@ So the only parameter here that we can play with is `yt_url`.
 
 I tried entering `id` to see how the application responds .
 
-![intercept2](../../assets/img/posts/Convertmyvideo/intercept2.png)
+![intercept2](img/intercept2.png#center)
 
 Error - 
 ```bash
@@ -116,14 +116,14 @@ Error -
 
 So it is running something called `youtube-dl`. Lets google and see what actually this is.
 
-![youtube-dl](../../assets/img/posts/Convertmyvideo/youtube-dl.png)
+![youtube-dl](img/youtube-dl.png#center)
 
 > Seems like it is a command line tool to download or convert youtube videos!
 >
 >It is run with the following syntax - `youtube-dl [OPTIONS] URL [URL...]`
 
 
-![syntax](../../assets/img/posts/Convertmyvideo/syntax.png)
+![syntax](img/syntax.png#center)
 
 Assuming there is a **command injection** vulnerability , I gave this i/p in the yt_url parameter - `|id;`
 
@@ -131,7 +131,7 @@ NOTE-
 * `|` - will act as command separator
 * `;` - acts as a line terminator ie ensures nothing executes after this .
 
-![intercept3](../../assets/img/posts/Convertmyvideo/intercept3.png)
+![intercept3](img/intercept3.png#center)
 
 Now the error response was like this - 
 ```bash
@@ -141,7 +141,7 @@ Note that it returned the result of our `id` command which is `uid=33(www-data) 
 
 So now since we could execute commands , lets look at what directory we are in !
 
-![intercept4](../../assets/img/posts/Convertmyvideo/intercept4.png)
+![intercept4](img/intercept4.png#center)
 
 Response -
 ```bash
@@ -151,7 +151,7 @@ So we are in the `/var/www/html` directory .
 
 Lets check out the contents of the directory
 
-![intercept5](../../assets/img/posts/Convertmyvideo/intercept5.png)
+![intercept5](img/intercept5.png#center)
 
 
 Response -
@@ -162,7 +162,7 @@ Syntax error: EOF in backquote substitution
 
 Seems like the space is causing errors.After some googling I found that we could use `${IFS}` which acts as a whitespace !
 
-![intercept6](../../assets/img/posts/Convertmyvideo/intercept6.png)
+![intercept6](img/intercept6.png#center)
 
 Response was bit confusing so I have formatted it to make it easy to understand -
 
@@ -182,7 +182,7 @@ drwxr-xr-x 2 www-data www-data 4096 Apr 12  2020 tmp
 
 The admin directory seems looks interesting.Lets list the contents of it.
 
-![intercept7](../../assets/img/posts/Convertmyvideo/intercept7.png)
+![intercept7](img/intercept7.png#center)
 
 ```bash
 total 24
@@ -195,7 +195,7 @@ drwxr-xr-x 6 www-data www-data 4096 Apr 12  2020 ..
 ```
 Wohoo!There's the first flag .Lets grab the flag and submit it 
 
-![flag1](../../assets/img/posts/Convertmyvideo/flag1.png)
+![flag1](img/flag1.png#center)
 
 ```shell
 QN 3- ❓
@@ -205,15 +205,15 @@ What is the user flag? - flag{0d8486a*********7f4046ed7}
 
 Its frustrating to use this method to execute commands so lets try getting a shell !
 
-![intercept8](../../assets/img/posts/Convertmyvideo/intercept8.png)
+![intercept8](img/intercept8.png)#center
 
 I used `wget` to transfer my payload which ``pentestmonkey's php reverse shell`` to the victim.
 
-![intercept9](../../assets/img/posts/Convertmyvideo/intercept9.png)
+![intercept9](img/intercept9.png#center)
 
 Then set up a listerner & execute `php shell.php` to get a reverse shell back .
 
-![revshell](../../assets/img/posts/Convertmyvideo/revshell.png)
+![revshell](img/revshell.png#center)
 
 We are in as `www-data`.
 
@@ -267,7 +267,7 @@ rm -rf downloads
 
 So my guess is that it is being run by cron in the background once in few mins.Lets conform that using `pspy`
 
-![pspy](../../assets/img/posts/Convertmyvideo/pspy.png)
+![pspy](img/pspy.png#center)
 
 `clean.sh` script is indeed run by cron once in 2 mins.
 

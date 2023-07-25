@@ -14,7 +14,7 @@ cover:
 
 **Lumberjack Turtle** is a medium difficulty box from Tryhackme which is entirely focused on **Log4j/Log4shell** a 0-day vulnerability that caused a havoc on the internet . The website is vulnerable to Log4j & so we're able to exploit it and get a shell on the box . We find a **.dockerenv** file in the / directory which indicates we are on a docker container. To obtain the root flag , we mount the **/dev/xvda1** disk partition since it contains the entire filesystem(/) to access all the files .
 
-![header](/assets/img/posts/Lumberjackturtle/header.png)
+![header](img/header.png#center)
 
 |  **Room** 	| <img width="25" height="25" alt="Lumberjack Turtle" src="/assets/img/posts/Lumberjackturtle/lumb.webp">                                          	|
 |:--------------:	|----------------------------------------------------	|
@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 38.92 seconds
 
 The homepage of the website has only this comment .It gives us a hint as `java` and also to bruteforce the directories.
 
-![website1](../../assets/img/posts/Lumberjackturtle/website1.png)
+![website1](img/website1.png#center)
 
 
 ## Directory bruteforcing
@@ -84,7 +84,7 @@ Task Completed
 ```
 Now lets visit `/~logs` directory .
 
-![website2](../../assets/img/posts/Lumberjackturtle/website2.png)
+![website2](img/website2.png#center)
 
 Again it tells us to go deeper !
 
@@ -128,13 +128,13 @@ Intercept the request in burp and send it to repeater tab. Set up a netcat liste
 
 First lets test for log4j on `User-Agent` header.
 
-![burp1](../../assets/img/posts/Lumberjackturtle/burp1.png)
+![burp1](img/burp1.png#center)
 
 We get a hint in response - `CVE-2021-44228 IN X-Api-Version` .
 
 Testing it again but this time sending out payload in **X-Api-version** header.
 
-![burp2](../../assets/img/posts/Lumberjackturtle/burp2.png)
+![burp2](img/burp2.png#center)
 
 We dont get any response back which is a good sign .It means we've got a connection back in our netcat session.
 

@@ -42,12 +42,6 @@ params:
     cover:
     responsiveImages: false
 
-    images: ["logo_outlined_6.png"]
-    label:
-    text: "sh3bu.github.io"
-    icon: /goku.jpeg
-    iconHeight: 35
-
 
     defaultTheme: auto
     # disableThemeToggle: true
@@ -66,16 +60,15 @@ params:
 
     homeInfoParams:
         Title: "Whoami"
-        Content: >
-            Hey There 👋🏻, I'm **Shebu** - (sh3bu)
-
+        Content: |
+            Hey There 👋🏻, I'm **Shebu** - (sh3bu).
 
             A Security Geek : Building and Breaking for Knowledge
             
 
-              - M.Tech Cybersecurity student at **TIFAC CORE** in Cyber Security - **Amrita Vishwa Vidhyapeetham**.
-              - Security Intern at **Philips**.
-              - Currently preparing for **Comptia Pentest+**.
+            - M.Tech Cybersecurity student at **TIFAC CORE** in Cyber Security - **Amrita Vishwa Vidhyapeetham**.
+            - Security Intern at **Philips**.
+            - Currently preparing for **Comptia Pentest+**.
 
 
     socialIcons:
@@ -94,10 +87,10 @@ params:
         - name: Rss
           url: "index.xml"
 
-    editPost:
-        URL: "https://github.com/<gitlab user>/<repo name>/tree/<branch name>/<path to content>/"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
+    #editPost:
+        #URL: "https://github.com/<gitlab user>/<repo name>/tree/<branch name>/<path to content>/"
+        #Text: "Suggest Changes" # edit text
+        #appendFilePath: true # to append file path to Edit link
 
 outputs:
     home:
@@ -108,36 +101,37 @@ outputs:
 
 
 
-    # label:
-    #     text: "Home"
-    #     icon: icon.png
-    #     iconHeight: 35
+    label:
+        text: "CTF writeups & more"
+        icon: static/gok.jpg
+        iconHeight: 35
 
-    # analytics:
-    #     google:
-    #         SiteVerificationTag: "XYZabc"
+    analytics:
+        google:
+            SiteVerificationTag: "XYZabc"
 
     assets:
-        disableHLJS: true
-    #     favicon: "<link / abs url>"
-    #     favicon16x16: "<link / abs url>"
-    #     favicon32x32: "<link / abs url>"
-    #     apple_touch_icon: "<link / abs url>"
-    #     safari_pinned_tab: "<link / abs url>"
+     disableHLJS: true
+     favicon:  "/favicons/favicon.ico"
+     favicon16x16:  /favicons/favicon-16x16.png
+     favicon32x32:  /favicons/favicon-32x32.png
+     apple_touch_icon:  /favicons/apple-touch-icon.png
+     safari_pinned_tab:  /favicons/apple-touch-icon.png
+
 
     # cover:
     #     hidden: true # hide everywhere but not in structured data
     #     hiddenInList: true # hide on list pages and home
     #     hiddenInSingle: true # hide on single page
 
-    # fuseOpts:
-    #     isCaseSensitive: false
-    #     shouldSort: true
-    #     location: 0
-    #     distance: 1000
-    #     threshold: 0.4
-    #     minMatchCharLength: 0
-    #     keys: ["title", "permalink", "summary", "content"]
+    fuseOpts:
+         isCaseSensitive: false
+         shouldSort: true
+         location: 0
+         distance: 1000
+         threshold: 0.4
+         minMatchCharLength: 0
+         keys: ["title", "permalink", "summary", "content"]
 
 markup:
     goldmark:
