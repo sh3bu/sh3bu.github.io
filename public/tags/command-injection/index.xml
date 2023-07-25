@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>command-injection on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/command-injection/</link>
+    <description>Recent content in command-injection on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/command-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyborg - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/</guid>
+      <description>Description A box involving encrypted archives, source code analysis and more.
+Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7.</description>
+    </item>
+    
+    <item>
+      <title>ConvertMyVideo - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/</guid>
+      <description>My Script to convert videos to MP3 is super secure. You can convert your videos - Why don&amp;rsquo;t you check it out!
+Room name Convert My Video OS Linux Difficulty Medium Room Link https://tryhackme.com/room/convertmyvideo Creator overjt Enumeration Portscan ➜ yt-convert nmap -sC -sV 10.10.240.17 -v -oN yt-convert.nmap # Nmap 7.91 scan initiated Sat Nov 27 06:13:41 2021 as: nmap -sC -sV -v -oN yt-convert.nmap 10.10.240.17 Increasing send delay for 10.10.240.17 from 5 to 10 due to 11 out of 30 dropped probes since last increase.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/</link>
+    <description>Recent content in Tags on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C2 server</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/c2-server/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/c2-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elastic</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/elastic/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/elastic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kibana</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/kibana/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/kibana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2019-7609</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2019-7609/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2019-7609/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kiba</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/kiba/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/kiba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prototype pollution</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/prototype-pollution/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/prototype-pollution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>misconfiguration</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/misconfiguration/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/misconfiguration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phishing</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/phishing/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/phishing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tabnabbing</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/tabnabbing/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/tabnabbing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/vim/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cve-2020-14144</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-14144/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-14144/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fail2ban</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/fail2ban/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/fail2ban/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/git/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitea</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/gitea/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/gitea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>githooks</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/githooks/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/githooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2021-44228</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2021-44228/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2021-44228/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker escape</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/docker-escape/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/docker-escape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log4j</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4j/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log4shell</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4shell/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>borg backup</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/borg-backup/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/borg-backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cockpit-cms</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cockpit-cms/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cockpit-cms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command-injection</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/command-injection/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/command-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2020-35847</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-35847/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-35847/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2020-35848</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-35848/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-35848/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2021-22204</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2021-22204/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2021-22204/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exiftool</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/exiftool/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/exiftool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>getopts</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/getopts/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/getopts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/mongodb/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>squid-proxy</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/squid-proxy/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/squid-proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cronjob</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cronjob/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cronjob/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file-upload</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/file-upload/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/file-upload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jtr</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/jtr/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/jtr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pspy</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/pspy/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/pspy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql-injection</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/sql-injection/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yara</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/yara/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/yara/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube-dl</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/youtube-dl/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/youtube-dl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gtfobins</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/gtfobins/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/gtfobins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>journelctl</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/journelctl/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/journelctl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nostromo</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/nostromo/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/nostromo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opennetadmin</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/opennetadmin/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/opennetadmin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rsa</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/rsa/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/rsa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh2john</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/ssh2john/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/ssh2john/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tryhackme</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/tryhackme/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/tryhackme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>autologon-credentials</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/autologon-credentials/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/autologon-credentials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogengine</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/blogengine/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/blogengine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmseek</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cmseek/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cmseek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CVE-2019-1388</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2019-1388/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2019-1388/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IIS</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/iis/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/iis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>johntheripper</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/johntheripper/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/johntheripper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>joomla</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/joomla/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/joomla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linpeas</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/linpeas/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/linpeas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentestmonkey</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/pentestmonkey/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/pentestmonkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rdp</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/rdp/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/rdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>systemscheduler</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/systemscheduler/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/systemscheduler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>winpeas</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/winpeas/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/winpeas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xfreerdp</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/xfreerdp/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/tags/xfreerdp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>journelctl on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/journelctl/</link>
+    <description>Recent content in journelctl on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/journelctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Traverxec - HTB</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</guid>
+      <description>Summary - Traverxec is a easy rated machine from hackthebox which involves a public exploit for nostromo web server by which we gain a foothold on the box . On the machine there&amp;rsquo;s a user called david .We find an id_rsa key of David in one of the directories &amp;amp; thus escalating our privileges to David. For root, we make use of a sudo misconfiguration on journelctl binary to escalate our privileges to root !</description>
+    </item>
+    
+  </channel>
+</rss>

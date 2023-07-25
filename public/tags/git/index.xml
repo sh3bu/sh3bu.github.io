@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>git on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/git/</link>
+    <description>Recent content in git on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitandCrumpets - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/</guid>
+      <description>Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea&amp;rsquo;s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user&amp;rsquo;s ssh private key through which we login as root to get the root flag.</description>
+    </item>
+    
+    <item>
+      <title>Git Happens - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</guid>
+      <description>Room Description - Boss wanted me to create a prototype, so here it is! We even used something called &amp;ldquo;version control&amp;rdquo; that made deploying this really easy!
+Room Link - https://tryhackme.com/room/githappens
+Creator - hydragyrum
+Task 1 - Find the Super Secret Password NMAP
+# Nmap 7.91 scan initiated Wed Jul 21 01:43:34 2021 as: nmap -sC -sV -v -p 80 -Pn -oN git-happens.nmap 10.10.73.189 Nmap scan report for 10.10.73.189 Host is up.</description>
+    </item>
+    
+  </channel>
+</rss>

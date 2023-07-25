@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kibana on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/kibana/</link>
+    <description>Recent content in Kibana on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/kibana/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ItsyBitsy - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/itsybitsy/itsybitsy/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/itsybitsy/itsybitsy/</guid>
+      <description>ItsyBitsy is a medium difficulty room from tryhackme which involves using Kibana to examine the network connection logs of a suspicious user, find the link and the content of the file, and answer the questions.
+Room Difficulty Medium Room Link https://tryhackme.com/room/itsybitsy Creator Dex01 Task 1 : Introduction In this challenge room, we will take a simple challenge to investigate an alert by IDS regarding a potential C2 communication.
+Username: Admin</description>
+    </item>
+    
+  </channel>
+</rss>

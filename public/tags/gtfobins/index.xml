@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>gtfobins on Shebu 🔽</title>
+    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/gtfobins/</link>
+    <description>Recent content in gtfobins on Shebu 🔽</description>
+    <image>
+      <title>Shebu 🔽</title>
+      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/gtfobins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openadmin - HTB</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</guid>
+      <description>Summary - OpenAdmin from HackTheBox is an easy-rated machine which involves an exploit for OpenNetAdmin to get a foothold on the machine. There are 2 users on the box Jimmy and Joanna . We get the password for Jimmy via database config file &amp;amp; then ssh as Jimmy, then on enumerating we find an internal application running.Doing a simple curl command reveals id_rsa key of Joanna. We then crack the password of the id_rsa file and ssh into the machine as Joanna.</description>
+    </item>
+    
+    <item>
+      <title>Traverxec - HTB</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</guid>
+      <description>Summary - Traverxec is a easy rated machine from hackthebox which involves a public exploit for nostromo web server by which we gain a foothold on the box . On the machine there&amp;rsquo;s a user called david .We find an id_rsa key of David in one of the directories &amp;amp; thus escalating our privileges to David. For root, we make use of a sudo misconfiguration on journelctl binary to escalate our privileges to root !</description>
+    </item>
+    
+    <item>
+      <title>Daily Bugle - THM</title>
+      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</guid>
+      <description>Description - Compromise a Joomla CMS account via SQLi, practise cracking hashes and escalate your privileges by taking advantage of yum . Hack into the machine and obtain the root user&amp;rsquo;s credentials.
+**Room name ** Daily Bugle **OS ** Linux **Difficulty ** Hard **Room Link ** https://tryhackme.com/room/dailybugle **Creator ** Tryhackme Enumeration - Portscan ➜ dailybugle rustscan -a 10.10.164.206 --range 0-65535 -- -sV -sC -v -oN dailybugle.nmap # Nmap 7.91 scan initiated Sun Sep 5 10:04:00 2021 as: nmap -vvv -p 22,80,3306 -sV -sC -v -oN dailybugle.</description>
+    </item>
+    
+  </channel>
+</rss>
