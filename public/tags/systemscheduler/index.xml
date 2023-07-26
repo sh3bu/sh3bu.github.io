@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>systemscheduler on Shebu 🔽</title>
-    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/systemscheduler/</link>
-    <description>Recent content in systemscheduler on Shebu 🔽</description>
-    <image>
-      <title>Shebu 🔽</title>
-      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
-    </image>
+    <title>systemscheduler on Shebu</title>
+    <link>https://sh3bu.github.io/tags/systemscheduler/</link>
+    <description>Recent content in systemscheduler on Shebu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/systemscheduler/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/tags/systemscheduler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HackPark - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</link>
+      <link>https://sh3bu.github.io/posts/hackpark/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</guid>
+      <guid>https://sh3bu.github.io/posts/hackpark/</guid>
       <description>Description - Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine!
 Room name HackPark OS Windows Difficulty Medium Room Link https://tryhackme.com/room/hackpark Creator Tryhackme Enumeration - nmap ┌──(shebu㉿kali)-[~/thm/hackpark] └─$rustscan -a 10.10.253.78 --range 0-65535 -- -sV -sV -oN hackpark.nmap # Nmap 7.91 scan initiated Fri Sep 24 10:37:00 2021 as: nmap -vvv -p 80,3389 -sV -sC -v -oN hackpark.nmap 10.10.30.95 Nmap scan report for 10.</description>
     </item>

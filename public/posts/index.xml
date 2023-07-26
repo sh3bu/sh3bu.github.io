@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Shebu 🔽</title>
-    <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/</link>
-    <description>Recent content in Posts on Shebu 🔽</description>
-    <image>
-      <title>Shebu 🔽</title>
-      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
-    </image>
+    <title>Posts on Shebu</title>
+    <link>https://sh3bu.github.io/posts/</link>
+    <description>Recent content in Posts on Shebu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ItsyBitsy - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/itsybitsy/itsybitsy/</link>
+      <link>https://sh3bu.github.io/posts/itsybitsy/</link>
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/itsybitsy/itsybitsy/</guid>
+      <guid>https://sh3bu.github.io/posts/itsybitsy/</guid>
       <description>ItsyBitsy is a medium difficulty room from tryhackme which involves using Kibana to examine the network connection logs of a suspicious user, find the link and the content of the file, and answer the questions.
-Room Difficulty Medium Room Link https://tryhackme.com/room/itsybitsy Creator Dex01 Task 1 : Introduction In this challenge room, we will take a simple challenge to investigate an alert by IDS regarding a potential C2 communication.
+Room ItsyBitsy Difficulty Medium Room Link https://tryhackme.com/room/itsybitsy Creator Dex01 Task 1 : Introduction In this challenge room, we will take a simple challenge to investigate an alert by IDS regarding a potential C2 communication.
 Username: Admin</description>
     </item>
     
     <item>
       <title>Kiba - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/kiba/kiba/</link>
+      <link>https://sh3bu.github.io/posts/kiba/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/kiba/kiba/</guid>
+      <guid>https://sh3bu.github.io/posts/kiba/</guid>
       <description>Kiba is a easy rated room from tryhackme where we exploit a prototype pollution vulnerability to gain a user shell &amp;amp; then escalate our privileges to root by exploiting a python3 binary which has setuid capabilities.
 Room Kiba OS Linux Difficulty Easy Room Link https://tryhackme.com/room/kiba Creator stuxnet What is the vulnerability that is specific to programming languages with prototype-based inheritance? Vulnerability - Prototype Pollution
 What is the version of visualization dashboard installed in the server?</description>
@@ -35,37 +30,37 @@ What is the version of visualization dashboard installed in the server?</descrip
     
     <item>
       <title>Napping - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/</link>
+      <link>https://sh3bu.github.io/posts/napping/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/</guid>
+      <guid>https://sh3bu.github.io/posts/napping/</guid>
       <description>Napping is a medium difficulty box from TryHackMe which had a interesting vulnerability called Tab Nabbing to phish the admin of the website to get user daniel&amp;rsquo;s credentials by which we could ssh into the box. We then alter a python file which is run every minute by user adrian to get a reverse shell back as that user. For root, we could execute vim as root . So we refer GTFOBINS for sudo entry for vim binary to elevate our privileges to root.</description>
     </item>
     
     <item>
       <title>GitandCrumpets - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/</link>
+      <link>https://sh3bu.github.io/posts/gitandcrumpets/</link>
       <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/</guid>
+      <guid>https://sh3bu.github.io/posts/gitandcrumpets/</guid>
       <description>Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea&amp;rsquo;s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user&amp;rsquo;s ssh private key through which we login as root to get the root flag.</description>
     </item>
     
     <item>
       <title>Lumberjack Turtle - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lumberjackturtle/</link>
+      <link>https://sh3bu.github.io/posts/lumberjackturtle/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lumberjackturtle/</guid>
+      <guid>https://sh3bu.github.io/posts/lumberjackturtle/</guid>
       <description>Lumberjack Turtle is a medium difficulty box from Tryhackme which is entirely focused on Log4j/Log4shell a 0-day vulnerability that caused a havoc on the internet . The website is vulnerable to Log4j &amp;amp; so we&amp;rsquo;re able to exploit it and get a shell on the box . We find a .dockerenv file in the / directory which indicates we are on a docker container. To obtain the root flag , we mount the /dev/xvda1 disk partition since it contains the entire filesystem(/) to access all the files .</description>
     </item>
     
     <item>
       <title>CMSpit - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cmspit/</link>
+      <link>https://sh3bu.github.io/posts/cmspit/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cmspit/</guid>
+      <guid>https://sh3bu.github.io/posts/cmspit/</guid>
       <description>Description This is a machine that allows you to practise web app hacking and privilege escalation using recent vulnerabilities. You&amp;rsquo;ve identified that the CMS installed on the web server has several vulnerabilities that allow attackers to enumerate users and change account passwords.
 Your mission is to exploit these vulnerabilities and compromise the web server.
 Room name CMSpit OS Linux Difficulty Medium Room Link https://tryhackme.com/room/cmspit Creator stuxnet Recon Portscan sh3bu@VM:~/thm/cmspit$ rustscan -a cmspit.</description>
@@ -73,40 +68,40 @@ Room name CMSpit OS Linux Difficulty Medium Room Link https://tryhackme.com/room
     
     <item>
       <title>Cyborg - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/</link>
+      <link>https://sh3bu.github.io/posts/cyborg/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/cyborg/</guid>
+      <guid>https://sh3bu.github.io/posts/cyborg/</guid>
       <description>Description A box involving encrypted archives, source code analysis and more.
 Room name Cyborg OS Linux Difficulty Easy Room Link https://tryhackme.com/room/cyborgt8 Creator fieldraccoon Enumeration Portscan ┌──(root💀kali)-[~/Cyborg] └─# rustscan -a cyborg.thm -- -sV -sC -oN cyborg.nmap # Nmap 7.92 scan initiated Sat Jan 22 10:09:17 2022 as: nmap -vvv -p 22,80 -sV -sC -oN cyborg.nmap 10.10.194.216 Nmap scan report for cyborg.thm (10.10.194.216) Host is up, received echo-reply ttl 63 (0.25s latency). Scanned at 2022-01-22 10:09:19 EST for 15s PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack ttl 63 OpenSSH 7.</description>
     </item>
     
     <item>
       <title>ConvertMyVideo - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/</link>
+      <link>https://sh3bu.github.io/posts/convertmyvideo/</link>
       <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/convertmyvideo/</guid>
+      <guid>https://sh3bu.github.io/posts/convertmyvideo/</guid>
       <description>My Script to convert videos to MP3 is super secure. You can convert your videos - Why don&amp;rsquo;t you check it out!
 Room name Convert My Video OS Linux Difficulty Medium Room Link https://tryhackme.com/room/convertmyvideo Creator overjt Enumeration Portscan ➜ yt-convert nmap -sC -sV 10.10.240.17 -v -oN yt-convert.nmap # Nmap 7.91 scan initiated Sat Nov 27 06:13:41 2021 as: nmap -sC -sV -v -oN yt-convert.nmap 10.10.240.17 Increasing send delay for 10.10.240.17 from 5 to 10 due to 11 out of 30 dropped probes since last increase.</description>
     </item>
     
     <item>
       <title>Lockdown - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/</link>
+      <link>https://sh3bu.github.io/posts/lockdown/</link>
       <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lockdown/</guid>
+      <guid>https://sh3bu.github.io/posts/lockdown/</guid>
       <description>Description Stay at 127.0.0.1. Wear a 255.255.255.0
 Room name Lockdown OS Linux Difficulty Medium Room Link https://tryhackme.com/room/lockdown Creator hangrymoose Enumeration Portscan ➜ lockdown nmap -sC -sV 10.10.252.58 -v -oN lockdown.nmap # Nmap 7.91 scan initiated Mon Nov 8 03:56:11 2021 as: nmap -sV -sC -v -oN lockdown.nmap 10.10.252.58 Nmap scan report for 10.10.252.58 Host is up (0.35s latency). Not shown: 998 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.</description>
     </item>
     
     <item>
       <title>Git Happens - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</link>
+      <link>https://sh3bu.github.io/posts/githappens/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</guid>
+      <guid>https://sh3bu.github.io/posts/githappens/</guid>
       <description>Room Description - Boss wanted me to create a prototype, so here it is! We even used something called &amp;ldquo;version control&amp;rdquo; that made deploying this really easy!
 Room Link - https://tryhackme.com/room/githappens
 Creator - hydragyrum
@@ -116,48 +111,48 @@ Task 1 - Find the Super Secret Password NMAP
     
     <item>
       <title>Openadmin - HTB</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</link>
+      <link>https://sh3bu.github.io/posts/openadmin/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/openadmin/</guid>
+      <guid>https://sh3bu.github.io/posts/openadmin/</guid>
       <description>Summary - OpenAdmin from HackTheBox is an easy-rated machine which involves an exploit for OpenNetAdmin to get a foothold on the machine. There are 2 users on the box Jimmy and Joanna . We get the password for Jimmy via database config file &amp;amp; then ssh as Jimmy, then on enumerating we find an internal application running.Doing a simple curl command reveals id_rsa key of Joanna. We then crack the password of the id_rsa file and ssh into the machine as Joanna.</description>
     </item>
     
     <item>
       <title>Traverxec - HTB</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</link>
+      <link>https://sh3bu.github.io/posts/traverxec/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/traverxec/</guid>
+      <guid>https://sh3bu.github.io/posts/traverxec/</guid>
       <description>Summary - Traverxec is a easy rated machine from hackthebox which involves a public exploit for nostromo web server by which we gain a foothold on the box . On the machine there&amp;rsquo;s a user called david .We find an id_rsa key of David in one of the directories &amp;amp; thus escalating our privileges to David. For root, we make use of a sudo misconfiguration on journelctl binary to escalate our privileges to root !</description>
     </item>
     
     <item>
       <title>Daily Bugle - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</link>
+      <link>https://sh3bu.github.io/posts/dailybugle/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</guid>
+      <guid>https://sh3bu.github.io/posts/dailybugle/</guid>
       <description>Description - Compromise a Joomla CMS account via SQLi, practise cracking hashes and escalate your privileges by taking advantage of yum . Hack into the machine and obtain the root user&amp;rsquo;s credentials.
 **Room name ** Daily Bugle **OS ** Linux **Difficulty ** Hard **Room Link ** https://tryhackme.com/room/dailybugle **Creator ** Tryhackme Enumeration - Portscan ➜ dailybugle rustscan -a 10.10.164.206 --range 0-65535 -- -sV -sC -v -oN dailybugle.nmap # Nmap 7.91 scan initiated Sun Sep 5 10:04:00 2021 as: nmap -vvv -p 22,80,3306 -sV -sC -v -oN dailybugle.</description>
     </item>
     
     <item>
       <title>HackPark - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</link>
+      <link>https://sh3bu.github.io/posts/hackpark/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</guid>
+      <guid>https://sh3bu.github.io/posts/hackpark/</guid>
       <description>Description - Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine!
 Room name HackPark OS Windows Difficulty Medium Room Link https://tryhackme.com/room/hackpark Creator Tryhackme Enumeration - nmap ┌──(shebu㉿kali)-[~/thm/hackpark] └─$rustscan -a 10.10.253.78 --range 0-65535 -- -sV -sV -oN hackpark.nmap # Nmap 7.91 scan initiated Fri Sep 24 10:37:00 2021 as: nmap -vvv -p 80,3389 -sV -sC -v -oN hackpark.nmap 10.10.30.95 Nmap scan report for 10.</description>
     </item>
     
     <item>
       <title>Retro - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/retro/</link>
+      <link>https://sh3bu.github.io/posts/retro/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/retro/</guid>
+      <guid>https://sh3bu.github.io/posts/retro/</guid>
       <description>Description - New high score!
 There are two distinct paths that can be taken on Retro. One requires significantly less trial and error, however, both will work.
 Room Retro OS Windows Difficulty Hard Room Link https://tryhackme.com/room/retro Creator DarkStar7471 Enumeration - Task 1 - Pwn

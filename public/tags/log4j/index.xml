@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>log4j on Shebu 🔽</title>
-    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4j/</link>
-    <description>Recent content in log4j on Shebu 🔽</description>
-    <image>
-      <title>Shebu 🔽</title>
-      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
-    </image>
+    <title>log4j on Shebu</title>
+    <link>https://sh3bu.github.io/tags/log4j/</link>
+    <description>Recent content in log4j on Shebu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/log4j/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/tags/log4j/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lumberjack Turtle - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lumberjackturtle/</link>
+      <link>https://sh3bu.github.io/posts/lumberjackturtle/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/lumberjackturtle/</guid>
+      <guid>https://sh3bu.github.io/posts/lumberjackturtle/</guid>
       <description>Lumberjack Turtle is a medium difficulty box from Tryhackme which is entirely focused on Log4j/Log4shell a 0-day vulnerability that caused a havoc on the internet . The website is vulnerable to Log4j &amp;amp; so we&amp;rsquo;re able to exploit it and get a shell on the box . We find a .dockerenv file in the / directory which indicates we are on a docker container. To obtain the root flag , we mount the /dev/xvda1 disk partition since it contains the entire filesystem(/) to access all the files .</description>
     </item>
     

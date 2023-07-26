@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>tryhackme on Shebu 🔽</title>
-    <link>https://sh3bu.github.io/themes/hugo-PaperMod/tags/tryhackme/</link>
-    <description>Recent content in tryhackme on Shebu 🔽</description>
-    <image>
-      <title>Shebu 🔽</title>
-      <url>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</url>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/papermod-cover.png</link>
-    </image>
+    <title>tryhackme on Shebu</title>
+    <link>https://sh3bu.github.io/tags/tryhackme/</link>
+    <description>Recent content in tryhackme on Shebu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/tryhackme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/tags/tryhackme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Happens - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</link>
+      <link>https://sh3bu.github.io/posts/githappens/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/githappens/</guid>
+      <guid>https://sh3bu.github.io/posts/githappens/</guid>
       <description>Room Description - Boss wanted me to create a prototype, so here it is! We even used something called &amp;ldquo;version control&amp;rdquo; that made deploying this really easy!
 Room Link - https://tryhackme.com/room/githappens
 Creator - hydragyrum
@@ -26,30 +21,30 @@ Task 1 - Find the Super Secret Password NMAP
     
     <item>
       <title>Daily Bugle - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</link>
+      <link>https://sh3bu.github.io/posts/dailybugle/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/dailybugle/</guid>
+      <guid>https://sh3bu.github.io/posts/dailybugle/</guid>
       <description>Description - Compromise a Joomla CMS account via SQLi, practise cracking hashes and escalate your privileges by taking advantage of yum . Hack into the machine and obtain the root user&amp;rsquo;s credentials.
 **Room name ** Daily Bugle **OS ** Linux **Difficulty ** Hard **Room Link ** https://tryhackme.com/room/dailybugle **Creator ** Tryhackme Enumeration - Portscan ➜ dailybugle rustscan -a 10.10.164.206 --range 0-65535 -- -sV -sC -v -oN dailybugle.nmap # Nmap 7.91 scan initiated Sun Sep 5 10:04:00 2021 as: nmap -vvv -p 22,80,3306 -sV -sC -v -oN dailybugle.</description>
     </item>
     
     <item>
       <title>HackPark - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</link>
+      <link>https://sh3bu.github.io/posts/hackpark/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/hackpark/</guid>
+      <guid>https://sh3bu.github.io/posts/hackpark/</guid>
       <description>Description - Bruteforce a websites login with Hydra, identify and use a public exploit then escalate your privileges on this Windows machine!
 Room name HackPark OS Windows Difficulty Medium Room Link https://tryhackme.com/room/hackpark Creator Tryhackme Enumeration - nmap ┌──(shebu㉿kali)-[~/thm/hackpark] └─$rustscan -a 10.10.253.78 --range 0-65535 -- -sV -sV -oN hackpark.nmap # Nmap 7.91 scan initiated Fri Sep 24 10:37:00 2021 as: nmap -vvv -p 80,3389 -sV -sC -v -oN hackpark.nmap 10.10.30.95 Nmap scan report for 10.</description>
     </item>
     
     <item>
       <title>Retro - THM</title>
-      <link>https://sh3bu.github.io/themes/hugo-PaperMod/posts/retro/</link>
+      <link>https://sh3bu.github.io/posts/retro/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sh3bu.github.io/themes/hugo-PaperMod/posts/retro/</guid>
+      <guid>https://sh3bu.github.io/posts/retro/</guid>
       <description>Description - New high score!
 There are two distinct paths that can be taken on Retro. One requires significantly less trial and error, however, both will work.
 Room Retro OS Windows Difficulty Hard Room Link https://tryhackme.com/room/retro Creator DarkStar7471 Enumeration - Task 1 - Pwn

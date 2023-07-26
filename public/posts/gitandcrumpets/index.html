@@ -5,19 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>GitandCrumpets - THM | Shebu 🔽</title>
+<title>GitandCrumpets - THM | Shebu</title>
 <meta name="keywords" content="fail2ban, git, gitea, githooks, cve-2020-14144">
 <meta name="description" content="Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea&rsquo;s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user&rsquo;s ssh private key through which we login as root to get the root flag.">
 <meta name="author" content="Shebu">
-<link rel="canonical" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/">
-<link crossorigin="anonymous" href="/themes/hugo-PaperMod/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/themes/hugo-PaperMod/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/themes/hugo-PaperMod/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sh3bu.github.io/themes/hugo-PaperMod/safari-pinned-tab.svg">
+<link rel="canonical" href="https://sh3bu.github.io/posts/gitandcrumpets/">
+<meta name="google-site-verification" content="GTM-NNK933J">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7140587df96a2b1a49eb723fa7063dc0c641a6cb638f3140e8d3beb4deae4f5c.css" integrity="sha256-cUBYfflqKxpJ63I/pwY9wMZBpstjjzFA6NO&#43;tN6uT1w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sh3bu.github.io/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sh3bu.github.io/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sh3bu.github.io/img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sh3bu.github.io/img/apple-touch-icon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -56,16 +55,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="GitandCrumpets - THM" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6XL9391MH"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-T6XL9391MH', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="GitandCrumpets - THM" />
 <meta property="og:description" content="Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea&rsquo;s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user&rsquo;s ssh private key through which we login as root to get the root flag." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/" />
-<meta property="og:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/gitandcrumpets.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://sh3bu.github.io/posts/gitandcrumpets/" />
+<meta property="og:image" content="https://sh3bu.github.io/img/gitandcrumpets.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-02-18T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sh3bu.github.io/themes/hugo-PaperMod/img/gitandcrumpets.png" />
+<meta name="twitter:image" content="https://sh3bu.github.io/img/gitandcrumpets.png" />
 <meta name="twitter:title" content="GitandCrumpets - THM"/>
 <meta name="twitter:description" content="Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea&rsquo;s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user&rsquo;s ssh private key through which we login as root to get the root flag."/>
 
@@ -74,18 +84,18 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Posts",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/"
+      "item": "https://sh3bu.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "GitandCrumpets - THM",
-      "item": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/"
+      "item": "https://sh3bu.github.io/posts/gitandcrumpets/"
     }
   ]
 }
@@ -103,7 +113,7 @@
   "articleBody": "Git and Crumpets is a medium difficulty box from tryhackme which is mostly based on git. We get a shell on the box using a CVE in gitea’s git hooks functionality .For root, we change the permissions of the git user to root user. Now we were able to see a private repository owned by root which had root user’s ssh private key through which we login as root to get the root flag.\nRoom Git and Crumpets OS Linux Difficulty Medium Room Link https://tryhackme.com/room/gitandcrumpets Creator hydragyrum Enumeration Portscan ┌──(root💀kali)-[~/gitsandcrumpets] └─# nmap -sCV 10.10.234.147 -oN gitsandcrumpets.nmap Starting Nmap 7.92 ( https://nmap.org ) at 2022-02-09 10:01 EST Nmap scan report for 10.10.234.147 Host is up (0.35s latency). Not shown: 953 filtered tcp ports (no-response), 44 filtered tcp ports (admin-prohibited) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.0 (protocol 2.0) 80/tcp open http nginx | http-title: Hello, World |_Requested resource was http://10.10.234.147/index.html 9090/tcp closed zeus-admin Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 91.94 seconds Website - port 80 After the nmap scan I couldn’t access the webpage .Initially I thought it might be some vpn issues. Later I got to know that fail2ban was used. So no more bruteforcing attempts!\nFail2Ban is an intrusion prevention software framework that protects computer servers from brute-force attacks. Fail2ban scans log files (e.g. /var/log/apache/error_log) and bans IPs that show the malicious signs – too many password failures\nThe nmap results show that the machine ip is getting redirected to http://10.10.234.147/index.html .There was nothing quite interesting here.\nSearching for /robots.txt or any other directories leads to Rick Roll youtube video .\nWe couldn’t find any dirctories \u0026 there was pretty much nothing we could do here but using curl to retrieve the contents of the webpage reveals the following.\n┌──(root💀kali)-[~/thm/gitsandcrumpets] └─# curl 10.10.174.224 \u003c!DOCTYPE html\u003e Go away! Nothing to see here, move along Notice: Hey guys, I set up the dev repos at git.git-and-crumpets.thm, but I haven't gotten around to setting up the DNS yet. In the meantime, here's a fun video I found! Hydra iiiii*nMMWWWWW@@@@@WWWWW@@@@@@@@@WnnxxnnnnnnnnnxxxMMW@@@@@@@@@@@@@@@WWWW@WW@WMMz*iiiiiiiiiiiiii;iiiiiiiiiiii ;;;;;;;;;;;;;iiiiiii;;;;;;;;;;i;;;;;;;;;;iiiiii+xMMWWWWW@@@@@WWWWWW@@@@@@@@WxnMMMMMMxMMMMMWWWWWW@@@@@@@@@@@@@@@WWWWWW@WMx#*iiiiiiiiiiiiiiiiiiiiiiiiiii ;;;;;;;;;;;;iiiiiii;;;;;;;;;;;;;;;;ii;;;;iiiiii#xxMMWWWW@@@@@WWWWWW@@@@@@@WWnxxxnnxxxxxxxxxxxMWW@@@@@@@@@@@@@@@@WWWWW@WMx+iiiiiiiiiiiiiiiiiiiii;iiiiii ;ii;;;i;;;;iiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMWMMMMMWWWWWMMWWWW@@@@@@@@WxxMxxxMMMMxxxMMWWWWWW@@@@@@@@@@@@@@@@WWWW@WMz*iiiiiiiiiiiiiiiiiiiiiiiiiiii ;ii;;;ii;iiiiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMMMMMxxxMMx##zxWWW@@@@@@@WWxxxxxxxxxxxMMMMMMMMWW@@@@@@@@@@@@@@@@@WWWWMx+*iiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiii;;;;;;;;;;i;;;;;iii;iiiiiiii#xMMMMxxxMMn++#zxWWW@@@@@@@WWxxxxxnnnnxxxnxMMWWWWW@@@@@@@@@@@@@@@@@@WWWx#**iiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiiii;;;;;;;;;ii;;;;iiiiiiiiiiii+xMMMMMMnz#++#zzxWWW@@@@@@@@WxnxxxxxxxMMxxxxMxMMWW@@@@@@@@@@@@@@@@@@WMx+**iiiiiiiiiiiiiiiiiiii;ii;iiiii iiiiiiiiiiiiiiiiiiiiiiiii;;;iiii;;iiiiiiiiiiiiii#nMMxM#***+#zzzxWWW@@@@@@@WWxnMMMMMMMMMMMMMMWWWWWW@@@@@@@@WWW@@@@WWMz+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiii;;;;ii;;;;ii;;;iiiiiiiiiiiiiii#xxxn++##zzzzzxWW@@@@@@@@WWxnxxxxMMMxxxxxMMMMMMMWW@@@@@@@@WW@@@WWMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiii;;;;ii;;;;i;;;;;;iiiiiiiiiiiii+xxxzzzzzzznnnxW@@@@@@@@@@WxnxxnnnnnnnnnnxMMMMWWWWWWW@@@@@@@@@WWMMx#***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiii;;;;i;;;;;i;;;;;;;;iiiiiiiiiiizxMMnzzzzzznnnMW@@@@@@@@@@WxxxxxxxMMMWWWMMWWWWMWWWWWWW@@@@@@@WWMMMMx+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiiiiiiiiiiiiiiii;;;;i;;;;i;;;;;;;;;iiiiiiiiiiizxMMnzzzzzzznnxW@@@@@@@@@@WxxxnxxMMWWMMWMMxMWMxMW@@WWWW@@@@@@WWMMMMMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiii Never gonna give you up, Never gonna let you down... Gitea In the comments we see a hostname called git.git-and-crumpets.thm . Added it to /etc/hosts file \u0026 visited the page.\nIt’ a Gitea page.\nGitea is an open-source forge software package for hosting software development version control using Git as well as other collaborative features like bug tracking, wikis and code review.\nViewing the source code reveals the version of gitea as 1.14.0\nShell as git Create an account in signup page and log in to the account.\nHere we have 3 repositories cant-touch-this, hello world.\nThere are 4 users hydra, root groot, scones\u0026 test other than the account which I created.\nVisit the cant-touch-this repository which the user scones owns .\nThere are 5 commits in this repo. Here there is a comment in one of the commits mentioning that the user scones has stored his password in his avatar.\nUsing exiftool to retrieve user scones password .\n┌──(root💀kali)-[~/thm/gitsandcrumpets] └─# exiftool 3fc2cde6ac97e8c8a0c8b202e527d56d.png ExifTool Version Number : 12.36 File Name : 3fc2cde6ac97e8c8a0c8b202e527d56d.png Directory : .. File Size : 279 KiB File Modification Date/Time : 2022:02:10 10:09:37-05:00 File Access Date/Time : 2022:02:10 10:09:37-05:00 File Inode Change Date/Time : 2022:02:10 10:09:37-05:00 File Permissions : -rw-r--r-- File Type : PNG File Type Extension : png MIME Type : image/png Image Width : 290 Image Height : 290 Bit Depth : 16 Color Type : RGB Compression : Deflate/Inflate Filter : Adaptive Interlace : Noninterlaced Description : My 'Password' should be easy enough to guess Image Size : 290x290 Megapixels : 0.084 Now after logging in to the website as scones ,we see that the user has access to modify git hooks .\nGit hooks are scripts that run automatically every time a particular event occurs in a Git repository.\nCVE-2020-14144 There is a CVE exploit for git hooks feature in Gitea 1.1.0 to 1.12.5 through which we could get a reverse shell . This works for Blog post for this Githooks RCE - https://podalirius.net/en/articles/exploiting-cve-2020-14144-gitea-authenticated-remote-code-execution/\nEdit the contents of git-hook with a reverse shell one-liner \u0026 click on Update hook.\nMake changes in README.md file \u0026 commit the changes to trigger a callback.\nWe get a connection back on our machine \u0026 we are user git on the machine!\n┌──(root💀kali)-[~/thm/gitsandcrumpets/cant-touch-this] └─# nc -lvnp 9001/9001 0\u003e\u00261 listening on [any] 9001 ... connect to [10.17.6.87] from (UNKNOWN) [10.10.59.255] 37618 bash: cannot set terminal process group (869): Inappropriate ioctl for device bash: no job control in this shell [git@git-and-crumpets cant-touch-this.git]$ whoami git I uploaded my ssh-public keys and ssh’ed into the machine \u0026 grabbed the user flag 🚩.\n┌──(root💀kali)-[~] └─# ssh git@10.10.59.255 -i id_rsa Last failed login: Thu Feb 10 16:59:14 CET 2022 from 10.17.6.87 on ssh:notty There were 2 failed login attempts since the last successful login. Last login: Sat Apr 17 23:07:52 2021 [git@git-and-crumpets ~]$ ls -al total 20 drwx------. 3 git git 129 Apr 15 2021 . drwxr-xr-x. 4 root root 35 Apr 14 2021 .. lrwxrwxrwx. 1 git git 9 Apr 15 2021 .bash_history -\u003e /dev/null -rw-r--r--. 1 git git 18 Jul 21 2020 .bash_logout -rw-r--r--. 1 git git 141 Jul 21 2020 .bash_profile -rw-r--r--. 1 git git 376 Jul 21 2020 .bashrc -rw-r--r--. 1 git git 162 Apr 14 2021 .gitconfig drwx------. 2 git git 29 Apr 14 2021 .ssh -r--------. 1 git git 53 Apr 15 2021 user.txt [git@git-and-crumpets ~]$ cat user.txt dGhte2ZkN2Fi*********jZDcwY2YzZDZhYTE2fQ== [git@git-and-crumpets ~]$ cat user.txt | base64 -d thm{fd7ab9f*********d6aa16} Shell as root By default gitea logs all its data into /var/lib/gitea.\n[git@git-and-crumpets data]$ pwd /var/lib/gitea/data ## sqlite3 db [git@git-and-crumpets data]$ ls -al total 1288 drwxr-x---. 11 git git 170 Feb 10 16:51 . drwxr-xr-x. 5 git git 57 Apr 15 2021 .. drwxr-xr-x. 2 git git 6 Apr 14 2021 attachments drwxr-xr-x. 3 git git 217 Feb 10 16:45 avatars -rw-r--r--. 1 git git 1318912 Feb 10 16:45 gitea.db drwxr-xr-x. 5 git git 45 Apr 15 2021 gitea-repositories drwxr-xr-x. 4 git git 46 Apr 14 2021 indexers drwxr-xr-x. 2 git git 6 Apr 14 2021 lfs drwxr-xr-x. 7 git git 114 Apr 14 2021 queues drwxr-xr-x. 2 git git 6 Apr 14 2021 repo-avatars drwx------. 15 git git 123 Feb 10 16:35 sessions drwxr-xr-x. 3 git git 24 Feb 10 16:51 tmp We have an gitea.db file here. Examine the db file.\nsqlite\u003e .tables access org_user access_token project action project_board attachment project_issue collaboration protected_branch comment public_key commit_status pull_request deleted_branch reaction deploy_key release email_address repo_indexer_status email_hash repo_redirect external_login_user repo_topic follow repo_transfer gpg_key repo_unit gpg_key_import repository hook_task review issue session issue_assignees star issue_dependency stopwatch issue_label task issue_user team issue_watch team_repo label team_unit language_stat team_user lfs_lock topic lfs_meta_object tracked_time login_source two_factor milestone u2f_registration mirror upload notice user notification user_open_id oauth2_application user_redirect oauth2_authorization_code version oauth2_grant watch oauth2_session webhook sqlite\u003e SELECT * FROM user; 1|hydra|hydra||hydragyrum@example.com|0|enabled|9b020d3e158bc31b5fe64d668d94cab38cadc6721a5fdf7a4b1fb7bf97021c5e68f56bd9bd44d5ce9547e5e234086342c4e4|pbkdf2|0|0|0||0|||XGySX7uBlc|3C4NzJWN9e|en-US||1618386984|1621615239|1621614217|0|-1|1|1|0|0|0|0|0|d91f03c868d38ecf84ab3cc54f876106|hydragyrum@example.com|1|0|0|0|1|0|0|0|0|unified|arc-green|0 2|root|root|groot|root@example.com|0|enabled|2181d2b5fbf1859db426bcb94d97851d9a0e87a5eb47c5edc7f92bffc45b679e554c8367084f379e59936b68c0d770823ec9|pbkdf2|0|0|0||0|||2VK8fSxvIZ|5e5xPrzvBr|en-US||1618391049|1621716065|1621716065|1|-1|1|0|1|0|0|0|0|b2b218891f86ea980812a5b934ecec1a|root@examle.com|1|0|0|0|1|0|0|0|0|unified|gitea|0 3|scones|scones||withcream@example.com|0|enabled|8d0386b217e0f1ad5a1012d879ce93c9d77fd79d888410fdee9e76ec58d6fa017042906dd9a2ea498d3fd5a7486a73875660|pbkdf2|0|0|0||0|Her Majesty's Secret Service||IF60pw0rVc|13y4Vtc2AH|en-US|I like scones.|1618492621|1644507952|1644507952|0|-1|1|0|0|1|0|0|0|3fc2cde6ac97e8c8a0c8b202e527d56d|jackel@example.com|1|0|0|0|1|0|0|0|0|unified|gitea|0 4|test|test||test@test.thm|0|enabled|d3463d9c205751364af7850bca7956d0f5cc0eb125a097db54fd0087eec31cec1912245e57fdfc53423a89e6684a15f8939a|pbkdf2|0|0|0||0|||oe4oKzc3mk|EgtShiimON|en-US||1618526457|1618526530|1618526457|0|-1|1|0|0|0|0|0|0|15c9bc2cfbc7b7fd0b627422d8189173|test@test.thm|0|0|0|0|0|0|0|0|0|unified|gitea|0 5|shebu|shebu||shebu@gits.thm|0|enabled|e4d2b4f6680ab31ec40dfa49e4aac7fec580db3e67d9ec9ff31267db26f70e98fc9ad86db9cf05b5f313274bf30c30de7163|pbkdf2|0|0|0||0|||fdbwIzFByW|IIserdA0R2|en-US||1644507919|1644507920|1644507919|0|-1|1|0|0|0|0|0|0|6790b3c717baa3412054f123049a7205|shebu@gits.thm|0|0|0|0|0|0|0|0|0||gitea|0 Update our permissions to root user.\nsqlite\u003e UPDATE user SET is_admin=1 WHERE id=3; Now if we visit the website we see a private repository called backups owned by root!\nWe have 2 branches in here master \u0026 dotfiles.\nThe dotfiles branch has 4 commits. We see that the root user added his ssh keys and then deleted it.\nLets now grab the SSH private key and ssh into the box as root to grab the root flag!🚩\nNOTE - The name of the file is the passphrase required to ssh in as root.\n┌──(root💀kali)-[~/thm/gitsandcrumpets] └─# ssh root@git.git-and-crumpets.thm -i id_rsa Enter passphrase for key 'id_rsa': Last login: Sat Jul 3 21:36:13 2021 from 192.168.247.1 [root@git-and-crumpets ~]# id uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 [root@git-and-crumpets ~]# cat /root/root.txt dGhtezYzMjAy*********g4NzI0MGRjNmExfQ== [root@git-and-crumpets ~]# cat /root/root.txt | base64 -d thm{6320228d*********7240dc6a1} ",
   "wordCount" : "1323",
   "inLanguage": "en",
-  "image":"https://sh3bu.github.io/themes/hugo-PaperMod/img/gitandcrumpets.png","datePublished": "2022-02-18T00:00:00Z",
+  "image":"https://sh3bu.github.io/img/gitandcrumpets.png","datePublished": "2022-02-18T00:00:00Z",
   "dateModified": "2022-02-18T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -111,14 +121,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/"
+    "@id": "https://sh3bu.github.io/posts/gitandcrumpets/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Shebu 🔽",
+    "name": "Shebu",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://sh3bu.github.io/themes/hugo-PaperMod/favicon.ico"
+      "url": "https://sh3bu.github.io/img/favicon.ico"
     }
   }
 }
@@ -140,7 +150,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sh3bu.github.io/themes/hugo-PaperMod" accesskey="h" title="Shebu 🔽 (Alt + H)">Shebu 🔽</a>
+            <a href="https://sh3bu.github.io/" accesskey="h" title="Shebu&#39;s Blog (Alt + H)">
+                <img src="https://sh3bu.github.io/img/goku.png" alt="" aria-label="logo"
+                    height="90">Shebu&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -166,17 +178,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/archives" title="Archive">
+                <a href="https://sh3bu.github.io/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://sh3bu.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/" title="Tags">
+                <a href="https://sh3bu.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -187,7 +199,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sh3bu.github.io/themes/hugo-PaperMod">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://sh3bu.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sh3bu.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       GitandCrumpets - THM
     </h1>
@@ -196,8 +208,8 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" srcset="https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets.png 1115w" 
-            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/themes/hugo-PaperMod/posts/gitandcrumpets/img/gitandcrumpets.png" alt="" 
+        <img loading="lazy" srcset="https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets_hu26f1dcc9d2f5eda99ad9f7227a0bdc14_100208_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets.png 1115w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/posts/gitandcrumpets/img/gitandcrumpets.png" alt="" 
             width="1115" height="628">
         <p><text></p>
 </figure><div class="toc">
@@ -263,22 +275,22 @@
 <h1 id="enumeration">Enumeration<a hidden class="anchor" aria-hidden="true" href="#enumeration">#</a></h1>
 <hr>
 <h2 id="portscan">Portscan<a hidden class="anchor" aria-hidden="true" href="#portscan">#</a></h2>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/gitsandcrumpets]
-└─# nmap -sCV 10.10.234.147 -oN gitsandcrumpets.nmap
-Starting Nmap 7.92 ( https://nmap.org ) at 2022-02-09 10:01 EST
-Nmap scan report for 10.10.234.147
-Host is up (0.35s latency).                                                                                                                                           
-Not shown: 953 filtered tcp ports (no-response), 44 filtered tcp ports (admin-prohibited)                                                                             
-PORT     STATE  SERVICE    VERSION                                                                                                                                    
-22/tcp   open   ssh        OpenSSH 8.0 (protocol 2.0)                                                                                                                 
-80/tcp   open   http nginx                                                                                                                                      
-| http-title: Hello, World
-|_Requested resource was http://10.10.234.147/index.html
-9090/tcp closed zeus-admin
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 91.94 seconds
-</code></pre><h2 id="website---port-80">Website - port 80<a hidden class="anchor" aria-hidden="true" href="#website---port-80">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/gitsandcrumpets]
+</span></span><span class="line"><span class="cl">└─# nmap -sCV 10.10.234.147 -oN gitsandcrumpets.nmap
+</span></span><span class="line"><span class="cl">Starting Nmap 7.92 ( https://nmap.org ) at 2022-02-09 10:01 EST
+</span></span><span class="line"><span class="cl">Nmap scan report for 10.10.234.147
+</span></span><span class="line"><span class="cl">Host is up (0.35s latency).                                                                                                                                           
+</span></span><span class="line"><span class="cl">Not shown: 953 filtered tcp ports (no-response), 44 filtered tcp ports (admin-prohibited)                                                                             
+</span></span><span class="line"><span class="cl">PORT     STATE  SERVICE    VERSION                                                                                                                                    
+</span></span><span class="line"><span class="cl">22/tcp   open   ssh        OpenSSH 8.0 (protocol 2.0)                                                                                                                 
+</span></span><span class="line"><span class="cl">80/tcp   open   http nginx                                                                                                                                      
+</span></span><span class="line"><span class="cl">| http-title: Hello, World
+</span></span><span class="line"><span class="cl">|_Requested resource was http://10.10.234.147/index.html
+</span></span><span class="line"><span class="cl">9090/tcp closed zeus-admin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl">Nmap done: 1 IP address (1 host up) scanned in 91.94 seconds
+</span></span></code></pre></div><h2 id="website---port-80">Website - port 80<a hidden class="anchor" aria-hidden="true" href="#website---port-80">#</a></h2>
 <p>After the nmap scan I couldn&rsquo;t access the webpage .Initially I thought it might be some vpn issues. Later I got to know that <strong>fail2ban</strong> was used. So no more bruteforcing attempts!</p>
 <blockquote>
 <p>Fail2Ban is an <strong>intrusion prevention software framework that protects computer servers from brute-force attacks</strong>. Fail2ban scans log files (e.g. /var/log/apache/error_log) and bans IPs that show the malicious signs &ndash; too many password failures</p>
@@ -290,47 +302,47 @@ Nmap done: 1 IP address (1 host up) scanned in 91.94 seconds
 <p><img loading="lazy" src="img/website2.png#center" alt="header"  />
 </p>
 <p>We couldn&rsquo;t find any dirctories &amp; there was pretty much nothing we could do here but using curl to retrieve the contents of the webpage reveals the following.</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/thm/gitsandcrumpets]
-└─# curl 10.10.174.224
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&#34;UTF-8&#34; /&gt;
-    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34; /&gt;
-    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;
-    &lt;title&gt;Go away!&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;main&gt;
-      &lt;h1&gt;Nothing to see here, move along&lt;/h1&gt;
-      &lt;h2&gt;Notice:&lt;/h2&gt;
-      &lt;p&gt; 
-        Hey guys,
-           I set up the dev repos at git.git-and-crumpets.thm, but I haven&#39;t gotten around to setting up the DNS yet. 
-           In the meantime, here&#39;s a fun video I found!
-        Hydra
-      &lt;/p&gt;
-      &lt;pre&gt;
-iiiii*nMMWWWWW@@@@@WWWWW@@@@@@@@@WnnxxnnnnnnnnnxxxMMW@@@@@@@@@@@@@@@WWWW@WW@WMMz*iiiiiiiiiiiiii;iiiiiiiiiiii
-;;;;;;;;;;;;;iiiiiii;;;;;;;;;;i;;;;;;;;;;iiiiii+xMMWWWWW@@@@@WWWWWW@@@@@@@@WxnMMMMMMxMMMMMWWWWWW@@@@@@@@@@@@@@@WWWWWW@WMx#*iiiiiiiiiiiiiiiiiiiiiiiiiii
-;;;;;;;;;;;;iiiiiii;;;;;;;;;;;;;;;;ii;;;;iiiiii#xxMMWWWW@@@@@WWWWWW@@@@@@@WWnxxxnnxxxxxxxxxxxMWW@@@@@@@@@@@@@@@@WWWWW@WMx+iiiiiiiiiiiiiiiiiiiii;iiiiii
-;ii;;;i;;;;iiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMWMMMMMWWWWWMMWWWW@@@@@@@@WxxMxxxMMMMxxxMMWWWWWW@@@@@@@@@@@@@@@@WWWW@WMz*iiiiiiiiiiiiiiiiiiiiiiiiiiii
-;ii;;;ii;iiiiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMMMMMxxxMMx##zxWWW@@@@@@@WWxxxxxxxxxxxMMMMMMMMWW@@@@@@@@@@@@@@@@@WWWWMx+*iiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiii;;;;;;;;;;i;;;;;iii;iiiiiiii#xMMMMxxxMMn++#zxWWW@@@@@@@WWxxxxxnnnnxxxnxMMWWWWW@@@@@@@@@@@@@@@@@@WWWx#**iiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiiii;;;;;;;;;ii;;;;iiiiiiiiiiii+xMMMMMMnz#++#zzxWWW@@@@@@@@WxnxxxxxxxMMxxxxMxMMWW@@@@@@@@@@@@@@@@@@WMx+**iiiiiiiiiiiiiiiiiiii;ii;iiiii
-iiiiiiiiiiiiiiiiiiiiiiiii;;;iiii;;iiiiiiiiiiiiii#nMMxM#***+#zzzxWWW@@@@@@@WWxnMMMMMMMMMMMMMMWWWWWW@@@@@@@@WWW@@@@WWMz+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiii;;;;ii;;;;ii;;;iiiiiiiiiiiiiii#xxxn++##zzzzzxWW@@@@@@@@WWxnxxxxMMMxxxxxMMMMMMMWW@@@@@@@@WW@@@WWMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiii;;;;ii;;;;i;;;;;;iiiiiiiiiiiii+xxxzzzzzzznnnxW@@@@@@@@@@WxnxxnnnnnnnnnnxMMMMWWWWWWW@@@@@@@@@WWMMx#***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiii;;;;i;;;;;i;;;;;;;;iiiiiiiiiiizxMMnzzzzzznnnMW@@@@@@@@@@WxxxxxxxMMMWWWMMWWWWMWWWWWWW@@@@@@@WWMMMMx+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii
-iiiiiiiiiiiiiiiiiii;;;;i;;;;i;;;;;;;;;iiiiiiiiiiizxMMnzzzzzzznnxW@@@@@@@@@@WxxxnxxMMWWMMWMMxMWMxMW@@WWWW@@@@@@WWMMMMMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiii
-
-Never gonna give you up,
-            Never gonna let you down...
-      &lt;/pre&gt;
-    &lt;/main&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><h2 id="gitea">Gitea<a hidden class="anchor" aria-hidden="true" href="#gitea">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/thm/gitsandcrumpets]
+</span></span><span class="line"><span class="cl">└─# curl 10.10.174.224
+</span></span><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+</span></span><span class="line"><span class="cl">&lt;html lang=&#34;en&#34;&gt;
+</span></span><span class="line"><span class="cl">  &lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;meta charset=&#34;UTF-8&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Go away!&lt;/title&gt;
+</span></span><span class="line"><span class="cl">  &lt;/head&gt;
+</span></span><span class="line"><span class="cl">  &lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;main&gt;
+</span></span><span class="line"><span class="cl">      &lt;h1&gt;Nothing to see here, move along&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">      &lt;h2&gt;Notice:&lt;/h2&gt;
+</span></span><span class="line"><span class="cl">      &lt;p&gt; 
+</span></span><span class="line"><span class="cl">        Hey guys,
+</span></span><span class="line"><span class="cl">           I set up the dev repos at git.git-and-crumpets.thm, but I haven&#39;t gotten around to setting up the DNS yet. 
+</span></span><span class="line"><span class="cl">           In the meantime, here&#39;s a fun video I found!
+</span></span><span class="line"><span class="cl">        Hydra
+</span></span><span class="line"><span class="cl">      &lt;/p&gt;
+</span></span><span class="line"><span class="cl">      &lt;pre&gt;
+</span></span><span class="line"><span class="cl">iiiii*nMMWWWWW@@@@@WWWWW@@@@@@@@@WnnxxnnnnnnnnnxxxMMW@@@@@@@@@@@@@@@WWWW@WW@WMMz*iiiiiiiiiiiiii;iiiiiiiiiiii
+</span></span><span class="line"><span class="cl">;;;;;;;;;;;;;iiiiiii;;;;;;;;;;i;;;;;;;;;;iiiiii+xMMWWWWW@@@@@WWWWWW@@@@@@@@WxnMMMMMMxMMMMMWWWWWW@@@@@@@@@@@@@@@WWWWWW@WMx#*iiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">;;;;;;;;;;;;iiiiiii;;;;;;;;;;;;;;;;ii;;;;iiiiii#xxMMWWWW@@@@@WWWWWW@@@@@@@WWnxxxnnxxxxxxxxxxxMWW@@@@@@@@@@@@@@@@WWWWW@WMx+iiiiiiiiiiiiiiiiiiiii;iiiiii
+</span></span><span class="line"><span class="cl">;ii;;;i;;;;iiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMWMMMMMWWWWWMMWWWW@@@@@@@@WxxMxxxMMMMxxxMMWWWWWW@@@@@@@@@@@@@@@@WWWW@WMz*iiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">;ii;;;ii;iiiiiiiiii;;;;;;;;;;;;;;;;;;;;iiiiiiii#xMMMMMxxxMMx##zxWWW@@@@@@@WWxxxxxxxxxxxMMMMMMMMWW@@@@@@@@@@@@@@@@@WWWWMx+*iiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiii;;;;;;;;;;i;;;;;iii;iiiiiiii#xMMMMxxxMMn++#zxWWW@@@@@@@WWxxxxxnnnnxxxnxMMWWWWW@@@@@@@@@@@@@@@@@@WWWx#**iiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiiii;;;;;;;;;ii;;;;iiiiiiiiiiii+xMMMMMMnz#++#zzxWWW@@@@@@@@WxnxxxxxxxMMxxxxMxMMWW@@@@@@@@@@@@@@@@@@WMx+**iiiiiiiiiiiiiiiiiiii;ii;iiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiiiiiiiii;;;iiii;;iiiiiiiiiiiiii#nMMxM#***+#zzzxWWW@@@@@@@WWxnMMMMMMMMMMMMMMWWWWWW@@@@@@@@WWW@@@@WWMz+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiii;;;;ii;;;;ii;;;iiiiiiiiiiiiiii#xxxn++##zzzzzxWW@@@@@@@@WWxnxxxxMMMxxxxxMMMMMMMWW@@@@@@@@WW@@@WWMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiii;;;;ii;;;;i;;;;;;iiiiiiiiiiiii+xxxzzzzzzznnnxW@@@@@@@@@@WxnxxnnnnnnnnnnxMMMMWWWWWWW@@@@@@@@@WWMMx#***iiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiii;;;;i;;;;;i;;;;;;;;iiiiiiiiiiizxMMnzzzzzznnnMW@@@@@@@@@@WxxxxxxxMMMWWWMMWWWWMWWWWWWW@@@@@@@WWMMMMx+***iiiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">iiiiiiiiiiiiiiiiiii;;;;i;;;;i;;;;;;;;;iiiiiiiiiiizxMMnzzzzzzznnxW@@@@@@@@@@WxxxnxxMMWWMMWMMxMWMxMW@@WWWW@@@@@@WWMMMMMn+***iiiiiiiiiiiiiiiiiiiiiiiiiiii
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Never gonna give you up,
+</span></span><span class="line"><span class="cl">            Never gonna let you down...
+</span></span><span class="line"><span class="cl">      &lt;/pre&gt;
+</span></span><span class="line"><span class="cl">    &lt;/main&gt;
+</span></span><span class="line"><span class="cl">  &lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></div><h2 id="gitea">Gitea<a hidden class="anchor" aria-hidden="true" href="#gitea">#</a></h2>
 <p>In the comments we see a hostname called <code>git.git-and-crumpets.thm</code> . Added it to /etc/hosts file &amp; visited the page.</p>
 <p><img loading="lazy" src="img/website3.png#center" alt="header"  />
 </p>
@@ -360,31 +372,31 @@ Here there is a comment in one of the commits mentioning that the user scones ha
 <p><img loading="lazy" src="img/website9.png#center" alt="header"  />
 </p>
 <p>Using <strong>exiftool</strong> to retrieve user <strong>scones</strong> password .</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/thm/gitsandcrumpets]
-└─# exiftool 3fc2cde6ac97e8c8a0c8b202e527d56d.png                                                                                                          
-
-ExifTool Version Number         : 12.36
-File Name                       : 3fc2cde6ac97e8c8a0c8b202e527d56d.png
-Directory                       : ..
-File Size                       : 279 KiB
-File Modification Date/Time     : 2022:02:10 10:09:37-05:00
-File Access Date/Time           : 2022:02:10 10:09:37-05:00
-File Inode Change Date/Time     : 2022:02:10 10:09:37-05:00
-File Permissions                : -rw-r--r--
-File Type                       : PNG
-File Type Extension             : png
-MIME Type                       : image/png
-Image Width                     : 290
-Image Height                    : 290
-Bit Depth                       : 16
-Color Type                      : RGB
-Compression                     : Deflate/Inflate
-Filter                          : Adaptive
-Interlace                       : Noninterlaced
-Description                     : My &#39;Password&#39; should be easy enough to guess
-Image Size                      : 290x290
-Megapixels                      : 0.084
-</code></pre><p>Now after logging in to the website as scones ,we see that the user has access to modify git hooks .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/thm/gitsandcrumpets]
+</span></span><span class="line"><span class="cl">└─# exiftool 3fc2cde6ac97e8c8a0c8b202e527d56d.png                                                                                                          
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ExifTool Version Number         : 12.36
+</span></span><span class="line"><span class="cl">File Name                       : 3fc2cde6ac97e8c8a0c8b202e527d56d.png
+</span></span><span class="line"><span class="cl">Directory                       : ..
+</span></span><span class="line"><span class="cl">File Size                       : 279 KiB
+</span></span><span class="line"><span class="cl">File Modification Date/Time     : 2022:02:10 10:09:37-05:00
+</span></span><span class="line"><span class="cl">File Access Date/Time           : 2022:02:10 10:09:37-05:00
+</span></span><span class="line"><span class="cl">File Inode Change Date/Time     : 2022:02:10 10:09:37-05:00
+</span></span><span class="line"><span class="cl">File Permissions                : -rw-r--r--
+</span></span><span class="line"><span class="cl">File Type                       : PNG
+</span></span><span class="line"><span class="cl">File Type Extension             : png
+</span></span><span class="line"><span class="cl">MIME Type                       : image/png
+</span></span><span class="line"><span class="cl">Image Width                     : 290
+</span></span><span class="line"><span class="cl">Image Height                    : 290
+</span></span><span class="line"><span class="cl">Bit Depth                       : 16
+</span></span><span class="line"><span class="cl">Color Type                      : RGB
+</span></span><span class="line"><span class="cl">Compression                     : Deflate/Inflate
+</span></span><span class="line"><span class="cl">Filter                          : Adaptive
+</span></span><span class="line"><span class="cl">Interlace                       : Noninterlaced
+</span></span><span class="line"><span class="cl">Description                     : My &#39;Password&#39; should be easy enough to guess
+</span></span><span class="line"><span class="cl">Image Size                      : 290x290
+</span></span><span class="line"><span class="cl">Megapixels                      : 0.084
+</span></span></code></pre></div><p>Now after logging in to the website as scones ,we see that the user has access to modify git hooks .</p>
 <blockquote>
 <p>Git hooks are <strong>scripts that run automatically every time a particular event occurs in a Git repository</strong>.</p>
 </blockquote>
@@ -515,38 +527,38 @@ Blog post for this Githooks RCE - <a href="https://podalirius.net/en/articles/ex
 </p>
 <p>Lets now grab the SSH private key and ssh into the box as root to grab the root flag!🚩</p>
 <p>NOTE - The name of the file is the passphrase required to ssh in as root.</p>
-<pre tabindex="0"><code>┌──(root💀kali)-[~/thm/gitsandcrumpets]
-└─# ssh root@git.git-and-crumpets.thm -i id_rsa 
-Enter passphrase for key &#39;id_rsa&#39;: 
-Last login: Sat Jul  3 21:36:13 2021 from 192.168.247.1
-
-[root@git-and-crumpets ~]# id
-uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
-
-[root@git-and-crumpets ~]# cat /root/root.txt
-dGhtezYzMjAy*********g4NzI0MGRjNmExfQ==
-
-[root@git-and-crumpets ~]# cat /root/root.txt | base64 -d
-thm{6320228d*********7240dc6a1}
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──(root💀kali)-[~/thm/gitsandcrumpets]
+</span></span><span class="line"><span class="cl">└─# ssh root@git.git-and-crumpets.thm -i id_rsa 
+</span></span><span class="line"><span class="cl">Enter passphrase for key &#39;id_rsa&#39;: 
+</span></span><span class="line"><span class="cl">Last login: Sat Jul  3 21:36:13 2021 from 192.168.247.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[root@git-and-crumpets ~]# id
+</span></span><span class="line"><span class="cl">uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[root@git-and-crumpets ~]# cat /root/root.txt
+</span></span><span class="line"><span class="cl">dGhtezYzMjAy*********g4NzI0MGRjNmExfQ==
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[root@git-and-crumpets ~]# cat /root/root.txt | base64 -d
+</span></span><span class="line"><span class="cl">thm{6320228d*********7240dc6a1}
+</span></span></code></pre></div>
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/fail2ban/">fail2ban</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/git/">git</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/gitea/">gitea</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/githooks/">githooks</a></li>
-      <li><a href="https://sh3bu.github.io/themes/hugo-PaperMod/tags/cve-2020-14144/">cve-2020-14144</a></li>
+      <li><a href="https://sh3bu.github.io/tags/fail2ban/">fail2ban</a></li>
+      <li><a href="https://sh3bu.github.io/tags/git/">git</a></li>
+      <li><a href="https://sh3bu.github.io/tags/gitea/">gitea</a></li>
+      <li><a href="https://sh3bu.github.io/tags/githooks/">githooks</a></li>
+      <li><a href="https://sh3bu.github.io/tags/cve-2020-14144/">cve-2020-14144</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/napping/">
+  <a class="prev" href="https://sh3bu.github.io/posts/napping/">
     <span class="title">« Prev</span>
     <br>
     <span>Napping - THM</span>
   </a>
-  <a class="next" href="https://sh3bu.github.io/themes/hugo-PaperMod/posts/lumberjackturtle/">
+  <a class="next" href="https://sh3bu.github.io/posts/lumberjackturtle/">
     <span class="title">Next »</span>
     <br>
     <span>Lumberjack Turtle - THM</span>
@@ -556,42 +568,42 @@ thm{6320228d*********7240dc6a1}
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on twitter"
-        href="https://twitter.com/intent/tweet/?text=GitandCrumpets%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f&amp;hashtags=fail2ban%2cgit%2cgitea%2cgithooks%2ccve-2020-14144">
+        href="https://twitter.com/intent/tweet/?text=GitandCrumpets%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f&amp;hashtags=fail2ban%2cgit%2cgitea%2cgithooks%2ccve-2020-14144">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f&amp;title=GitandCrumpets%20-%20THM&amp;summary=GitandCrumpets%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f">
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f&amp;title=GitandCrumpets%20-%20THM&amp;summary=GitandCrumpets%20-%20THM&amp;source=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on reddit"
-        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f&title=GitandCrumpets%20-%20THM">
+        href="https://reddit.com/submit?url=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f&title=GitandCrumpets%20-%20THM">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f">
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on whatsapp"
-        href="https://api.whatsapp.com/send?text=GitandCrumpets%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f">
+        href="https://api.whatsapp.com/send?text=GitandCrumpets%20-%20THM%20-%20https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share GitandCrumpets - THM on telegram"
-        href="https://telegram.me/share/url?text=GitandCrumpets%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fthemes%2fhugo-PaperMod%2fposts%2fgitandcrumpets%2f">
+        href="https://telegram.me/share/url?text=GitandCrumpets%20-%20THM&amp;url=https%3a%2f%2fsh3bu.github.io%2fposts%2fgitandcrumpets%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -603,7 +615,7 @@ thm{6320228d*********7240dc6a1}
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://sh3bu.github.io/themes/hugo-PaperMod">Shebu 🔽</a></span>
+    <span>&copy; 2023 <a href="https://sh3bu.github.io/">Shebu</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
