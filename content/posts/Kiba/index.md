@@ -14,7 +14,7 @@ cover:
 
 **Kiba** is a easy rated room from tryhackme where we exploit a prototype pollution vulnerability to gain a user shell  & then escalate our privileges to root by exploiting a python3 binary which has setuid capabilities.
 
-![image](https://github.com/sh3bu/sh3bu.github.io/assets/67383098/00c9c5df-4466-4467-89dd-d64a3882c13b)
+![header](img/0.png#center)
 
 
 |  **Room** 	| Kiba                                          	|
@@ -27,7 +27,7 @@ cover:
 
 ## What is the vulnerability that is specific to programming languages with prototype-based inheritance? 
 
-![image](https://github.com/sh3bu/sh3bu.github.io/assets/67383098/698e9f80-fccf-49e8-8e0a-4259426abb89)
+![header](img/1.png#center)
 
 > Vulnerability - Prototype Pollution
 
@@ -35,7 +35,7 @@ cover:
 
 Go to **Management tab** , there we can find the version of kiba that is running.
 
-![image](https://github.com/sh3bu/sh3bu.github.io/assets/67383098/c37a64bd-5b7a-4ac2-af0a-d3fca7ac158d)
+![header](img/2.png#center)
 
 > Version - 6.5.4
 
@@ -43,7 +43,7 @@ Go to **Management tab** , there we can find the version of kiba that is running
 
 A simple google search reveals the **CVE** number.
 
-![image](https://github.com/sh3bu/sh3bu.github.io/assets/67383098/14e1e57c-7956-484d-9518-3964b66eb702)
+![header](img/3.png#center)
 
 > CVE ID - CVE-2019-7609
 
