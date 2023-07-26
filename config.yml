@@ -88,7 +88,7 @@ params:
         - name: twitter
           url: "https://twitter.com/_sh3bu"
         - name: linkedin
-          url: "https://linkedin.com/shebu"
+          url: "https://linkedin.com/in/shebu"
         - name: instagram
           url: "https://www.instagram.com/_shebu._/"
         - name: tryhackme
