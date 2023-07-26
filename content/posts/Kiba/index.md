@@ -4,7 +4,7 @@ title: "Kiba - THM"
 date: "2023-06-07"
 tags: ["kiba", "elastic", "prototype pollution", "CVE-2019-7609"]
 cover:
-    image: "null"
+    image: "img/0.png"
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "<alt text>"
