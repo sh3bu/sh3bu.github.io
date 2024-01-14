@@ -500,7 +500,7 @@ sh3bu@Ubuntu:~/thm/whyhackme$ pwncat-cs -lp 8888
 uid=33(www-data) gid=1003(h4ck3d) groups=1003(h4ck3d)
 ```
 
-## Shell as root 
+# Shell as root 
 
 The `www-data` user had the privilege to run any command as any user!
 ```bash
