@@ -176,7 +176,7 @@ Scrolling down the page we find a comment section. We need to log in to comment 
 So I tried to login to the site using the usernames that we encountered - **admin**, **mike** along some common weak passwords. It didn't work.
 Even tried sql injection , that too yielded nothing.
 
-Remember there was a `register.php` page found during directory bruteforcing. So I registered as a user & logged in.
+Remember there was a `register.php` page found during directory bruteforcing? Using that I registered as a user & logged in.
 
 ![header](img/website3.png#center)
 
