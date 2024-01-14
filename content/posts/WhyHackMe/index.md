@@ -181,7 +181,7 @@ Remember there was a `register.php` page found during directory bruteforcing. So
 ![header](img/website3.png#center)
 
 
-# Exploitation 
+# Shell as Jack 
 
 Initially I tried injecting several XSS payloads into the comment field but failed to execute my malicious js code.
 
@@ -216,7 +216,7 @@ I have now successfully stolen the admin's session cookie -`x73smx4j6aepuyygktci
 
 I tried to replace my sesion cookie with that of with admin's. But nothing worked. I was stuck here & then later I remembered about the note that admin had left. The **127.0.0.1/dir/pass.txt** file has credentials of new account.
 
-## Shell as jack 
+## Exfiltrate data using XSS
 
 Googling for ways to access files via XSS, I came across a blog by **Trustedsec** which explained how we could use stored XSS to exfiltrate data using XSS.
 
@@ -345,7 +345,7 @@ sh3bu@Ubuntu:~/thm/whyhackme$ echo "amFjazpXa********uZ0lESwo=" | base64 -d
 jack:Why********IDK
 ```
 
-With the creds obtained I was able to ssh in as **Jack** & get the `user.txt` flag.
+With the creds obtained I was able to ssh in as **Jack** & grab the `user.txt` flag 🚩.
 ```
 sh3bu@Ubuntu:~/thm/whyhackme$ ssh jack@10.10.87.106
 jack@10.10.87.106's password: 
@@ -374,8 +374,7 @@ jack@ubuntu:~$ cat user.txt
 ```
 
 # Shell as www-data 
-
-### sudo 
+ 
 
 Running `sudo -l` reveals that the user jack has sudo permissions to run **iptables** utility.
 
@@ -445,7 +444,7 @@ Enumerating further, in the **/opt** directory there are 2 interesting files. I 
 jack@ubuntu:/$ ls /opt
 capture.pcap  urgent.txt
 ```
-### urgent.txt
+## urgent.txt
 
 The **urgent.txt** had the following message by admin.
 > Hey guys, after the hack some files have been placed in /usr/lib/cgi-bin/ and when I try to remove them, they wont, even though I am root. Please go through the pcap file in /opt and
@@ -457,7 +456,7 @@ When I checked the `/usr/lib/cgi-bin` directory, I saw that it was owned by user
 jack@ubuntu:/var/www/html$ ls  -al /usr/lib/ | grep "cgi-bin"
 drwxr-x---  2 root h4ck3d   4096 Aug 16 14:29 cgi-bin
 ```
-### capture.pcap
+## capture.pcap
 
 Next up I opened **capture.pcap** using wireshark. But the contents were encrypted.
 
@@ -510,7 +509,7 @@ User www-data may run the following commands on ubuntu:
     (ALL : ALL) NOPASSWD: ALL
 ```
 
-Now we can easily grab the **root.txt**.
+Now we can easily grab the **root.txt** 🚩.
 ```
 (remote) www-data@ubuntu:/usr/lib/cgi-bin$ sudo wc -c /root/root.txt
 33 /root/root.txt
