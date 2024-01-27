@@ -93,7 +93,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ## Directory Bruteforce 
 
-Ferosbuster reveals the following endpoints. 
+Feroxbuster reveals the following endpoints. 
 ```bash
 sh3bu@Ubuntu:~/thm/whyhackme$ feroxbuster -w ~/opt/SecLists/Discovery/Web-Content/raft-medium-directories.txt -u http://$ip/ -x php,json,bak,pl,sh,html,asp,aspx,cgi,rb -C 404 -o  recon/scans/feroxbuster.out
 
