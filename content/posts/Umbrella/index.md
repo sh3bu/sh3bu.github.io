@@ -12,7 +12,7 @@ cover:
     relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
 
-**WhyHackMe** is a **medium difficulty** machine from **TryHackMe** which involves exfiltrating a sensitive file from the server using stored XSS to gain foothold. Later using iptables we modify a rule to allow incoming traffic via a certain port in which the attacker had uploaded a web shell to run system commands. Then by decrypting a .pcap file, we find the endpoint containing the backdoor & with the help of that we gain a shell as _www-data_ user where the user has sudo permissions.
+**Umbrella** is a **medium difficulty** machine from **TryHackMe** which involves gaining credentials by querying the docker registry. With the credentials obtained, we were able to login to MySQL & obtain the usernames & passwords that can be used to log in to the site and as well as to SSH into the box. Then we go on and exploit the `eval()` function to get a reverse shell as root on the container. For escalating our privileges to root, as root user inside the container, we make a copy of the bash binary to the `logs/` directory  & give it setuid permissions. Since the `logs/` directory from the host is mounted to `/logs/` directory on the container, `claire-r` user can run the setuid binary to gain a root shell on the host machine!
 
 ![header](img/header.png#center)
 
