@@ -4,7 +4,7 @@ title: "Umbrella - THM"
 date: "2024-01-27"
 tags: ["Docker registry","MySQL","RCE via eval()","Docker privilege escalation"]
 cover:
-    image: img/head.png
+    image: img/umbrella.png
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "<alt text>"
