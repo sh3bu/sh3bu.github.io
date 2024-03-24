@@ -14,7 +14,7 @@ cover:
 
 **Umbrella** is a **medium difficulty** machine from **TryHackMe** which involves gaining credentials by querying the docker registry. With the credentials obtained, we were able to login to MySQL & obtain the usernames & passwords that can be used to log in to the site and as well as to SSH into the box. Then we go on and exploit the `eval()` function to get a reverse shell as root on the container. For escalating our privileges to root, as root user inside the container, we make a copy of the bash binary to the `logs/` directory  & give it setuid permissions. Since the `logs/` directory from the host is mounted to `/logs/` directory on the container, `claire-r` user can run the setuid binary to gain a root shell on the host machine!
 
-![header](img/header.png#center)
+![header](img/head.png#center)
 
 |  **Room** 	| Umbrella                                          	|
 |:--------------:	|----------------------------------------------------	|
