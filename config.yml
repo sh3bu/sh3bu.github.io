@@ -76,10 +76,10 @@ params:
 
             A Security Geek : Building and Breaking for Knowledge
             
-
+            - Product Security Engineer at Philips.
             - M.Tech Cybersecurity student at **TIFAC CORE** in Cyber Security - **Amrita Vishwa Vidhyapeetham**.
-            - Security Intern at **Philips**.
-
+            - Author of verified CVEs: CVE-2024-41662, CVE-2024-7869
+            
 
     socialIcons:
         - name: github
@@ -88,8 +88,6 @@ params:
           url: "https://twitter.com/_sh3bu"
         - name: linkedin
           url: "https://linkedin.com/in/shebu"
-        - name: instagram
-          url: "https://www.instagram.com/_shebu._/"
         - name: tryhackme
           url: "https://tryhackme.com/p/shebu"
         - name: hackthebox
